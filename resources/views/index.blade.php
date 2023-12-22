@@ -906,7 +906,7 @@
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                    {{'$' . $employees->avg('salary')}}
+                    {{'$' . Number::format($employees->sum('salary'))}}
                   </p>
                 </div>
               </div>
@@ -977,7 +977,7 @@
                       <th class="px-4 py-3">Employee</th>
                       <th class="px-4 py-3">Salary</th>
                       <th class="px-4 py-3">Email</th>
-                      <th class="px-4 py-3">Number</th>
+                      <th class="px-4 py-3">Phone Number</th>
                     </tr>
                   </thead>
 
@@ -1012,7 +1012,7 @@
                         </div>
                       </td>
                       <td class="px-4 py-3 text-sm">
-                         {{'$' . $employee->salary}}
+                         {{'$' . Number::format($employee->salary)}}
                       </td>
                       <td class="px-4 py-3 text-xs">
                         <span

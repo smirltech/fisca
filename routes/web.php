@@ -29,3 +29,5 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/compute_salary', [\App\Http\Controllers\SalaryController::class, 'compute'])->name('compute_salary');

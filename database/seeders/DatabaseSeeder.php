@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Employee;
+use App\Models\PublicHoliday;
 use App\Models\User;
 use Database\Factories\EmployeeFactory;
 use Illuminate\Database\Seeder;
@@ -22,8 +23,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-            User::factory(10)->create();
-            Employee::factory(10)->create();
-
+//            User::factory(10)->create();
+//            Employee::factory(10)->create();
+            PublicHoliday::factory()->create();
     }
 }

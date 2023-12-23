@@ -1006,7 +1006,7 @@
                             ></div>
                           </div>
                           <div>
-                              <a href="{{ route('compute_salary', ['employee_id' => $employee->id]) }}">
+                              <a href="{{ route('ComputeDailySalary', ['employee_id' => $employee->id]) }}">
                             <p class="font-semibold">{{ $employee->full_name }}</p>
                               </a>
                             <p class="text-xs text-gray-600 dark:text-gray-400">
@@ -1020,7 +1020,7 @@
                       </td>
                       <td class="px-4 py-3 text-xs">
                         <span
-                          class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                          class="px-4 py-3 text-sm"
                         >
                           {{ $employee->email }}
                         </span>
@@ -1029,7 +1029,7 @@
                         {{ $employee->phone_number }}
                       </td>
                             <td>
-                                <a href="{{route('compute_salary', ['employee_id' => $employee->id])}}">
+                                <a href="{{route('ComputeDailySalary', ['employee_id' => $employee->id]  )}}">
                                     <button class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                                         Salary
                                     </button>

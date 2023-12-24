@@ -808,16 +808,11 @@
         </header>
         <main class="h-full pb-16 overflow-y-auto">
           <div class="container grid px-6 mx-auto">
-            <h2
-              class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
-            >
-              Salary
-            </h2>
             <!-- CTA -->
-            <a
+            {{--<a
               class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
-            >
-              <div class="flex items-center">
+            >--}}
+              <div class="my-6 flex items-center p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">
                 <svg
                   class="w-5 h-5 mr-2"
                   fill="currentColor"
@@ -829,7 +824,12 @@
                 </svg>
                 <span> {{$full_name}}</span>
               </div>
-            </a>
+{{--            </a>--}}
+              <h1
+                  class="font-semibold text-gray-700 dark:text-gray-200"
+              >
+                  Salary
+              </h1>
 
               <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
                   <!-- Card -->
@@ -854,7 +854,7 @@
                           <p
                               class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                           >
-                              {{ $daily_salary }}
+                              {{ Number::currency($daily_salary) }}
                           </p>
                       </div>
                   </div>
@@ -882,11 +882,34 @@
                           <p
                               class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                           >
-                            {{ $hourly_salary }}
+                            {{ Number::currency($hourly_salary) }}
                           </p>
                       </div>
                   </div>
                   <!-- Card -->
+                  <div
+                      class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+                  >
+                      <div
+                          class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500"
+                      >
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 9a1 1 0 11-2 0V7a1 1 0 112 0v4zm-1-12a10 10 0 110 20 10 10 0 010-20z" clip-rule="evenodd" />
+                          </svg>
+                      </div>
+                      <div>
+                          <p
+                              class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                          >
+                              Supplementary hours
+                          </p>
+                          <p
+                              class="text-lg font-semibold text-gray-700 dark:text-gray-200"
+                          >
+                              {{ $total_hours_of_overtime_of_this_month }}
+                          </p>
+                      </div>
+                  </div>
               </div>
 
               {{-- IF THE EMPLOYEE HAS ALMOST ONE OVERTIME --}}

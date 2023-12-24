@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -51,23 +52,6 @@ class SalaryController extends Controller
         ]);*/
     }
 
-    public function compute_journaly(Request $request): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
-    {
-
-        $request->validate([
-            'employee_id' => 'required|exists:employees,id',
-            /*'start_date' => 'required|date',
-            'end_date' => 'required|date',*/
-        ]);
-
-        $employee = Employee::find($request->employee_id);
-        $journaly_salary = $employee->salary / 26;
-
-        return view('journaly_salary', [
-            'journaly_salary' => $journaly_salary,
-        ]);
-    }
-
     public function ComputeDailySalary(Request $request){
         $request->validate([
             'employee_id' => 'required|exists:employees,id',
@@ -87,13 +71,40 @@ class SalaryController extends Controller
 
         $overtimes = DB::table('over_times')->where('employee_id', $employee->id)->get();
 
-
+        $total_hours_of_overtime_of_this_month = $this->getTotalHoursOfOvertimeOfThisMonth($employee->id);
+        $salary_to_be_payed = $this->overtime_salary($hourly_salary, $total_hours_of_overtime_of_this_month);
 
         return view('salary', [
             'daily_salary' => $daily_salary,
             'hourly_salary' => $hourly_salary,
             'full_name' => $full_name,
             'overtimes' => $overtimes,
+            'total_hours_of_overtime_of_this_month' => $total_hours_of_overtime_of_this_month,
+            'salary_to_be_payed' => $salary_to_be_payed,
         ]);
+    }
+
+    /*
+     * Compute overtime salary of an employee
+     * based on this formula:
+     * overtime_salary = hourly_salary * number_of_hours
+     *
+     */
+    private function overtime_salary($hourly_salary, $number_of_hours){
+        return $hourly_salary * $number_of_hours;
+    }
+
+    private function getTotalHoursOfOvertimeOfThisMonth($employee_id){
+        $overtimes = DB::table('over_times')
+            ->where('employee_id', $employee_id)
+            ->whereMonth('date', now()->month)
+            ->pluck('hours')
+            ->toArray();
+
+        if (empty($overtimes)) {
+            return 0;
+        }
+
+        return array_sum($overtimes);
     }
 }

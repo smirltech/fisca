@@ -15,8 +15,8 @@ class OverTimeFactory extends Factory
     {
         return [
             'employee_id' => fake()->randomElement(Employee::all()->pluck('id')),
-            'date' => fake()->date(),
-            'hours' => fake()->randomElement(range(1, 14)),
+            'date' => fake()->dateTimeThisMonth(),
+            'hours' => fake()->randomElement(range(1, 7)),
             'reason' => fake()->realText()
         ];
     }

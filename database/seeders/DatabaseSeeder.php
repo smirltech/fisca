@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Employee;
+use App\Models\OverTime;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,11 +20,12 @@ class DatabaseSeeder extends Seeder
              'email' => 'test@example.com',
          ]);*/
 
-        Employee::factory(10)->create();
+        Employee::factory(30)->create();
+        OverTime::factory(300)->create();
+
         $this->call([
             UserSeeder::class,
-            PublicHolidaySeeder::class,
-            OverTimeSeeder::class,
+            PublicHolidaySeeder::class
         ]);
     }
 }

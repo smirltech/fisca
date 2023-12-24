@@ -85,12 +85,15 @@ class SalaryController extends Controller
         $employee = Employee::find($request->employee_id);
         $full_name = $employee->full_name;
 
+        $overtimes = DB::table('over_times')->where('employee_id', $employee->id)->get();
+
 
 
         return view('salary', [
             'daily_salary' => $daily_salary,
             'hourly_salary' => $hourly_salary,
             'full_name' => $full_name,
+            'overtimes' => $overtimes,
         ]);
     }
 }

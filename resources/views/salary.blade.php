@@ -889,12 +889,16 @@
                   <!-- Card -->
               </div>
 
+              {{-- IF THE EMPLOYEE HAS ALMOST ONE OVERTIME --}}
+              @if(count($overtimes) > 0)
+                  <x-over-time-table :over-times="$overtimes"></x-over-time-table>
+              @endif
 
             <div
               class="max-w-2xl px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
             >
-              <p class="mb-4 text-gray-600 dark:text-gray-400">
-                  <p>Bonjour Monsier</p>
+              <p class="mb-4 text-gray-800 dark:text-gray-200">
+                  <span class="block">Bonjour Monsier</span>
                   <span>Nous sommes ravis de vous annoncer que votre salaire
                       pour le mois de janvier s'élève à <strong>{{ $daily_salary }}</strong> . N'hésitez
                       pas à nous contacter si vous avez des questions ou des préoccupations.

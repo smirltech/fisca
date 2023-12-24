@@ -22,9 +22,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call([
-            User::factory(10)->create(),
-            Employee::factory(10)->create(),
-        ]);
+            User::factory(10)->create();
+            Employee::factory(10)->create();
+
     }
 }

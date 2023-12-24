@@ -8,6 +8,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="{{ asset('css/tailwind.output.css')}}"/>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script
@@ -879,7 +880,7 @@
                             <p
                                 class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                             >
-                                {{ $employees->count('full_name') }}
+                                {{ \App\Models\Employee::all()->count() }}
                             </p>
                         </div>
                     </div>
@@ -902,12 +903,12 @@
                             <p
                                 class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
                             >
-                                Account balance
+                                To be paid
                             </p>
                             <p
                                 class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                             >
-                                {{'$' . Number::format($employees->sum('salary'))}}
+                                {{'$' . Number::format($salaryToBePaid)}}
                             </p>
                         </div>
                     </div>
@@ -956,12 +957,12 @@
                             <p
                                 class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
                             >
-                                Pending contacts
+                                Pending Agent
                             </p>
                             <p
                                 class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                             >
-                                35
+                                {{ $pendingAgent }}
                             </p>
                         </div>
                     </div>
@@ -978,6 +979,7 @@
                                 <th class="px-4 py-3">Employee</th>
                                 <th class="px-4 py-3">Salary</th>
                                 <th class="px-4 py-3">Email</th>
+                                <th class="px-4 py-3">Payed</th>
                                 <th class="px-4 py-3">Phone Number</th>
                                 <th class="px-4 py-3">Action</th>
                             </tr>
@@ -1019,11 +1021,26 @@
                                         {{'$' . Number::format($employee->salary)}}
                                     </td>
                                     <td class="px-4 py-3 text-xs">
-                        <span
-                            class="px-4 py-3 text-sm"
-                        >
-                          {{ $employee->email }}
-                        </span>
+                                        <span
+                                            class="px-4 py-3 text-sm"
+                                        >
+                                          {{ $employee->email }}
+                                        </span>
+                                    </td>
+                                    <td class='px-4 py-3 text-sm'>
+                                        @if($employee->payed)
+                                            <div class="flex justify-center w-8 p-1 bg-green-500 rounded-full">
+                                                <span class="material-symbols-outlined text-white">
+                                                check
+                                                </span>
+                                            </div>
+                                        @else
+                                            <div class="flex justify-center w-8 p-1 bg-red-500 rounded-full">
+                                                <span class="material-symbols-outlined text-white">
+                                                pending
+                                                </span>
+                                            </div>
+                                        @endif
                                     </td>
                                     <td class="px-4 py-3 text-sm">
                                         {{ $employee->phone_number }}

@@ -16,9 +16,18 @@ class EmployeeController extends Controller
      */
     public function index()
     {
+        $salaryToBePaid =  DB::table('employees')
+            ->where('payed', '=', '0')
+            ->sum('salary');
+
+        $pendingAgent = DB::table('employees')
+            ->where('payed', '=', '0')
+            ->count('id');
+
         return view('index', [
             'employees' =>DB::table('employees')->paginate(10),
-
+            'salaryToBePaid' => $salaryToBePaid,
+            'pendingAgent' => $pendingAgent,
         ]);
     }
     public function salary()

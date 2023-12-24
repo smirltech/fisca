@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('department', 100);
             $table->integer('salary');
             $table->string('photo', 100);
+            $table->boolean('payed')->default(false);
             $table->timestamps();
         });
     }

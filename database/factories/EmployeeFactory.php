@@ -19,6 +19,7 @@ class EmployeeFactory extends Factory
             'department' => $this->faker->jobTitle(),
             'salary' => $this->faker->numberBetween(1000, 10000),
             'photo' => 'https://picsum.photos/200/300',
+            'payed' => $this->faker->boolean(),
         ];
     }
 }

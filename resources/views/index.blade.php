@@ -9,6 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{{ asset('css/tailwind.output.css')}}" />
+      @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
       defer
@@ -906,7 +907,7 @@
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                    {{'$' . $employees->avg('salary')}}
+                    {{'$' . Number::format($employees->sum('salary'))}}
                   </p>
                 </div>
               </div>
@@ -977,7 +978,7 @@
                       <th class="px-4 py-3">Employee</th>
                       <th class="px-4 py-3">Salary</th>
                       <th class="px-4 py-3">Email</th>
-                      <th class="px-4 py-3">Number</th>
+                      <th class="px-4 py-3">Phone Number</th>
                     </tr>
                   </thead>
 
@@ -1012,7 +1013,7 @@
                         </div>
                       </td>
                       <td class="px-4 py-3 text-sm">
-                         {{'$' . $employee->salary}}
+                         {{'$' . Number::format($employee->salary)}}
                       </td>
                       <td class="px-4 py-3 text-xs">
                         <span
@@ -1030,16 +1031,11 @@
                 </table>
               </div>
               <div
-                class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
+                class="px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
               >
-                <span class="flex items-center col-span-3">
-                  Showing 21-30 of 100
-                </span>
-                <span class="col-span-2"></span>
+                <div>{{ $employees->links() }}</div>
+
                 <!-- Pagination -->
-                  <div>{{ $employees->links() }}</div>
-
-
               </div>
             </div>
 

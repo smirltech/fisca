@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [EmployeeController::class, 'index'])->name('index');
+Route::get('/salary',[EmployeeController::class,'salary'])->name('salary');
+Route::get('/salar',[EmployeeController::class,'salar'])->name('salar');
+Route::get('/pdf',[EmployeeController::class,'pdf'])->name('pdf');

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use Barryvdh\DomPDF\PDF;
+use Dompdf\Dompdf;
+use FontLib\Table\Type\post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +18,16 @@ class EmployeeController extends Controller
     {
         return view('index', [
             'employees' =>DB::table('employees')->paginate(10),
+
         ]);
+    }
+    public function salary()
+    {
+        return view('/salary');
+    }
+    public function salar()
+    {
+        return view('/salar');
     }
 
     /**
@@ -39,7 +51,7 @@ class EmployeeController extends Controller
      */
     public function show(Employee $employee)
     {
-        //
+
     }
 
     /**
@@ -65,4 +77,5 @@ class EmployeeController extends Controller
     {
         //
     }
+
 }

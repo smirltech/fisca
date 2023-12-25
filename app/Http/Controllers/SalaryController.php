@@ -51,7 +51,8 @@ class SalaryController extends Controller
         ]);*/
     }
 
-    public function compute_journaly(Request $request) {
+    public function compute_journaly(Request $request): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    {
 
         $request->validate([
             'employee_id' => 'required|exists:employees,id',

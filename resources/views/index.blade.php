@@ -208,19 +208,17 @@
                                         </span>
                                     </td>
                                     <td class='px-4 py-3 text-sm'>
-                                        @if($employee->payed)
-                                            <div class="flex justify-center w-8 p-1 bg-green-500 rounded-full">
-                                                <span class="material-symbols-outlined text-white">
+                                        <div class="flex justify-center w-8 p-1">
+                                            @if($employee->payed)
+                                                <span class="material-symbols-outlined text-green-500">
                                                 check
                                                 </span>
-                                            </div>
-                                        @else
-                                            <div class="flex justify-center w-8 p-1 bg-red-500 rounded-full">
-                                                <span class="material-symbols-outlined text-white">
+                                            @else
+                                                <span class="material-symbols-outlined text-red-800">
                                                 pending
                                                 </span>
-                                            </div>
-                                        @endif
+                                            @endif
+                                        </div>
                                     </td>
                                     <td class="px-4 py-3 text-sm">
                                         {{ $employee->phone_number }}

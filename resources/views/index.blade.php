@@ -986,7 +986,7 @@
                     class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                   >
                   @foreach($employees as $employee)
-                    <tr class="text-gray-700 dark:text-gray-400">
+                        <tr class="text-gray-700 dark:text-gray-400">
                       <td class="px-4 py-3">
                         <div class="flex items-center text-sm">
                           <!-- Avatar with inset shadow -->
@@ -1005,7 +1005,9 @@
                             ></div>
                           </div>
                           <div>
+                              <a href="{{ route('compute_salary', ['employee_id' => $employee->id]) }}">
                             <p class="font-semibold">{{ $employee->full_name }}</p>
+                              </a>
                             <p class="text-xs text-gray-600 dark:text-gray-400">
                               {{ $employee->department }}
                             </p>

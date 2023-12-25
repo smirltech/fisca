@@ -31,3 +31,4 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/compute_salary', [\App\Http\Controllers\SalaryController::class, 'compute'])->name('compute_salary');
+Route::get('/compute_journaly', [\App\Http\Controllers\SalaryController::class, 'compute_journaly'])->name('compute_journaly');

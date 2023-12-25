@@ -10,8 +10,6 @@ class SalaryController extends Controller
 {
     public function compute(Request $request)
     {
-//  DB:: enployee
-        $employees = DB::table('employees')->get();
         $request->validate([
             'employee_id' => 'required|exists:employees,id',
             /*'start_date' => 'required|date',

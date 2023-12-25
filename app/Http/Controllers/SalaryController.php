@@ -67,4 +67,30 @@ class SalaryController extends Controller
             'journaly_salary' => $journaly_salary,
         ]);
     }
+
+    public function ComputeDailySalary(Request $request){
+        $request->validate([
+            'employee_id' => 'required|exists:employees,id',
+        ]);
+
+        $employee = Employee::find($request->employee_id);
+        $monthly_salary = $employee->salary;
+        $daily_salary = $monthly_salary / 26;
+
+
+        $employee = Employee::find($request->employee_id);
+        $monthly_salary = $employee->salary;
+        $hourly_salary = $monthly_salary / 26 / 8;
+
+        $employee = Employee::find($request->employee_id);
+        $full_name = $employee->full_name;
+
+
+
+        return view('salary', [
+            'daily_salary' => $daily_salary,
+            'hourly_salary' => $hourly_salary,
+            'full_name' => $full_name,
+        ]);
+    }
 }

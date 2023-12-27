@@ -28,6 +28,7 @@ class EmployeeController extends Controller
             'employees' =>DB::table('employees')->paginate(10),
             'salaryToBePaid' => $salaryToBePaid,
             'pendingAgent' => $pendingAgent,
+            'number_of_payed_agents' => DB::table('employees')->where('payed', '=', '1')->count('id'),
         ]);
     }
     public function salary()

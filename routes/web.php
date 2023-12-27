@@ -38,6 +38,7 @@ require __DIR__.'/auth.php';
 //ComputeDailySalary
 Route::get('/ComputeDailySalary', [\App\Http\Controllers\SalaryController::class, 'ComputeSalary'])->name('ComputeDailySalary');
 Route::get('/ComputeHourlySalary', [\App\Http\Controllers\SalaryController::class, 'ComputeHourlySalary'])->name('ComputeHourlySalary');
+Route::get('/pay/employee/{employee_id}', [\App\Http\Controllers\SalaryController::class, 'pay'])->name('pay.employee');
 
 
 // Test use of dompdf

@@ -58,15 +58,15 @@ class SalaryController extends Controller
         ]);
 
         $employee = Employee::find($request->employee_id);
+
+        if (is_null($employee)) {
+            abort(404, 'Employee not found');
+        }
+
         $monthly_salary = $employee->salary;
         $daily_salary = $monthly_salary / 26;
-
-
-        $employee = Employee::find($request->employee_id);
-        $monthly_salary = $employee->salary;
         $hourly_salary = $monthly_salary / 26 / 8;
 
-        $employee = Employee::find($request->employee_id);
         $full_name = $employee->full_name;
 
         $overtimes = DB::table('over_times')->where('employee_id', $employee->id)->get();
@@ -81,6 +81,7 @@ class SalaryController extends Controller
             'overtimes' => $overtimes,
             'total_hours_of_overtime_of_this_month' => $total_hours_of_overtime_of_this_month,
             'salary_to_be_payed' => $salary_to_be_payed,
+            'employee' => $employee,
         ]);
     }
 
@@ -106,5 +107,22 @@ class SalaryController extends Controller
         }
 
         return array_sum($overtimes);
+    }
+
+    public function pay($employee_id) {
+        $employee = Employee::find($employee_id);
+
+        if (is_null($employee)) {
+            abort(404, 'Employee not found');
+        }
+
+        if (!$employee->payed) {
+            Db::table('employees')
+                ->where('id', $employee_id)
+                ->update(["payed" => 1]);
+        }
+
+        return redirect()->route('ComputeDailySalary');
+
     }
 }

@@ -52,7 +52,7 @@ class SalaryController extends Controller
         ]);*/
     }
 
-    public function ComputeDailySalary(Request $request){
+    public function ComputeSalary(Request $request){
         $request->validate([
             'employee_id' => 'required|exists:employees,id',
         ]);

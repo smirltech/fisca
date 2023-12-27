@@ -36,5 +36,5 @@ require __DIR__.'/auth.php';
 //Route::get('/compute_journaly', [\App\Http\Controllers\SalaryController::class, 'compute_journaly'])->name('compute_journaly');
 
 //ComputeDailySalary
-Route::get('/ComputeDailySalary', [\App\Http\Controllers\SalaryController::class, 'ComputeDailySalary'])->name('ComputeDailySalary');
+Route::get('/ComputeDailySalary', [\App\Http\Controllers\SalaryController::class, 'ComputeSalary'])->name('ComputeDailySalary');
 Route::get('/ComputeHourlySalary', [\App\Http\Controllers\SalaryController::class, 'ComputeHourlySalary'])->name('ComputeHourlySalary');

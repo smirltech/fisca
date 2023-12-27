@@ -12,11 +12,7 @@
     <!-- Entête -->
     @if(! $download)
         <div class="">
-            <a href="{{ route('index') }}">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Home
-                </button>
-            </a>
+            <a href="{{ route('index') }}" class="text-blue-500 font-bold">home</a>
         </div>
     @endif
     <div class="text-center mb-8">

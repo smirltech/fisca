@@ -10,6 +10,7 @@ class EmployeeBulletinController extends Controller
     public function index($employee_id)
     {
         $employee = Employee::find($employee_id);
+        $department = $employee->department;
         $full_name = $employee->full_name;
         $monthly_salary = $employee->salary;
         $daily_salary = $monthly_salary / 26;
@@ -27,7 +28,8 @@ class EmployeeBulletinController extends Controller
                 'hourly_salary',
                 'overtime_salary',
                 'total_hours_of_overtime_of_this_month',
-                'total_salary'
+                'total_salary',
+                'department'
             )
         );
     }

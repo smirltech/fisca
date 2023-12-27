@@ -17,7 +17,7 @@
     <!-- Informations sur l'employé -->
     <div class="mb-6">
         <p class="font-bold">Nom de l'employé: {{ $full_name }}</p>
-        <p class="text-sm text-gray-500">Poste: Développeur Web</p>
+        <p class="text-sm text-gray-500">Poste: {{ $department }}</p>
     </div>
 
     <!-- Tableau des détails du salaire -->

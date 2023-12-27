@@ -90,11 +90,11 @@ class SalaryController extends Controller
      * overtime_salary = hourly_salary * number_of_hours
      *
      */
-    private function overtime_salary($hourly_salary, $number_of_hours){
+    public static function overtime_salary($hourly_salary, $number_of_hours){
         return $hourly_salary * $number_of_hours;
     }
 
-    private function getTotalHoursOfOvertimeOfThisMonth($employee_id){
+    public static function getTotalHoursOfOvertimeOfThisMonth($employee_id){
         $overtimes = DB::table('over_times')
             ->where('employee_id', $employee_id)
             ->whereMonth('date', now()->month)

@@ -41,4 +41,5 @@ Route::get('/ComputeHourlySalary', [\App\Http\Controllers\SalaryController::clas
 
 
 // Test use of dompdf
-Route::get('/test/employee/{employee_id}/bulletin', [\App\Http\Controllers\EmployeeBulletinController::class, 'index'])->name('test');
+Route::get('/bulletin/employee/{employee_id}', [\App\Http\Controllers\EmployeeBulletinController::class, 'index'])->name('bulletin');
+Route::get('/bulletin/download/employee/{employee_id}', [\App\Http\Controllers\EmployeeBulletinController::class, 'download'])->name('bulletin.download');

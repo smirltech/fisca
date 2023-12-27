@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bulletin de paie</title>
     <script src="https://cdn.tailwindcss.com"></script>
+{{--    @vite('resources/css/app.css')--}}
 </head>
-<body class="bg-gray-100 p-8">
+<body class="bg-gray-300 p-8">
 <div class="max-w-3xl mx-auto bg-white p-8 shadow-md">
     <!-- Entête -->
     <div class="text-center mb-8">
@@ -60,6 +61,15 @@
         </tr>
         </tbody>
     </table>
+    @if(! $download)
+        <div class="flex justify-end">
+            <a href="{{ route('bulletin.download', ['employee_id' => $employee->id]) }}">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Download
+                </button>
+            </a>
+        </div>
+    @endif
 
     <!-- Pied de page -->
     <div class="text-gray-500 text-xs">

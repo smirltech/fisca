@@ -16,7 +16,7 @@
                 <h2
                     class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
                 >
-                    SmirlTech
+                    Dashboard
                 </h2>
                 <!-- CTA -->
                 <a
@@ -33,7 +33,7 @@
                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                             ></path>
                         </svg>
-                        <span>Liste des agents </span>
+                        <span>List of agents </span>
                     </div>
                 </a>
                 <!-- Cards -->
@@ -227,15 +227,17 @@
                                         <a href="{{route('ComputeDailySalary', ['employee_id' => $employee->id]  )}}">
                                             <button
                                                 class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
-                                                Salary
+                                                Details
                                             </button>
                                         </a>
-                                        <a href="">
-                                            <button
-                                                class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple">
-                                                OverTime
-                                            </button>
-                                        </a>
+{{--                                        Route::get('/test/employee/{employee_id}/bulletin', [\App\Http\Controllers\EmployeeBulletinController::class, 'index'])->name('test');--}}
+
+{{--                                        <a href="{{ route('test', ['employee_id' => $employee->id]) }}">--}}
+{{--                                            <button--}}
+{{--                                                class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple">--}}
+{{--                                                OverTime ,Bullltin--}}
+{{--                                            </button>--}}
+{{--                                        </a>--}}
                                     </td>
                                 {{--<td>
                                 </td>--}}
@@ -256,66 +258,8 @@
                 <h2
                     class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
                 >
-                    Charts
+                    Notes
                 </h2>
-                <div class="grid gap-6 mb-8 md:grid-cols-2">
-                    <div
-                        class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
-                    >
-                        <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
-                            Revenue
-                        </h4>
-                        <canvas id="pie"></canvas>
-                        <div
-                            class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400"
-                        >
-                            <!-- Chart legend -->
-                            <div class="flex items-center">
-                    <span
-                        class="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"
-                    ></span>
-                                <span>Shirts</span>
-                            </div>
-                            <div class="flex items-center">
-                    <span
-                        class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"
-                    ></span>
-                                <span>Shoes</span>
-                            </div>
-                            <div class="flex items-center">
-                    <span
-                        class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"
-                    ></span>
-                                <span>Bags</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
-                    >
-                        <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
-                            Traffic
-                        </h4>
-                        <canvas id="line"></canvas>
-                        <div
-                            class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400"
-                        >
-                            <!-- Chart legend -->
-                            <div class="flex items-center">
-                    <span
-                        class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"
-                    ></span>
-                                <span>Organic</span>
-                            </div>
-                            <div class="flex items-center">
-                    <span
-                        class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"
-                    ></span>
-                                <span>Paid</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </main>
     </div>

@@ -10,6 +10,15 @@
 <body class="bg-gray-300 p-8">
 <div class="max-w-3xl mx-auto bg-white p-8 shadow-md">
     <!-- Entête -->
+    @if(! $download)
+        <div class="">
+            <a href="{{ route('index') }}">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Home
+                </button>
+            </a>
+        </div>
+    @endif
     <div class="text-center mb-8">
         <h1 class="text-3xl font-bold">Bulletin de paie</h1>
         <p class="text-gray-500">SmirlTech</p>

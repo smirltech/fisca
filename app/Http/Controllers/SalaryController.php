@@ -52,12 +52,9 @@ class SalaryController extends Controller
         ]);*/
     }
 
-    public function ComputeSalary(Request $request){
-        $request->validate([
-            'employee_id' => 'required|exists:employees,id',
-        ]);
-
-        $employee = Employee::find($request->employee_id);
+    public function details($employee_id)
+    {
+        $employee = Employee::find($employee_id);
 
         if (is_null($employee)) {
             abort(404, 'Employee not found');
@@ -122,7 +119,7 @@ class SalaryController extends Controller
                 ->update(["payed" => 1]);
         }
 
-        return redirect()->route('ComputeDailySalary');
+        return redirect()->route('salary.details', $employee_id);
 
     }
 }

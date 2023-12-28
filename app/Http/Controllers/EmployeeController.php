@@ -31,21 +31,13 @@ class EmployeeController extends Controller
             'number_of_payed_agents' => DB::table('employees')->where('payed', '=', '1')->count('id'),
         ]);
     }
-    public function salary()
-    {
-        return view('/salary');
-    }
-    public function salar()
-    {
-        return view('/salar');
-    }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('employees.create');
     }
 
     /**
@@ -53,7 +45,13 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'required',
+            'salary' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+        ]);
     }
 
     /**

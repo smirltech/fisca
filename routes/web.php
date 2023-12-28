@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\EmployeeBulletinController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SalaryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +17,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
 
+Route::get('/', [EmployeeController::class, 'index'])->name('index');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+require __DIR__.'/auth.php';
+
+
+//
+//Route::get('/compute_salary', [\App\Http\Controllers\SalaryController::class, 'compute'])->name('compute_salary');
+//Route::get('/compute_journaly', [\App\Http\Controllers\SalaryController::class, 'compute_journaly'])->name('compute_journaly');
+
+//ComputeDailySalary
+Route::get('/ComputeDailySalary', [SalaryController::class, 'ComputeSalary'])->name('ComputeDailySalary');
+Route::get('/ComputeHourlySalary', [SalaryController::class, 'ComputeHourlySalary'])->name('ComputeHourlySalary');
+Route::get('/pay/employee/{employee_id}', [SalaryController::class, 'pay'])->name('pay.employee');
+
+
+// Test use of dompdf
+Route::get('/bulletin/employee/{employee_id}', [EmployeeBulletinController::class, 'index'])->name('bulletin');
+Route::get('/bulletin/download/employee/{employee_id}', [EmployeeBulletinController::class, 'download'])->name('bulletin.download');

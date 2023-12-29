@@ -831,6 +831,7 @@
                 >
                     Salary
                 </h1>
+                <br>
 
                 <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
                     <!-- Card -->
@@ -921,26 +922,29 @@
                     <x-over-time-table :over-times="$overtimes"></x-over-time-table>
                 @endif
 
-                <div
-                    class="max-w-2xl px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
-                >
-                    <p class="mb-4 text-gray-800 dark:text-gray-200">
-                        <span class="block">Bonjour Monsier</span>
-                        <span>Nous sommes ravis de vous annoncer que votre salaire
-                      pour le mois de janvier s'élève à <strong>{{ $daily_salary }}</strong> . N'hésitez
-                      pas à nous contacter si vous avez des questions ou des préoccupations.
-                      Merci et bonne continuation !</span>
-                    </p>
-
-                </div>
-
                 <div>
+                    <a href="#">
                     <button
-                        {{--                @click="openModal"--}}
                         class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                     >
                         Payer
                     </button>
+                    </a>
+
+{{--                    // Test use of dompdf
+Route::get('/test/employee/{employee_id}/bulletin', [\App\Http\Controllers\EmployeeBulletinController::class, 'index'])->name('test');
+--}}
+{{--                    <a href="{{  route('test/employee/{employee_id}/bulletin') }}">--}}
+{{--                        <button--}}
+{{--                            class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"--}}
+{{--                        >--}}
+{{--                            Bulletin--}}
+{{--                        </button>--}}
+
+                    <!-- resources/views/your-view.blade.php -->
+
+
+
                 </div>
             </div>
         </main>

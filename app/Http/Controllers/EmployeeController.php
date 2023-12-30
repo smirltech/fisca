@@ -37,20 +37,6 @@ class EmployeeController extends Controller
      */
     public function create(Request $request)
     {
-        $validate = $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'middle_name' => 'required',
-            'gender' => 'required',
-            'email' => 'required|email',
-            'phone_number' => 'required',
-            'department' => 'required',
-            'photo' => 'required|image',
-            'matriculate' => 'required',
-            'base_salary' => 'required|numeric',
-            'payed' => 'required|boolean',
-        ]);
-
         return view('employees.create');
     }
 
@@ -64,11 +50,13 @@ class EmployeeController extends Controller
             'email' => 'required|email',
             'phone_number' => 'required',
             'department' => 'required',
-            'photo' => 'required|image',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'matriculate' => 'required',
             'base_salary' => 'required|numeric',
             'payed' => 'required|boolean',
         ]);
+
+        $validate['photo'] = $request->file('photo')->store('photos', 'public');
 
        Employee::create($validate->all());
 

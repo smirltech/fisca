@@ -10,12 +10,16 @@ class Employee extends Model
     use HasFactory;
 
     protected $fillable = [
-        'full_name',
+        'first_name',
+        'last_name',
+        'middle_name',
         'gender',
         'email',
         'phone_number',
         'department',
-        'salary',
         'photo',
+        'matriculate',
+        'base_salary',
+        'payed',
     ];
 }

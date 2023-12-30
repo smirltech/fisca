@@ -17,5 +17,6 @@ class CnssData extends Model
         'number_of_work_hours',
         'gross_taxable_amount',
         'contributed_period',
+
     ];
 }

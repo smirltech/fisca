@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('commission');        //Commission
             $table->integer('other_allowances');    //Autres indemnités
 
-            $table->string('fringe benefit');   //Avantage en nature
+            $table->string('fringe_benefit');   //Avantage en nature
 
             $table->timestamps();
         });

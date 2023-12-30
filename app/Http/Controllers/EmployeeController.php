@@ -35,25 +35,50 @@ class EmployeeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
+        $validate = $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'middle_name' => 'required',
+            'gender' => 'required',
+            'email' => 'required|email',
+            'phone_number' => 'required',
+            'department' => 'required',
+            'photo' => 'required|image',
+            'matriculate' => 'required',
+            'base_salary' => 'required|numeric',
+            'payed' => 'required|boolean',
+        ]);
+
         return view('employees.create');
     }
+
+    public function store(Request $request)
+    {
+        $validate = $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'middle_name' => 'required',
+            'gender' => 'required',
+            'email' => 'required|email',
+            'phone_number' => 'required',
+            'department' => 'required',
+            'photo' => 'required|image',
+            'matriculate' => 'required',
+            'base_salary' => 'required|numeric',
+            'payed' => 'required|boolean',
+        ]);
+
+       Employee::create($validate->all());
+
+        return redirect()->route('employees.index');
+    }
+
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $validate = $request->validate([
-            'name' => 'required',
-            'salary' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
-            'address' => 'required',
-        ]);
-    }
-
     /**
      * Display the specified resource.
      */

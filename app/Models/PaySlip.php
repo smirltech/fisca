@@ -19,4 +19,5 @@ class PaySlip extends Model
         'other_allowances',
         'fringe_benefit',
         ];
+
 }

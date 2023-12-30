@@ -22,4 +22,5 @@ class Employee extends Model
         'base_salary',
         'payed',
     ];
+
 }

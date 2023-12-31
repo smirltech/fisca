@@ -189,7 +189,7 @@
                                             </div>
                                             <div>
                                                 <a href="{{ route('salary.details', ['employee_id' => $employee->id]) }}">
-                                                    <p class="font-semibold">{{ $employee->full_name }}</p>
+                                                    <p class="font-semibold">{{ $employee->first_name . " " . $employee->last_name. " ". $employee->middle_name }}</p>
                                                 </a>
                                                 <p class="text-xs text-gray-600 dark:text-gray-400">
                                                     {{ $employee->department }}
@@ -198,7 +198,7 @@
                                         </div>
                                     </td>
                                     <td class="px-4 py-3 text-sm">
-                                        {{'$' . Number::format($employee->salary)}}
+                                        {{'$' . Number::format($employee->base_salary)}}
                                     </td>
                                     <td class="px-4 py-3 text-xs">
                                         <span

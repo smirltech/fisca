@@ -19,7 +19,7 @@ class SalaryController extends Controller
 
         $employee = Employee::find($request->employee_id);
 
-        return view( 'salary', [
+        return view( 'salary_detail', [
             'salary' => $employee->salary,
         ]);
 
@@ -60,18 +60,17 @@ class SalaryController extends Controller
             abort(404, 'Employee not found');
         }
 
-        $monthly_salary = $employee->salary;
-        $daily_salary = $monthly_salary / 26;
-        $hourly_salary = $monthly_salary / 26 / 8;
+        $hourly_salary = $employee->base_salary;
+        $daily_salary = $hourly_salary * 8;
 
-        $full_name = $employee->full_name;
+        $full_name = $employee->first_name . ' ' . $employee->last_name . ' ' . $employee->middle_name;
 
         $overtimes = DB::table('over_times')->where('employee_id', $employee->id)->get();
 
         $total_hours_of_overtime_of_this_month = $this->getTotalHoursOfOvertimeOfThisMonth($employee->id);
         $salary_to_be_payed = $this->overtime_salary($hourly_salary, $total_hours_of_overtime_of_this_month);
 
-        return view('salary', [
+        return view('salary_detail', [
             'daily_salary' => $daily_salary,
             'hourly_salary' => $hourly_salary,
             'full_name' => $full_name,

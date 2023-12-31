@@ -18,7 +18,7 @@ class EmployeeController extends Controller
     {
         $salaryToBePaid =  DB::table('employees')
             ->where('payed', '=', '0')
-            ->sum('salary');
+            ->sum('base_salary') + $this->getTotalOverTimesAmount();
 
         $pendingAgent = DB::table('employees')
             ->where('payed', '=', '0')
@@ -97,6 +97,19 @@ class EmployeeController extends Controller
     public function destroy(Employee $employee)
     {
         //
+    }
+
+    public function getTotalOverTimesAmount() {
+        $couples = DB::table('employees')
+            ->join('over_times', 'employees.id', '=', 'over_times.employee_id')
+            ->where('payed', '=', '0')
+        ->get(['employees.base_salary', 'over_times.hours']);
+
+        $amount = 0;
+        foreach ($couples as $couple) {
+            $amount += $couple->base_salary * $couple->hours;
+        }
+        return $amount;
     }
 
 }

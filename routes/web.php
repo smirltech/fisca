@@ -52,6 +52,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/bulletin/download/employee/{employee_id}', [EmployeeBulletinController::class, 'download'])->name('bulletin.download');
 
     //CNSS
-    Route::get('/cnss/create', [CNSSController::class, 'create'])->name('cnss.create');
-    Route::post('/cnss/store', [CNSSController::class, 'store'])->name('cnss.store');
+    Route::get('/employees/{employee_id}/cnss/create', [CNSSController::class, 'create'])->name('cnss.create');
+    Route::post('/employees/{employee_id}/cnss/store', [CNSSController::class, 'store'])->name('cnss.store');
 });

@@ -27,7 +27,7 @@
                         <div class="bg-white dark:bg-gray-700 shadow rounded-lg p-6">
                             <h1 class="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Css Information</h1>
                             <p class="text-gray-600 dark:text-gray-300 mb-6">Fill all the fillable field below.</p>
-                            <form action="{{ route('cnss.store') }}" method="post">
+                            <form action="{{ route('cnss.store', ['employee_id' => $employee_id]) }}" method="post">
                                 @csrf
                                 <div class="mb-4">
                                     <input name="social_security_number" type="text" aria-label="social security number" placeholder="Social security number" class="border p-2 rounded w-full" value="{{ old('social_security_number') }}">
@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                     <input name="contributed_amount" type="number" placeholder="Contributed amount" class="border p-2 rounded w-full" aria-label="contributed_amount" value="{{ old('contributed_amount') }}">
-                                    <input name="number_of_work_days" type="number" placeholder="Number of work days" class="border p-2 rounded w-full" aria-label="number_of_work_days" value="{{ old('number_of_work_days') }}">
+                                    <input name="number_of_workdays" type="number" placeholder="Number of work days" class="border p-2 rounded w-full" aria-label="number_of_workdays" value="{{ old('number_of_workdays') }}">
                                 </div>
                                 <div class="mb-4">
                                     <input name="number_of_work_hours" type="number" placeholder="Number of work hours" class="border p-2 rounded w-full" aria-label="number_of_work_hours" value="{{ old('number_of_work_hours') }}">
@@ -51,7 +51,6 @@
 
                                     <input name="contributed_period" type="date" placeholder="Gross taxable amount" class="border p-2 rounded w-full" aria-label="contributed_period" value="{{ old('contributed_period') }}">
                                 </div>
-                                <input type="number" aria-hidden="true" hidden="hidden" aria-label="" value="{{ Request::par }}">
                                 <button type="submit" id="submit" class="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 focus:outline-none transition-colors">
                                     Submit
                                 </button>

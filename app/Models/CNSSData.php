@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CNSSData extends Model
 {
     use HasFactory;
+    protected $table = 'cnss_data';
     protected $fillable = [
         'social_security_number',
         'employee_id',

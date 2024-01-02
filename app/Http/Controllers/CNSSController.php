@@ -18,26 +18,27 @@ class CNSSController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($employee_id)
     {
-        return view('cnss.create');
+        return view('cnss.create', ['employee_id' => $employee_id]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $employee_id)
     {
         $validator = $request->validate([
-            'employee_id' => 'required',
-            'social_security_number' => 'required|numeric',
+            'social_security_number' => 'required',
             'type_of_worker' => 'required|numeric',
             'contributed_amount' => 'required|numeric',
-            'number_of_work_days' => 'required|numeric',
+            'number_of_workdays' => 'required|numeric',
             'number_of_work_hours' => 'required|numeric',
             'gross_taxable_amount' => 'required|numeric',
             'contributed_period' => 'required|date',
         ]);
+
+        $validator['employee_id'] = $employee_id;
 
         CNSSData::create($validator);
 

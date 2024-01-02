@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CNSSController;
 use App\Http\Controllers\EmployeeBulletinController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProfileController;
@@ -49,4 +50,8 @@ Route::middleware('auth')->group(function () {
     //Bulletin
     Route::get('/bulletin/employees/{employee_id}', [EmployeeBulletinController::class, 'index'])->name('bulletin');
     Route::get('/bulletin/download/employee/{employee_id}', [EmployeeBulletinController::class, 'download'])->name('bulletin.download');
+
+    //CNSS
+    Route::get('/cnss/create', [CNSSController::class, 'create'])->name('cnss.create');
+    Route::post('/cnss/store', [CNSSController::class, 'store'])->name('cnss.store');
 });

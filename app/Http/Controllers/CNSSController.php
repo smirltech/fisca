@@ -31,7 +31,7 @@ class CNSSController extends Controller
         $validator = $request->validate([
             'employee_id' => 'required',
             'social_security_number' => 'required|numeric',
-            'type_of_worker' => 'required|boolean',
+            'type_of_worker' => 'required|numeric',
             'contributed_amount' => 'required|numeric',
             'number_of_work_days' => 'required|numeric',
             'number_of_work_hours' => 'required|numeric',

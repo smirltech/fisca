@@ -35,11 +35,14 @@ class EmployeeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request)
+    public function create()
     {
         return view('employees.create');
     }
 
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(Request $request)
     {
         $validate = $request->validate([
@@ -51,22 +54,22 @@ class EmployeeController extends Controller
             'phone_number' => 'required',
             'department' => 'required',
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'matriculate' => 'required',
             'base_salary' => 'required|numeric',
             'payed' => 'required|boolean',
+            'commune' => 'required',
         ]);
 
+
+
         $validate['photo'] = $request->file('photo')->store('photos', 'public');
+        $validate['matriculate'] = str(now()->year)->substr(2, 2) . str($validate['first_name'])->substr(0, 1)->upper() . str($validate['last_name'])->substr(0, 1)->upper() . str($validate['middle_name'])->substr(0, 1)->upper() . DB::table('employees')->latest('id')->first()->id + 1   ;
 
-       Employee::create($validate->all());
+       Employee::create($validate);
 
-        return redirect()->route('employees.index');
+        return redirect()->route('index')->with('success', 'Employee created successfully.');
     }
 
 
-    /**
-     * Store a newly created resource in storage.
-     */
     /**
      * Display the specified resource.
      */

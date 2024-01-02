@@ -13,7 +13,17 @@
         @include('App.header')
         <main class="h-full overflow-y-auto">
             <div class="container px-2 mx-auto">
-                <form action="{{ route('employees.store') }}" method="post">
+
+                @if($errors->any())
+{{--                    @dd($errors->all())--}}
+                    @foreach($errors->all() as $error)
+                        <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
+                            {{ $error }}
+                        </div>
+                    @endforeach
+                @endif
+
+                <form action="{{ route('employees.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="flex flex-wrap gap-6 mt-4">
                         <div class="flex-col w-1/3">
@@ -160,6 +170,20 @@
                                 >
                                     <option value="">Choose the department</option>
                                     <option value="DRH">DRH</option>
+                                </select>
+                            </div>
+
+                            <!-- Payed -->
+                            <div>
+                                <label class="text-gray-700 dark:text-gray-200" for="payed">Payed</label>
+                                <select
+                                    class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none focus:ring"
+                                    name="payed"
+                                    id="payed"
+                                >
+                                    <option value="0">Choose an option default(Not)</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">Not</option>
                                 </select>
                             </div>
 

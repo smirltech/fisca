@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\CnssData;
+use App\Models\CNSSData;
 use App\Models\Employee;
 use App\Models\OverTime;
 use App\Models\PaySlip;
@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
 
         Employee::factory(30)->create();
         OverTime::factory(300)->create();
-        CnssData::factory(300)->create();
+        CNSSData::factory(300)->create();
         PaySlip::factory(300)->create();
 
         $this->call([

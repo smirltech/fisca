@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pay_slip;
+use App\Models\PaySlip;
 use Illuminate\Http\Request;
 
 class PaySlipController extends Controller
@@ -34,7 +34,7 @@ class PaySlipController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(pay_slip $pay_slip)
+    public function show(PaySlip $PaySlip)
     {
         //
     }
@@ -42,7 +42,7 @@ class PaySlipController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(pay_slip $pay_slip)
+    public function edit(PaySlip $PaySlip)
     {
         //
     }
@@ -50,7 +50,7 @@ class PaySlipController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, pay_slip $pay_slip)
+    public function update(Request $request, PaySlip $PaySlip)
     {
         //
     }
@@ -58,7 +58,7 @@ class PaySlipController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(pay_slip $pay_slip)
+    public function destroy(PaySlip $PaySlip)
     {
         //
     }

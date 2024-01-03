@@ -389,7 +389,9 @@
                 </div>
                 {{-- IF THE EMPLOYEE HAS ALMOST ONE OVERTIME --}}
                 @if(count($overtimes) > 0)
-                    <x-over-time-table :over-times="$overtimes"></x-over-time-table>
+                    <div class="overflow-x-scroll">
+                        <x-over-time-table :over-times="$overtimes"></x-over-time-table>
+                    </div>
                 @endif
 
                 <div>

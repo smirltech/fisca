@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
-@extends('App.app')
+@extends('flowbite.app')
 @section('title', 'Pay Slip')
 <body>
 <div

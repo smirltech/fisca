@@ -17,7 +17,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $salaryToBePaid =  DB::table('employees')
-            ->where('payed', '=', '0')
+            ->where('payed', '=', '0')->orderByDesc('id')
             ->sum('base_salary') + $this->getTotalOverTimesAmount();
 
         $pendingAgent = DB::table('employees')

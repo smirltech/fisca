@@ -323,6 +323,9 @@
                             </button>
                         </a>
                     @endif
+                    <a href="{{ route('over_times.create', ['employee_id' => $employee->id]) }}">
+                        <button class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Overtimes</button>
+                    </a>
                 </div>
                 <br>
                 <h1
@@ -418,11 +421,6 @@
 
                 <div>
                     <h2 class="font-semibold text-gray-800 dark:text-gray-200">Overtimes</h2>
-                </div>
-                <div class="w-full flex justify-end">
-                    <a href="{{ route('over_times.create', ['employee_id' => $employee->id]) }}">
-                        <button class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Add</button>
-                    </a>
                 </div>
                 {{-- IF THE EMPLOYEE HAS ALMOST ONE OVERTIME --}}
                 @if(count($overtimes) > 0)

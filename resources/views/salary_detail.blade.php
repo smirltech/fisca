@@ -287,7 +287,44 @@
                     </svg>
                     <span> {{$full_name}}</span>
                 </div>
-                {{--            </a>--}}
+
+                {{--ACTIONS--}}
+                <h1
+                    class="font-semibold text-gray-700 dark:text-gray-200">Actions</h1>
+                <br>
+                <div class="flex gap-2 space-x-4">
+                    <a href="{{ route('bulletin', ['employee_id' => $employee->id]) }}">
+                        <button
+                            class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                        >
+                            Bulletin
+                        </button>
+                    </a>
+                    <a href="{{ route('cnss.create', ['employee_id' => $employee->id]) }}">
+                        <button
+                            class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                        >
+                            CNSS
+                        </button>
+                    </a>
+                    <a href="{{ route('pay_slips.create', ['employee_id' => $employee->id]) }}">
+                        <button
+                            class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                        >
+                            Payslip
+                        </button>
+                    </a>
+                    @if(!$employee->payed)
+                        <a href="{{ route('pay.employee', ['employee_id' => $employee->id]) }}">
+                            <button
+                                class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                            >
+                                Payer
+                            </button>
+                        </a>
+                    @endif
+                </div>
+                <br>
                 <h1
                     class="font-semibold text-gray-700 dark:text-gray-200"
                 >
@@ -393,54 +430,6 @@
                         <x-over-time-table :over-times="$overtimes"></x-over-time-table>
                     </div>
                 @endif
-
-                <div>
-                    <a href="{{ route('bulletin', ['employee_id' => $employee->id]) }}">
-                    <button
-                        class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                    >
-                        Bulletin
-                    </button>
-                    </a>
-                    <a href="{{ route('cnss.create', ['employee_id' => $employee->id]) }}">
-                    <button
-                        class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                    >
-                        CNSS
-                    </button>
-                    </a>
-                    <a href="{{ route('pay_slips.create', ['employee_id' => $employee->id]) }}">
-                    <button
-                        class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                    >
-                        Pay slip
-                    </button>
-                    </a>
-                    @if(!$employee->payed)
-                        <a href="{{ route('pay.employee', ['employee_id' => $employee->id]) }}">
-                            <button
-                                class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                            >
-                                Payer
-                            </button>
-                        </a>
-                    @endif
-
-{{--                    // Test use of dompdf
-Route::get('/test/employee/{employee_id}/bulletin', [\App\Http\Controllers\EmployeeBulletinController::class, 'index'])->name('test');
---}}
-{{--                    <a href="{{  route('test/employee/{employee_id}/bulletin') }}">--}}
-{{--                        <button--}}
-{{--                            class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"--}}
-{{--                        >--}}
-{{--                            Bulletin--}}
-{{--                        </button>--}}
-
-                    <!-- resources/views/your-view.blade.php -->
-
-
-
-                </div>
             </div>
         </main>
     </div>

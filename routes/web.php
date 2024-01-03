@@ -3,6 +3,7 @@
 use App\Http\Controllers\CNSSController;
 use App\Http\Controllers\EmployeeBulletinController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\OverTimeController;
 use App\Http\Controllers\PaySlipController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SalaryController;
@@ -59,4 +60,8 @@ Route::middleware('auth')->group(function () {
     //PaySlip
     Route::get('/employees/{employee_id}/pay_slips/create', [PaySlipController::class, 'create'])->name('pay_slips.create');
     Route::post('/employees/{employee_id}/pay_slips/store', [PaySlipController::class, 'store'])->name('pay_slips.store');
+
+    //OverTime
+    Route::get('/employees/{employee_id}/over_times/create', [OverTimeController::class, 'create'])->name('over_times.create');
+    Route::post('/employees/{employee_id}/over_times/store', [OverTimeController::class, 'store'])->name('over_times.store');
 });

@@ -1,10 +1,4 @@
 <div class="flex flex-col gap-3">
-    <div>
-        <h2 class="font-semibold text-gray-800 dark:text-gray-200">Overtimes</h2>
-    </div>
-    <div class="w-full flex justify-end">
-        <button class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Add</button>
-    </div>
     <div class="-m-1.5 overflow-x-auto">
         <div class="p-1.5 min-w-full inline-block align-middle">
             <div class="border rounded-lg overflow-hidden bg-white shadow-md dark:border-gray-700 mt-4 mb-4 dark:bg-gray-800">

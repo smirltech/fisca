@@ -78,7 +78,7 @@
 
     <!-- Pied de page -->
     <div class="text-gray-500 text-xs">
-        <p>© 2023 SmirlTech</p>
+        <p>© {{ now()->year }} SmirlTech</p>
     </div>
 </div>
 </body>

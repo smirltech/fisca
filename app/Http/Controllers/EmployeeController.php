@@ -68,7 +68,6 @@ class EmployeeController extends Controller
 
        Employee::create($validate);
 
-       Mail::to($validate['email'])->send(new MailEmployee($validate));
 
         return redirect()->route('index')->with('success', 'Employee created successfully.');
     }

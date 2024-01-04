@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Http\Controllers\EmployeeBulletinController;
 use App\Models\Employee;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -17,7 +18,7 @@ class MailEmployee extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(protected  Employee $employee)
+    public function __construct(protected  Employee $employee )
     {
 
     }
@@ -45,7 +46,7 @@ class MailEmployee extends Mailable
                 'last_name' => $this->employee->last_name,
                 'middle_name' => $this->employee->middle_name,
                 'departement' => $this->employee->department,
-                'salary' => $this->employee->base_salary
+                'salary' => $this->employee->base_salary,
             ]
         );
     }

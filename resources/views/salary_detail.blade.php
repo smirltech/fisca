@@ -428,6 +428,45 @@
                         <x-over-time-table :over-times="$overtimes"></x-over-time-table>
                     </div>
                 @endif
+
+                <div>
+                    <div>
+                        <h2 class="font-semibold text-gray-800 dark:text-gray-200">Payslips</h2>
+                    </div>
+
+                    @php
+                        $headers = [
+                            'cost_of_living_allowance',
+                            'bonus',
+                            'gratuity',
+                            'leave_allowance',
+                            'commission',
+                            'other_allowances',
+                            'fringe_benefit',
+                        ];
+
+                        $rows = $payslips;
+                    @endphp
+                    <x-dynamic-table :headers="$headers" :rows="$rows"></x-dynamic-table>
+                </div>
+
+                <div>
+                    <div>
+                        <h2 class="font-semibold text-gray-800 dark:text-gray-200">CNSS</h2>
+                    </div>
+                    @php
+                        $headers = [
+                            "social_security_number",
+                            "contributed_amount",
+                            "number_of_workdays",
+                            "gross_taxable_amount",
+                            "contributed_period",
+                        ];
+
+                        $rows = $cnss;
+                    @endphp
+                    <x-dynamic-table :headers="$headers" :rows="$rows"></x-dynamic-table>
+                </div>
             </div>
         </main>
     </div>

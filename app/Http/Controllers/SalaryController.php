@@ -72,6 +72,9 @@ class SalaryController extends Controller
         $total_hours_of_overtime_of_this_month = $this->getTotalHoursOfOvertimeOfThisMonth($employee->id);
         $salary_to_be_payed = $this->overtime_salary($hourly_salary, $total_hours_of_overtime_of_this_month);
 
+        $cnss = DB::table('cnss_data')->where('employee_id', $employee->id)->get();
+        $payslips = DB::table('pay_slips')->where('employee_id', $employee->id)->get();
+
         return view('salary_detail', [
             'daily_salary' => $daily_salary,
             'hourly_salary' => $hourly_salary,
@@ -80,6 +83,8 @@ class SalaryController extends Controller
             'total_hours_of_overtime_of_this_month' => $total_hours_of_overtime_of_this_month,
             'salary_to_be_payed' => $salary_to_be_payed,
             'employee' => $employee,
+            'cnss' => $cnss,
+            'payslips' => $payslips,
         ]);
     }
 

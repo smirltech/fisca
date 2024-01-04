@@ -7,6 +7,7 @@ use Dompdf\Dompdf;
 
 class EmployeeBulletinController extends Controller
 {
+
     public function index($employee_id)
     {
         $employee = Employee::find($employee_id);
@@ -40,10 +41,12 @@ class EmployeeBulletinController extends Controller
 
     private function getView($employee, $download = false){
         $department = $employee->department;
-        $full_name = $employee->full_name;
-        $monthly_salary = $employee->salary;
-        $daily_salary = $monthly_salary / 26;
-        $hourly_salary = $daily_salary / 8;
+        $full_name = $employee->first_name . ' ' . $employee->last_name . ' ' . $employee->middle_name;
+
+        $hourly_salary = $employee->base_salary;
+        $daily_salary = $hourly_salary * 8;
+        $monthly_salary = $daily_salary * 26;
+
         $total_hours_of_overtime_of_this_month = SalaryController::getTotalHoursOfOvertimeOfThisMonth($employee->id);
         $overtime_salary = SalaryController::overtime_salary($hourly_salary, $total_hours_of_overtime_of_this_month);
         $total_salary = $monthly_salary + $overtime_salary;

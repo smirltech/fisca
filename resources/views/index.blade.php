@@ -188,8 +188,8 @@
                                                 ></div>
                                             </div>
                                             <div>
-                                                <a href="{{ route('ComputeDailySalary', ['employee_id' => $employee->id]) }}">
-                                                    <p class="font-semibold">{{ $employee->full_name }}</p>
+                                                <a href="{{ route('salary.details', ['employee_id' => $employee->id]) }}">
+                                                    <p class="font-semibold">{{ $employee->first_name . " " . $employee->last_name. " ". $employee->middle_name }}</p>
                                                 </a>
                                                 <p class="text-xs text-gray-600 dark:text-gray-400">
                                                     {{ $employee->department }}
@@ -198,7 +198,7 @@
                                         </div>
                                     </td>
                                     <td class="px-4 py-3 text-sm">
-                                        {{'$' . Number::format($employee->salary)}}
+                                        {{'$' . Number::format($employee->base_salary)}}
                                     </td>
                                     <td class="px-4 py-3 text-xs">
                                         <span
@@ -224,7 +224,7 @@
                                         {{ $employee->phone_number }}
                                     </td>
                                     <td class="px-4 py-4 flex justify-between">
-                                        <a href="{{route('ComputeDailySalary', ['employee_id' => $employee->id]  )}}">
+                                        <a href="{{route('salary.details', ['employee_id' => $employee->id]  )}}">
                                             <button
                                                 class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                                                 Details

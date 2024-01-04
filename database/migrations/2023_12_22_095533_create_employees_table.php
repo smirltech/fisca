@@ -13,13 +13,18 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name', 100);
+            $table->string('first_name', 30);   //Prenom
+            $table->string('last_name', 30);    //Nom
+            $table->string('middle_name', 30)->nullable();  //Nom du pere
             $table->string('gender', 2);
             $table->string('email', 100)->unique();
-            $table->string('phone_number', 30)->unique();
+            $table->string('phone_number', 30)->unique()->nullable();
             $table->string('department', 100);
-            $table->integer('salary');
             $table->string('photo', 100);
+            $table->string('matriculate', 20);
+            $table->string('commune', 30);  //Commune
+            //salaire de base exprimee en heures de travail
+            $table->integer('base_salary'); //Salaire de base
             $table->boolean('payed')->default(false);
             $table->timestamps();
         });

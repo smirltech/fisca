@@ -51,7 +51,8 @@
 
                                     <input name="contributed_period" type="date" placeholder="Gross taxable amount" class="border p-2 rounded w-full" aria-label="contributed_period" value="{{ old('contributed_period') }}">
                                 </div>
-                                <input type="number" aria-hidden="true" hidden="hidden" aria-label="" value="{{ Request::par }}">
+{{--                                recuper moi l'id de l'employee dans l'input tu met sont id dans value--}}
+                                <input type="number" aria-hidden="true"   aria-label="" {{--value="{{ Request:: }}--}}">
                                 <button type="submit" id="submit" class="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 focus:outline-none transition-colors">
                                     Submit
                                 </button>

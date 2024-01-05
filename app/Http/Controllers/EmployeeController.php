@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MailEmployee;
 use App\Models\Employee;
 use Barryvdh\DomPDF\PDF;
 use Dompdf\Dompdf;
 use FontLib\Table\Type\post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class EmployeeController extends Controller
 {
@@ -65,6 +67,8 @@ class EmployeeController extends Controller
         $validate['matriculate'] = str(now()->year)->substr(2, 2) . str($validate['first_name'])->substr(0, 1)->upper() . str($validate['last_name'])->substr(0, 1)->upper() . str($validate['middle_name'])->substr(0, 1)->upper() . DB::table('employees')->latest('id')->first()->id + 1   ;
 
        Employee::create($validate);
+
+       Mail::to($validate['email'])->send(new MailEmployee($validate));
 
         return redirect()->route('index')->with('success', 'Employee created successfully.');
     }

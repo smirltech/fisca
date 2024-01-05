@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MailEmployee;
 use App\Models\Employee;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class SalaryController extends Controller
 {
@@ -117,6 +119,9 @@ class SalaryController extends Controller
                 ->where('id', $employee_id)
                 ->update(["payed" => 1]);
         }
+
+
+        Mail::to($employee->email)->send(new MailEmployee($employee));
 
         return redirect()->route('salary.details', $employee_id);
 

@@ -7,6 +7,7 @@ use Dompdf\Dompdf;
 
 class EmployeeBulletinController extends Controller
 {
+
     public function index($employee_id)
     {
         $employee = Employee::find($employee_id);

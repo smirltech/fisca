@@ -122,7 +122,6 @@ class SalaryController extends Controller
 
 
         Mail::to($employee->email)->send(new MailEmployee($employee));
-
         return redirect()->route('salary.details', $employee_id);
 
     }

@@ -64,4 +64,9 @@ Route::middleware('auth')->group(function () {
     //OverTime
     Route::get('/employees/{employee_id}/over_times/create', [OverTimeController::class, 'create'])->name('over_times.create');
     Route::post('/employees/{employee_id}/over_times/store', [OverTimeController::class, 'store'])->name('over_times.store');
+
+    //
+});
+Route::get('/jlk',function (){
+    return view('pages.index');
 });

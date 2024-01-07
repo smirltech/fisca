@@ -15,16 +15,16 @@
     <!-- Layout config Js -->
     <script src="assets/js/pages/layout.js"></script>
     <!-- Icons CSS -->
-    
+
     <!-- Tailwind CSS -->
-    
+
 
   <link rel="stylesheet" href="assets/css/tailwind2.css">
 </head>
 
 <body class="text-base text-body-color font-poppins bg-body dark:text-white dark:bg-zink-800 ">
  <div class="group-data-[sidebar-size=sm]:min-h-[1500px] group-data-[sidebar-size=sm]:relative">
-    
+
     <div class="vertical-menu">
         <div id="sidebar" class="sidebar-left hidden lg:block w-vertical-menu bg-vertical-menu ltr:border-r rtl:border-l border-vertical-menu fixed bottom-0 top-0 transition-all duration-200 ease-linear group-data-[sidebar-size=md]:w-vertical-menu-md group-data-[sidebar-size=sm]:w-vertical-menu-sm group-data-[sidebar=dark]:bg-vertical-menu-dark group-data-[sidebar=dark]:border-vertical-menu-dark group-data-[sidebar=brand]:bg-vertical-menu-brand group-data-[sidebar=brand]:border-vertical-menu-brand group-data-[layout=horizontal]:w-full group-data-[layout=horizontal]:bottom-auto group-data-[layout=horizontal]:top-header z-40 ">
             <div class="flex items-center justify-center px-6 text-center h-header group-data-[layout=horizontal]:hidden sidebar-logo">
@@ -48,7 +48,7 @@
                     <i class="ri-record-circle-line"></i>
                 </button>
             </div>
-    
+
             <div id="scrollbar">
                 <div class="group-data-[layout=horizontal]:mx-auto group-data-[layout=horizontal]:max-w-screen-2xl">
                     <div data-simplebar class="group-data-[layout=vertical]:group-data-[sidebar-size=md]:max-h-[calc(100vh_-_80px)] group-data-[layout=vertical]:group-data-[sidebar-size=lg]:max-h-[calc(100vh_-_80px)]" id="data-simplebar"> <!-- data-simple bar remove data-sidebar-sm -->
@@ -96,9 +96,9 @@
                                             <span class="group-data-[sidebar-size=sm]:ltr:pl-10 group-data-[sidebar-size=sm]:rtl:pr-10 group-data-[sidebar-size=md]:block group-data-[sidebar-size=md]:mt-2  group-data-[sidebar-size=md]:text-center ltr:pl-3 rtl:pr-3 group-data-[layout=horizontal]:pl-2 group-data-[layout=horizontal]:rtl:pr-2 whitespace-nowrap" data-key="t-full-calendar">Calendar</span>
                                         </a>
                                     </div>
-    
+
                                 </li>
-    
+
                                 <!-- chat -->
                                 <li class="nav-items">
                                     <div class="group-data-[sidebar-size=sm]:py-4  group-data-[sidebar-size=sm]:px-5 py-[10px] px-6  flex items-center justify-between group-data-[layout=vertical]:text-vertical-menu-item-font-size font-normal transition-all duration-150 ease-linear rounded-sm  group-data-[layout=vertical]:text-vertical-menu-item  active:text-vertical-menu active:bg-vertical-menu-item-bg-active group-data-[sidebar=dark]:group-data-[layout=vertical]:text-vertical-menu-item-dark group-data-[layout=vertical]:group-data-[sidebar=dark]:hover:text-vertical-menu group-data-[sidebar=dark]:hover:bg-vertical-menu-item-bg-hover-dark group-data-[sidebar=dark]:active:text-vertical-menu group-data-[sidebar=dark]:active:bg-vertical-menu-item-bg-active-dark group-data-[sidebar-size=md]:block  group-data-[sidebar-size=sm]:my-0 group-data-[sidebar-size=sm]:rounded-b-none group-data-[layout=horizontal]:m-0 before:content-[''] before:font-material ltr:before:right-6 rtl:before:left-6 before:text-16 before:absolute relative  group-data-[sidebar-size=md]:before:hidden">
@@ -107,7 +107,7 @@
                                             <span class="group-data-[sidebar-size=sm]:ltr:pl-10 group-data-[sidebar-size=sm]:rtl:pr-10 group-data-[sidebar-size=md]:block group-data-[sidebar-size=md]:mt-2  group-data-[sidebar-size=md]:text-center ltr:pl-3 rtl:pr-3 group-data-[layout=horizontal]:pl-2 group-data-[layout=horizontal]:rtl:pr-2 whitespace-nowrap" data-key="t-chat">Chat</span>
                                         </a>
                                     </div>
-    
+
                                 </li>
                                 <!-- file manager -->
                                 <li class="nav-items">
@@ -116,7 +116,7 @@
                                             <i class="bx bx-file  inline-block text-start text-xl group-data-[sidebar-size=md]:block group-data-[sidebar-size=md]:text-center group-data-[layout=horizontal]:text-15"></i> <span class="group-data-[sidebar-size=sm]:ltr:pl-10 group-data-[sidebar-size=sm]:rtl:pr-10 group-data-[sidebar-size=md]:block group-data-[sidebar-size=md]:mt-2  group-data-[sidebar-size=md]:text-center ltr:pl-3 rtl:pr-3 group-data-[layout=horizontal]:pl-2 group-data-[layout=horizontal]:rtl:pr-2 whitespace-nowrap" data-key="t-file-manager">File Manager</span>
                                         </a>
                                     </div>
-    
+
                                 </li>
                                 <!-- e-commerce -->
                                 <li class="nav-items">
@@ -184,7 +184,7 @@
                                             <li>
                                                 <a href="crypto-ico-landing.html" class="relative flex items-center ltr:px-5 rtl:px-5 py-[6px] group-data-[layout=vertical]:text-vertical-menu-item-font-size transition-all duration-150 ease-linear text-vertical-menu-sub-item group-data-[layout=horizontal]:hover:text-gray-700 active:text-gray-700 group-data-[sidebar=dark]:text-vertical-menu-sub-item-dark  group-data-[layout=horizontal]:group-data-[mode=dark]:lg:text-zink-200 group-data-[layout=horizontal]:group-data-[mode=dark]:lg:hover:text-whitegroup-data-[layout=horizontal]:group-data-[sidebar=dark]:text-zink-200 group-data-[layout=horizontal]:group-data-[sidebar=dark]:hover:text-zink-200  group-data-[layout=vertical]:group-data-[sidebar=dark]:hover:text-vertical-menu group-data-[sidebar=dark]:active:text-vertical-menu group-data-[sidebar-size=md]:before:hidden group-data-[sidebar-size=md]:text-center group-data-[sidebar-size=md]:block group-data-[layout=horizontal]:px-4 text-13" data-key="t-ico">ICO Landing</a>
                                             </li>
-    
+
                                         </ul>
                                     </div>
                                 </li>
@@ -373,7 +373,7 @@
                                                     </ul>
                                                 </div>
                                             </li>
-    
+
                                         </ul>
                                     </div>
                                 </li>
@@ -660,7 +660,7 @@
                                             <li>
                                                 <a href="icons-dripicons.html" class="relative flex items-center ltr:px-5 rtl:px-5 py-[6px] group-data-[layout=vertical]:text-vertical-menu-item-font-size transition-all duration-150 ease-linear text-vertical-menu-sub-item group-data-[layout=horizontal]:hover:text-gray-700 active:text-gray-700 group-data-[sidebar=dark]:text-vertical-menu-sub-item-dark  group-data-[layout=horizontal]:group-data-[mode=dark]:lg:text-zink-200 group-data-[layout=horizontal]:group-data-[mode=dark]:lg:hover:text-whitegroup-data-[layout=horizontal]:group-data-[sidebar=dark]:text-zink-200 group-data-[layout=horizontal]:group-data-[sidebar=dark]:hover:text-zink-200  group-data-[layout=vertical]:group-data-[sidebar=dark]:hover:text-vertical-menu group-data-[sidebar=dark]:active:text-vertical-menu group-data-[sidebar-size=md]:before:hidden group-data-[sidebar-size=md]:text-center group-data-[sidebar-size=md]:block group-data-[layout=horizontal]:px-4 text-13" data-key="t-dripicons">Dripicons</a>
                                             </li>
-    
+
                                         </ul>
                                     </div>
                                 </li>
@@ -725,7 +725,7 @@
         <div id="backdrop" class=" fixed inset-0 bg-gray-900/20 z-[1] res-header-bg hidden group-data-[layout=horizontal]:hidden" onclick="closeSidebar()"></div>
         <!-- Left Sidebar End -->
     </div><header id="page-topbar" class="ltr:lg:left-vertical-menu group-data-[layout=vertical]:rtl:lg:right-vertical-menu group-data-[sidebar-size=md]:ltr:left-vertical-menu-md  group-data-[sidebar-size=md]:rtl:right-vertical-menu-md group-data-[sidebar-size=sm]:lg:ltr:left-vertical-menu-sm group-data-[sidebar-size=sm]:lg:rtl:right-vertical-menu-sm group-data-[layout=horizontal]:left-0 group-data-[layout=horizontal]:rtl:p-0 fixed ltr:right-0 rtl:left-0 z-50 ltr:left-0 rtl:right-0">
-    
+
         <div class="layout-width ">
             <div class="group-data-[topbar=dark]:bg-topbar-dark flex items-center mx-auto bg-vertical-menu-group-data-[topbar=dark]  group-data-[layout=horizontal]:border-none group-data-[topbar=light]:bg-white group-data-[topbar=light]:text-gray-700 topbar-main">
                 <div class="pr-3 flex  group-data-[layout:vertical]:relative items-center w-full group-data-[layout=horizontal]:mx-auto group-data-[layout=horizontal]:max-w-screen-2xl justify-between ">
@@ -758,12 +758,12 @@
                             <i class="fa fa-bars text-16 text-zink-600 group-data-[topbar=dark]:text-zink-200 "></i>
                         </button>
                     </div>
-    
+
                     <div class="hidden lg:block relative">
                         <i class="bx bx-search-alt text-16 text-gray-600 group-data-[topbar=dark]:text-zink-200 absolute top-3 ltr:left-3.5 rtl:right-3.5 transform"></i>
                         <input class="w-[219px] h-[38px] border-transparent bg-[#f3f3f9] group-data-[topbar=dark]:bg-[#2a3042] rounded-full group-data-[topbar=dark]:outline-none border group-data-[topbar=dark]:border-transparent text-gray-700  group-data-[topbar=dark]:text-zink-200  group-data-[topbar=dark]:placeholder:text-zink-200 ltr:pl-10 rtl:pr-10 py-1.2 p-2  placeholder:text-13 focus:border focus:border-blue-500 focus:ring-0 focus:outline-none  search placeholder:text-gray-600 group-data-[layout=horizontal]:border-transparent" type="search" placeholder="Search..." id="example-search-input">
                     </div>
-    
+
                     <div class="hidden lg:block">
                         <div class=" dropdown px-2">
                             <button class="p-0 text-gray-700 group-data-[topbar=dark]:text-zink-200 border-0 btn dropdown-toggle " type="button" data-bs-toggle="dropdown" id="dropdownMenuButton1" data-bs-toggle="dropdown">
@@ -827,7 +827,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="flex ms-auto items-center">
                         <div class="md:relative dropdown px-3 lg:hidden">
                             <button class="p-0 text-gray-700 group-data-[topbar=dark]:text-zink-200 border-0 h-header btn dropdown-toggle flex items-center space-x-2" type="button" data-bs-toggle="dropdown" id="dropdownMenuButton1" data-bs-toggle="dropdown">
@@ -1049,70 +1049,14 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-12 gap-x-6">
-                    <div class="col-span-12 2xl:col-span-4">
-                        <div class="card dark:bg-zink-700 overflow-hidden">
-                            <div class="card-body !p-0  bg-[#d4dbf9] dark:bg-blue-500/30">
-                                <div class="flex justify-between">
-                                    <div class="text-blue-500 !p-4">
-                                        <h4 class="text-16 font-medium ">Welcome Back !</h4>
-                                        <p class="font-light text-13 mt-1">Skote Dashboard</p>
-                                    </div>
-                                    <img class="max-w-[200px]" src="assets/images/profile-img.png" alt="">
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="grid grid-cols-12 space-y-4 md:space-y-0 space-x-2">
-                                    <div class="col-span-12 md:col-span-4 -mt-11 ">
-                                        <img src="assets/images/avatar-1.jpg" alt="" class="w-[72px] h-[72px] border bg-gray-300 p-1 border-white rounded-full dark:bg-zink-700 dark:border-zink-700">
-                                        <div>
-                                            <h6 class="mt-5 mb-1 text-15 font-medium text-gray-700 dark:text-white">Henry Price</h6>
-                                            <p class="text-gray-600 text-13 dark:text-zinc-200">UI/UX Designer</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-span-12 md:col-span-8">
-                                        <div class="grid grid-cols-2 mt-2">
-                                            <div>
-                                                <h5 class="text-15 leading-4 mb-2 font-medium text-gray-700 dark:text-white">125</h5>
-                                                <p class="text-13 font-normal text-gray-600 dark:text-zink-200">Projects</p>
-                                            </div>
-                                            <div class="ml-3">
-                                                <h5 class="text-15 leading-4 mb-2 font-medium text-gray-700 dark:text-white ">$1245</h5>
-                                                <p class="text-13 font-normal text-gray-600 dark:text-zink-200">Revenue</p>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="py-1 mt-6 border-transparent px-2 text-[11px] btn bg-blue-500 hover:bg-blue-600  text-white">View Details<i class="mdi mdi-arrow-right  ml-2"></i> </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card dark:bg-zink-700">
-                            <div class="card-body">
-                                <div class=" grid grid-cols-2">
-                                    <div class="text-gray-700 dark:text-zinc-200">
-                                        <h5 class="mb-6 text-gray-700 text-15 leading-4 font-semibold dark:text-gray-50">Monthly Earning</h5>
-                                        <p class="text-13 mb-4 text-gray-600 font-normal dark:text-zink-200">This month</p>
-                                        <div>
-                                            <h4 class="text-[22px] leading-8">$34,252</h4>
-                                            <p class="text-13 mt-2 text-gray-600 dark:text-zink-200"><span class="text-green-500">12% </span> <i class="text-green-500 mdi mdi-arrow-up "></i> From previous period</p>
-                                        </div>
-                                        <button type="button" class="py-1 px-2 mt-5 border-transparent text-[11px] btn bg-blue-500 hover:bg-blue-600 text-white ">View More<i class="mdi mdi-arrow-right  ml-2"></i> </button>
-                                    </div>
-                                    <div class="mt-4 mt-sm-0">
-                                        <div id="radialBar-chart" data-colors='["#5b73e8"]' class="apex-charts"></div>
-                                    </div>
-                                </div>
-                                <p class="text-13 mt-5 text-gray-600 text-normal dark:text-zink-200">We craft digital, graphic and dimensional thinking.</p>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-span-12 2xl:col-span-8">
                         <div class="grid grid-col-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6">
                             <div class="card dark:bg-zink-700">
                                 <div class="card-body">
                                     <div class="flex justify-between items-center">
                                         <div>
-                                            <p class="text-13 mb-3 font-medium text-gray-600 dark:text-zink-200">Orders</p>
-                                            <h4 class="text-[19px] leading-6 font-medium">1,235</h4>
+                                            <p class="text-13 mb-3 font-medium text-gray-600 dark:text-zink-200">Total agent</p>
+                                            <h4 class="text-[19px] leading-6 font-medium">{{ \App\Models\Employee::all()->count() }}</h4>
                                         </div>
                                         <div class="w-12 h-12 bg-blue-500 rounded-full flex justify-center items-center relative before:absolute before:content-[''] before:w-2 before:h-12 before:bg-white before:bg-opacity-10 before:transform before:rotate-[32deg] before:-top-1">
                                             <i class="bx bx-copy-alt text-[24px] text-white"></i>
@@ -1124,8 +1068,8 @@
                                 <div class="card-body">
                                     <div class="flex justify-between items-center">
                                         <div>
-                                            <p class="text-13 mb-3 font-medium text-gray-600 dark:text-zink-200">Revenue</p>
-                                            <h4 class="text-[19px] leading-6 font-medium">$35,235</h4>
+                                            <p class="text-13 mb-3 font-medium text-gray-600 dark:text-zink-200">To be paid</p>
+                                            <h4 class="text-[19px] leading-6 font-medium">  {{'$' . Number::format($salaryToBePaid)}}</h4>
                                         </div>
                                         <div class="w-12 h-12 bg-blue-500 rounded-full flex justify-center items-center relative before:absolute before:content-[''] before:w-2 before:h-12 before:bg-white before:bg-opacity-10 before:transform before:rotate-[32deg] before:-top-1">
                                             <i class="bx bx-archive-in  text-[24px] text-white"></i>
@@ -1142,154 +1086,6 @@
                                         </div>
                                         <div class="w-12 h-12 bg-blue-500 rounded-full flex justify-center items-center relative before:absolute before:content-[''] before:w-2 before:h-12 before:bg-white before:bg-opacity-10 before:transform before:rotate-[32deg] before:-top-1">
                                             <i class="bx bx-purchase-tag-alt text-[24px] text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card dark:bg-zink-700">
-                                <div class="card-body">
-                                    <div class="flex justify-between">
-                                        <h5 class="mb-6 text-gray-700 text-15 font-semibold dark:text-gray-50 leading-4">Email Sent</h5>
-                                        <ul class="flex items-center text-[13px] text-gray-700 font-medium">
-                                            <li class="py-2 px-4 hover:text-blue-500 cursor-pointer dark:text-white">Week</li>
-                                            <li class="py-2 px-4 hover:text-blue-500 cursor-pointer dark:text-white">Month</li>
-                                            <li> <button type="button" class="py-2 px-4 border-transparent  btn bg-blue-500 text-white hover:bg-blue-700  ">Year</button></li>
-                                        </ul>
-                                    </div>
-                                    <div id="stacked-column-chart" class="apex-charts w-full" data-colors='["#5b73e8", "#f1b44c", "#34C38F"]' dir="ltr"></div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-span-12">
-                        <div class="grid lg:grid-cols-2 2xl:grid-cols-3 gap-x-6">
-                            <div class="card dark:bg-zink-700">
-                                <div class="card-body">
-                                    <div class="text-gray-700 dark:text-zinc-200">
-                                        <h5 class="mb-6 text-gray-700 text-15 font-semibold dark:text-gray-50">Social Source</h5>
-                                        <div class="text-center ">
-                                            <div class="w-12 h-12 rounded-full bg-blue-100 flex justify-center items-center mx-auto mb-6 dark:bg-blue-400/20">
-                                                <i class="mdi mdi-facebook text-blue-500 text-2xl"></i>
-                                            </div>
-                                            <h5 class="text-16 font-medium my-2 text-gray-800 dark:text-white">Facebook <span class="text-gray-600 dark:text-zink-200">- 125 sales</span></h5>
-                                            <p class="text-gray-600 font-normal text-13 dark:text-zink-200 ">Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus tincidunt.</p>
-                                            <p class="text-blue-500 text-13 mt-4">Learn more <i class="mdi mdi-chevron-right"></i></p>
-                                        </div>
-                                        <div class="mt-6 grid grid-cols-3">
-                                            <div class="text-center pt-4">
-                                                <div class="w-8 h-8 rounded-full bg-blue-500 flex justify-center items-center mx-auto">
-                                                    <i class="mdi mdi-facebook text-white text-16"></i>
-                                                </div>
-                                                <h4 class="text-15 font-medium mt-3 mb-2">Facebook</h4>
-                                                <p class="text-gray-600 text-13 dark:text-zink-200">125 Sales</p>
-                                            </div>
-                                            <div class="text-center pt-4">
-                                                <div class="w-8 h-8 rounded-full bg-sky-500 flex justify-center items-center mx-auto">
-                                                    <i class="mdi mdi-twitter text-white text-16"></i>
-                                                </div>
-                                                <h4 class="text-15 font-medium mt-3 mb-2">Twitter</h4>
-                                                <p class="text-gray-600 text-13 dark:text-zink-200">112 Sales</p>
-                                            </div>
-                                            <div class="text-center pt-4">
-                                                <div class="w-8 h-8 rounded-full bg-red-500 flex justify-center items-center mx-auto">
-                                                    <i class="mdi mdi-instagram text-white text-16"></i>
-                                                </div>
-                                                <h4 class="text-15 font-medium mt-3 mb-2">Instagram</h4>
-                                                <p class="text-gray-600 text-13 dark:text-zink-200">104 Sales</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card dark:bg-zink-700">
-                                <div class="card-body">
-                                    <h5 class="mb-12 text-gray-700 text-15 font-semibold dark:text-gray-50">Activity</h5>
-                                    <ul class="pl-2 mb-0 mt-6 gap-y-3">
-                                        <li class="dark:border-zink-50 relative pb-[27px] ltr:pl-14 rtl:pr-14 border-dashed ltr:border-l-[2px] rtl:border-r-[2px] border-gray-400/50 flex gap-x-3 items-center">
-                                            <i class="bx bx-right-arrow-circle text-lg  text-gray-700 dark:text-zink-200 ltr:-ml-16 rtl:-mr-16"></i>
-                                            <div class="flex gap-x-3 mt-2 items-center">
-                                                <h5 class="text-[14px] font-medium whitespace-nowrap mb-2">22 Nov</h5>
-                                                <i class="mdi mdi-arrow-right text-16 text-blue-500 "></i>
-                                                <p class="text-13 font-normal dark:text-zink-200">Responded to need “Volunteer Activities</p>
-                                            </div>
-                                        </li>
-                                        <li class="dark:border-zink-50 relative pb-[27px] ltr:pl-14 rtl:pr-14 border-dashed ltr:border-l-[2px] rtl:border-r-[2px] border-gray-400/50 flex gap-x-3 items-center">
-                                            <i class="bx bx-right-arrow-circle text-lg  text-gray-700 dark:text-zink-200 ltr:-ml-16 rtl:-mr-16"></i>
-                                            <div class="flex gap-x-3 mt-2 items-center">
-                                                <h5 class="text-[14px] font-medium whitespace-nowrap mb-2">17 Nov</h5>
-                                                <i class="mdi mdi-arrow-right text-16 text-blue-500 "></i>
-                                                <p class="text-13 font-normal dark:text-zink-200">REveryone realizes why a new common language would be desirable... <span class="text-blue-500"> Read more</span></p>
-                                            </div>
-                                        </li>
-                                        <li class=" dark:border-zink-50 relative pb-[27px] ltr:pl-14 rtl:pr-14 border-dashed ltr:border-l-[2px] rtl:border-r-[2px] border-gray-400/50 flex gap-x-3 items-center">
-                                            <i class="arrow-animation bx bxs-right-arrow-circle text-lg  text-blue-500 dark:text-zink-200 ltr:-ml-16 rtl:-mr-16"></i>
-                                            <div class="flex gap-x-3 mt-2 items-center">
-                                                <h5 class="text-[14px] font-medium whitespace-nowrap mb-2">15 Nov</h5>
-                                                <i class="mdi mdi-arrow-right text-16 text-blue-500 "></i>
-                                                <p class="text-13 font-normal dark:text-zink-200">Joined the group “Boardsmanship Forum”</p>
-                                            </div>
-                                        </li>
-                                        <li class="dark:border-zink-50 relative ltr:pl-14 rtl:pr-14 border-dashed ltr:border-l-[2px] rtl:border-r-[2px] border-gray-400/50 flex gap-x-3 items-center">
-                                            <i class="bx bx-right-arrow-circle text-lg  text-gray-700 dark:text-zink-200 ltr:-ml-16 rtl:-mr-16"></i>
-                                            <div class="flex gap-x-3 mt-2 items-center">
-                                                <h5 class="text-[14px] font-medium whitespace-nowrap mb-2">22 Nov</h5>
-                                                <i class="mdi mdi-arrow-right text-16 text-blue-500 "></i>
-                                                <p class="text-13 font-normal dark:text-zink-200">Responded to need “In-Kind Opportunity”
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <div class="flex justify-center mt-6">
-                                            <button type="button" class="py-1 px-2 border-transparent text-[11px] btn text-white bg-blue-500 hover:bg-blue-600  ">View More<i class="mdi mdi-arrow-right  ml-2"></i> </button>
-                                        </div>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card dark:bg-zink-700">
-                                <div class="card-body">
-                                    <div class="text-gray-700 dark:text-zinc-200">
-                                        <h5 class="mb-6 text-gray-700 text-15 font-semibold dark:text-gray-50">Top Cities Selling Product</h5>
-                                        <div class=" text-center">
-                                            <i class="bx bx-map-pin text-[56px] text-blue-500 mb-6"></i>
-                                            <h4>1,456</h4>
-                                            <p class="text-13 mt-2 font-normal text-gray-600 dark:text-zink-200">San Francisco</p>
-                                        </div>
-                                        <div class="mt-6">
-                                            <div class="grid grid-cols-12 py-2 border-b border-gray-400/50 dark:border-zink-50">
-                                                <div class="col-span-4">
-                                                    <p class="text-13 text-gray-600 dark:text-zink-200">San Francisco</p>
-                                                </div>
-                                                <div class="col-span-2">
-                                                    <p class="text-16 font-medium">1,456</p>
-                                                </div>
-                                                <div class="col-span-6">
-                                                    <div class="w-[75%] h-1 mt-2 bg-blue-500 rounded-full"></div>
-                                                </div>
-                                            </div>
-                                            <div class="grid grid-cols-12 py-2 border-b border-gray-400/50 dark:border-zink-50">
-                                                <div class="col-span-4">
-                                                    <p class="text-13 text-gray-600 dark:text-zink-200">Los Angeles</p>
-                                                </div>
-                                                <div class="col-span-2">
-                                                    <p class="text-16 font-medium">1,123</p>
-                                                </div>
-                                                <div class="col-span-6">
-                                                    <div class="w-[60%] h-1 mt-2 bg-green-500 rounded-full"></div>
-                                                </div>
-                                            </div>
-                                            <div class="grid grid-cols-12 py-2 border-b border-gray-400/50 dark:border-zink-50">
-                                                <div class="col-span-4">
-                                                    <p class="text-13 text-gray-600 dark:text-zink-200">San Diego</p>
-                                                </div>
-                                                <div class="col-span-2">
-                                                    <p class="text-16 font-medium">1,026</p>
-                                                </div>
-                                                <div class="col-span-6">
-                                                    <div class="w-[40%] h-1 mt-2 bg-yellow-500 rounded-full"></div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2157,28 +1953,6 @@
                 </div>
                 <!-- Modal Container (hidden by default) -->
 
-                <div class="fixed top-1/2 left-1/2  hidden -translate-x-1/2 -translate-y-1/2  flex flex-col w-full transition-transform duration-300 ease-in-out transform modal  max-w-lg card z-[1060] shadow-none" id="myModal">
-                    <div class="p-4 flex justify-end cursor-pointer" id="closeModal"><i class="text-end mdi block mdi-close text-xl text-gray-600 dark:zink-200"></i></div>
-                    <div class="modal-content card-body !pt-0">
-                        <div class="w-[72px] h-[72px] rounded-full flex justify-center mx-auto items-center p-3 mt-2 bg-blue-50 dark:bg-zink-50">
-                            <i class="mdi mdi-email-open text-3xl text-blue-500"></i>
-                        </div>
-                        <div class="text-center mx-8">
-                            <div class="my-6 ">
-                                <h5 class="text-center text-blue-500 text-[19px]  font-medium" role="alert">
-                                    Subscribe !
-                                </h5>
-                                <p class="mt-1 text-sm text-gray-600 dark:text-zink-200">Subscribe our newletter and get notification to stay update.</p>
-                            </div>
-                            <form action="#" class=" mt-3">
-                                <div class="flex overflow-hidden rounded mb-4">
-                                    <input type="text" class="w-full border py-1 p-2 rounded-s border-transparent bg-gray-400/30 placeholder:text-xs text-gray-500 dark:bg-zink-50 dark:border-transparent  placeholder:text-gray-600 dark:text-zink-200 dark:placeholder:text-zink-200 " id="email" placeholder="Enter email Address">
-                                    <div class="bg-blue-500 p-2 px-3 text-white"><i class="bx bxs-paper-plane"></i></div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- container-fluid -->
         </div>
@@ -2267,7 +2041,7 @@
                     <button type="button" name="data-sidebar-color" id="data-sidebar-light" value="light" class="transition-all duration-200 ease-linear bg-white border-dashed text-blue-500 btn border-blue-200 hover:text-blue-500 hover:bg-blue-50 hover:border-blue-200 focus:text-blue-500 focus:bg-blue-50 focus:border-blue-200 [&.active]:text-blue-500 [&.active]:bg-blue-50 [&.active]:border-blue-200  dark:border-blue-500/50  dark:bg-blue-500/20 dark:[&.active]:border-blue-500 dark:[&.active]:bg-blue-500 dark:[&.active]:text-white">Light</button>
 
                     <button type="button" name="data-sidebar-color" id="data-sidebar-dark" value="dark" class="transition-all duration-200 ease-linear bg-white border-dashed text-blue-500 btn border-blue-200 hover:text-blue-500 hover:bg-blue-50 hover:border-blue-200 focus:text-blue-500 focus:bg-blue-50 focus:border-blue-200 [&.active]:text-blue-500 [&.active]:bg-blue-50 [&.active]:border-blue-200  dark:border-blue-500/50  dark:bg-blue-500/20 dark:[&.active]:border-blue-500 dark:[&.active]:bg-blue-500 dark:[&.active]:text-white ">Dark</button>
-                    
+
                 </div>
             </div>
             <!-- sidebar size horizontal hidden -->

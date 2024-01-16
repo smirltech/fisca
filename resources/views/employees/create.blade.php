@@ -2,6 +2,14 @@
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
 @extends('App.app')
 @section('title', 'Home')
+<link rel="stylesheet" href="{{ asset('assets/css/tailwind2.css')}}">
+<link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
+<!-- Layout config Js -->
+<script src="{{asset('assets/js/pages/layout.js')}}"></script>
+<!-- Icons CSS -->
+
+<!-- Tailwind CSS -->
+
 <body>
 <div
     class="flex h-screen bg-gray-50 dark:bg-gray-900"
@@ -278,6 +286,86 @@
                                         </button>
                                     </div>
                                 </div>
+
+
+
+
+
+                                <div class="relative min-h-screen group-data-[sidebar-size=sm]:min-h-[1500px]">
+
+                                    <div class="group-data-[sidebar-size=lg]:ltr:lg:ml-vertical-menu group-data-[sidebar-size=lg]:rtl:lg:mr-vertical-menu group-data-[sidebar-size=md]:ltr:ml-vertical-menu-md group-data-[sidebar-size=md]:rtl:mr-vertical-menu-md group-data-[sidebar-size=sm]:ltr:lg:ml-vertical-menu-sm group-data-[sidebar-size=sm]:lg:rtl:mr-vertical-menu-sm pt-[calc(theme('spacing.header')_*_1)] pb-[calc(theme('spacing.header')_*_1)] px-6 group-data-[layout=horizontal]:!mx-auto group-data-[layout=horizontal]:max-w-screen-2xl  group-data-[layout=horizontal]:lg:pt-[calc(theme('spacing.header')_*_1.75)] ">
+                                        <div class="container-fluid">
+
+                                            <div class="md:flex items-center justify-between pt-6 pb-5">
+                                                <div>
+                                                    <h6 class="mb-0 text-16 uppercase font-semibold dark:text-white">Form Wizard</h6>
+                                                </div>
+                                                 
+                                            </div>
+                                            <div class="grid grid-cols-12">
+                                                <div class="col-span-12">
+                                                    <div class="card dark:bg-zink-700">
+                                                        <div class="card-body">
+                                                            <div id="basic-example" class="basic-wizard dark:text-white">
+                                                                <!-- Seller Details -->
+
+                                                                <h3 class="dark:text-white">Seller Details</h3>
+                                                                <section>
+                                                                    <form>
+                                                                        <div class="grid grid-cols-12 gap-x-5">
+                                                                            <div class="col-span-12 md:col-span-6">
+                                                                                <div class="mb-3">
+                                                                                    <label for="basicpill-firstname-input" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">First Name</label>
+                                                                                    <input type="text" class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200" id="basicpill-firstname-input" placeholder="Enter your First name">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-span-12 md:col-span-6">
+                                                                                <div class="mb-3">
+                                                                                    <label for="basicpill-lastname-input" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Last Name</label>
+                                                                                    <input type="text" class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200" id="basicpill-lastname-input" placeholder="Enter your Last Name">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="grid grid-cols-12 gap-x-5">
+                                                                            <div class="col-span-12 md:col-span-6">
+                                                                                <div class="mb-3">
+                                                                                    <label for="basicpill-phoneno-input" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Phone</label>
+                                                                                    <input type="text" class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200" id="basicpill-phoneno-input" placeholder="Enter your Phone Number">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-span-12 md:col-span-6">
+                                                                                <div class="mb-3">
+                                                                                    <label for="basicpill-email-input" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Email</label>
+                                                                                    <input type="email" class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200" id="basicpill-email-input" placeholder="Enter your email address">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="grid grid-cols-12 gap-x-5">
+                                                                            <div class="col-span-12">
+                                                                                <div class="mb-3">
+                                                                                    <label for="basicpill-address-input" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Address</label>
+                                                                                    <textarea id="basicpill-address-input" class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200" grids="2" placeholder="Enter your Address"></textarea>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </section>
+                                                            </div>
+
+                                                        </div>
+                                                        <!-- end card body -->
+                                                    </div>
+                                                    <!-- end card -->
+                                                </div>
+                                                <!-- end col -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
                             </form>
                         </div>
                     </div>
@@ -286,5 +374,20 @@
         </main>
     </div>
 </div>
+
+
+<script src="{{ asset('assets/libs/jquery/jquery.min.js')}}"></script>
+<script src="{{ asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
+<script src="{{ asset('assets/libs/metismenujs/metismenujs.min.js')}}"></script>
+<script src="{{ asset('assets/libs/%40popperjs/core/umd/popper.min.js')}}"></script>
+<script src="{{ asset('assets/js/pages/plugins.js')}}"></script>
+<script src="{{ asset('assets/libs/jquery-steps/build/jquery.steps.min.js')}}"></script>
+
+<!-- form wizard init -->
+<script src="{{ asset('assets/js/pages/form-wizard.init.js')}}"></script>
+
+<!-- App js -->
+<script src="{{asset('assets/js/app.js')}}"></script>
+
 </body>
 </html>

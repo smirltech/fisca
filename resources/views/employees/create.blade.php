@@ -32,6 +32,22 @@
                                 @csrf
                                 <div class="flex flex-wrap gap-6 mt-4">
                                     <div class="flex-col w-1/3">
+                                        <!-- order number -->
+                                        <div class="">
+                                            <label class="text-gray-700 dark:text-gray-200" for="order_number">Order number</label>
+                                            <input
+                                                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none focus:ring"
+                                                type="text"
+                                                name="order_number"
+                                                id="order_number"
+                                                value="{{ old('order_number') }}"
+                                                placeholder="Order number"
+                                                autofocus
+                                            />
+                                            @error('order_number')
+                                            <p class="text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
+                                            @enderror
+                                        </div>
                                         <!-- First Name -->
                                         <div class="">
                                             <label class="text-gray-700 dark:text-gray-200" for="first_name">First Name</label>
@@ -122,20 +138,6 @@
                                             @enderror
                                         </div>
 
-                                        <!-- Base Salary -->
-                                        <div>
-                                            <label class="text-gray-700 dark:text-gray-200" for="base_salary">Base Salary</label>
-                                            <input
-                                                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none focus:ring"
-                                                type="number"
-                                                name="base_salary"
-                                                id="base_salary"
-                                                placeholder="Base Salary"
-                                                required
-                                                autofocus
-                                            />
-                                        </div>
-
                                         <!-- Commune -->
                                         <div>
                                             <label class="text-gray-700 dark:text-gray-200" for="commune">Commune</label>
@@ -150,6 +152,64 @@
                                             />
                                         </div>
                                     </div>
+
+                                    <div class="flex-col w-1/3">
+                                        <!-- Base Salary -->
+                                        <div>
+                                            <label class="text-gray-700 dark:text-gray-200" for="base_salary">Base Salary</label>
+                                            <input
+                                                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none focus:ring"
+                                                type="number"
+                                                name="base_salary"
+                                                id="base_salary"
+                                                placeholder="Base Salary"
+                                                required
+                                                autofocus
+                                            />
+                                        </div>
+
+                                        <!-- Daily rate -->
+                                        <div>
+                                            <label class="text-gray-700 dark:text-gray-200" for="hourly_rate">Hourly rate</label>
+                                            <input
+                                                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none focus:ring"
+                                                type="number"
+                                                name="hourly_rate"
+                                                id="hourly_rate"
+                                                placeholder="Hourly rate"
+                                                required
+                                                autofocus
+                                            />
+                                        </div>
+
+                                        <!-- Tow thirds paid days -->
+                                        <div>
+                                            <label class="text-gray-700 dark:text-gray-200" for="two_thirds_paid_days">Tow thirds paid days</label>
+                                            <input
+                                                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none focus:ring"
+                                                type="number"
+                                                name="two_thirds_paid_days"
+                                                id="two_thirds_paid_days"
+                                                placeholder="Two thirds paid days"
+                                                autofocus
+                                            />
+                                        </div>
+
+                                        <!-- Number of dependant children -->
+                                        <div>
+                                            <label class="text-gray-700 dark:text-gray-200" for="number_of_dependant_children">Dependant Childre</label>
+                                            <input
+                                                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none focus:ring"
+                                                type="number"
+                                                name="number_of_dependant_children"
+                                                id="number_of_dependant_children"
+                                                placeholder="number of dependant children"
+                                                required
+                                                autofocus
+                                            />
+                                        </div>
+                                    </div>
+
                                     <div class="flex-col w-1/3">
                                         <!-- Gender -->
                                         <div>
@@ -206,6 +266,7 @@
                                         </div>
 
                                     </div>
+
 
                                     <!-- Button -->
                                     <div class="w-full">

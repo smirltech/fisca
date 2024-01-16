@@ -22,8 +22,11 @@
 
     <!-- Informations sur l'employé -->
     <div class="mb-6">
-        <p class="font-bold">Nom de l'employé: {{ $full_name }}</p>
-        <p class="text-sm text-gray-500">Poste: {{ $department }}</p>
+
+        <p class="text-sm text-gray-500">N° d'affiliation de l'Employeur à la Sécurité sociale: </p>
+        <p class="text-sm text-gray-500">Nom de l'employeur: </p>
+        <p class="text-sm text-gray-500">Branche d'activité: </p>
+        <p class="text-sm text-gray-500">Feuille de paie du </p>
     </div>
 
     <!-- Tableau des détails du salaire -->
@@ -32,7 +35,6 @@
         <tr class="bg-gray-200">
             <th class="border p-2">Description</th>
             <th class="border p-2">Quantité</th>
-            <th class="border p-2">Taux</th>
             <th class="border p-2">Montant</th>
         </tr>
         </thead>
@@ -43,26 +45,155 @@
             <td class="border p-2">{{ Number::currency($daily_salary) }}</td>
             <td class="border p-2">{{ Number::currency($monthly_salary) }}</td>
         </tr>--}}
+
         <tr>
-            <td class="border p-2">Salaire horaire</td>
-            <td class="border p-2">{{ 8 * 26 }} heures</td>
-            <td class="border p-2">{{ Number::currency($hourly_salary) }}</td>
-            <td class="border p-2">{{ Number::currency($hourly_salary * 8 * 26) }}</td>
+            <td class="border p-2">Numero d'ordre</td>
+            <td class="border p-2"></td>
+            <td class="border p-2"></td>
         </tr>
-        <!-- Ajoutez d'autres lignes pour les heures supplémentaires, etc. -->
-        <tr class="font-bold">
-            <td class="border p-2" colspan="3">Sous total</td>
-            <td class="border p-2">{{ Number::currency($daily_salary * 26) }}</td>
+        <tr>
+            <td class="border p-2">Nom et Prenoms du Travailleur</td>
+            <td class="border p-2"></td>
+            <td class="border p-2"></td>
         </tr>
-        <tr class="">
-            <td class="border p-2">Heures supplementaires</td>
-            <td class="border p-2">{{ $total_hours_of_overtime_of_this_month }} heures</td>
-            <td class="border p-2">{{ Number::currency($hourly_salary) }}</td>
-            <td class="border p-2">{{ Number::currency(/*$hourly_salary * $total_hours_of_overtime_of_this_month,*/ $overtime_salary) }}</td>
+        <tr>
+            <td class="border p-2">Emploi et Categorie</td>
+            <td class="border p-2"></td>
+            <td class="border p-2"></td>
         </tr>
-        <tr class="font-bold">
-            <td class="border p-2" colspan="3">Salaire total</td>
-            <td class="border p-2">{{ Number::currency($total_salary) }}</td>
+        <tr>
+            <td class="border p-2">Numero d'immatriculation a la securite socaial</td>
+            <td class="border p-2"></td>
+            <td class="border p-2"></td>
+        </tr>
+        <tr>
+            <td class="border p-2" rowspan="3">Salaire</td>
+            <td class="border p-2" >Taux,Jour, heure, mois</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2" >Jour, heure payes a 100 %</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2 font-bold" >Total du</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2" rowspan="3">Heures supplementaires</td>
+            <td class="border p-2" >Nombre d'heure</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2" >Taux</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2 font-bold" >Total du</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2">Supplement du travail du samedi, du dimanche et jours feries</td>
+            <td class="border p-2"></td>
+            <td class="border p-2"></td>
+        </tr>
+        <tr>
+            <td class="border p-2">Primes</td>
+            <td class="border p-2"></td>
+            <td class="border p-2"></td>
+        </tr>
+        <tr>
+            <td class="border p-2">Divers</td>
+            <td class="border p-2"></td>
+            <td class="border p-2"></td>
+        </tr>
+        <tr>
+            <td class="border p-2" rowspan="3">Conges payes</td>
+            <td class="border p-2" >Jours</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2" >Taux</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2 font-bold" >Total du</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2" rowspan="3">Maladie ou accident</td>
+            <td class="border p-2" >Jours paayes aux 2/3</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2" >Taux journalier</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2 font-bold" >Total du 20 Total</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2 font-bold">Total brut du</td>
+            <td class="border p-2" ></td>
+            <td class="border p-2"></td>
+        </tr>
+        <tr>
+            <td class="border p-2" rowspan="5">Deduction</td>
+            <td class="border p-2" >Pension</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2" >Indemnites Compensatrices</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2  " >Avances</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2  " >Divers</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2  " >Retenues fiscales</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2 font-bold " >Total des deductions</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2" rowspan="4">Allocations familiales</td>
+            <td class="border p-2" >Nombre d'enfant beneficiaire</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2" >Nombre de jours</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2  " >Taux Journalier</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2 font-bold " >Total a payer</td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2 font-bold " >Net a payer </td>
+            <td class="border p-2" ></td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2 font-bold " >Montant pris en consideration pour le calcul des cotisitions INSS </td>
+            <td class="border p-2" ></td>
+            <td class="border p-2" ></td>
+        </tr>
+        <tr>
+            <td class="border p-2 font-bold " >Observations</td>
+            <td class="border p-2" ></td>
+            <td class="border p-2" ></td>
         </tr>
         </tbody>
     </table>
@@ -80,6 +211,8 @@
     <div class="text-gray-500 text-xs">
         <p>© {{ now()->year }} SmirlTech</p>
     </div>
+
+
 </div>
 </body>
 </html>

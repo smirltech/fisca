@@ -72,4 +72,14 @@ php artisan serve
 ```
 
 Vous pouvez maintenant accéder à l'application à l'adresse `http://localhost:8000`.
+
+## Connexion à l'application
+email
+```user name
+fake@email.com
+```
+
+password
+```password
+password
 ```

@@ -31,13 +31,6 @@
 
     <!-- Tableau des détails du salaire -->
     <table class="w-full border-collapse border border-gray-300 mb-6">
-        <thead>
-        <tr class="bg-gray-200">
-            <th class="border p-2">Description</th>
-            <th class="border p-2">Quantité</th>
-            <th class="border p-2">Montant</th>
-        </tr>
-        </thead>
         <tbody>
         {{--<tr>
             <td class="border p-2">Salaire journalier</td>
@@ -47,41 +40,51 @@
         </tr>--}}
 
         <tr>
-            <td class="border p-2">Numero d'ordre</td>
-            <td class="border p-2"></td>
-            <td class="border p-2"></td>
+            <th class=" p-2 bg-gray-200" colspan="3">Identification du Travailleur</th>
+        </tr>
+
+        <tr>
+            <td class="border p-2">Numéro d'ordre</td>
+            <td class="border p-2" colspan="2"></td>
         </tr>
         <tr>
-            <td class="border p-2">Nom et Prenoms du Travailleur</td>
-            <td class="border p-2"></td>
-            <td class="border p-2"></td>
+            <td class="border p-2">Nom et Prénoms du Travailleur</td>
+            <td class="border p-2" colspan="2"></td>
         </tr>
         <tr>
-            <td class="border p-2">Emploi et Categorie</td>
-            <td class="border p-2"></td>
-            <td class="border p-2"></td>
+            <td class="border p-2">Emploi et Catégorie</td>
+            <td class="border p-2" colspan="2"></td>
         </tr>
         <tr>
-            <td class="border p-2">Numero d'immatriculation a la securite socaial</td>
-            <td class="border p-2"></td>
-            <td class="border p-2"></td>
+            <td class="border p-2">Numéro d'immatriculation à la sécurité sociale</td>
+            <td class="border p-2" colspan="2"></td>
         </tr>
+
+        <tr>
+            <th class=" p-2 bg-gray-200" colspan="3">Salaire de Base </th>
+        </tr>
+
         <tr>
             <td class="border p-2" rowspan="3">Salaire</td>
-            <td class="border p-2" >Taux,Jour, heure, mois</td>
+            <td class="border p-2" >Jour, Heure, Mois</td>
             <td class="border p-2" ></td>
         </tr>
         <tr>
-            <td class="border p-2" >Jour, heure payes a 100 %</td>
+            <td class="border p-2" >Jour, heure payés à 100%</td>
             <td class="border p-2" ></td>
         </tr>
         <tr>
             <td class="border p-2 font-bold" >Total du</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2 font-bold" > </td>
         </tr>
+
+        <tr>
+            <th class=" p-2 bg-gray-200" colspan="3">Rémunération de Base</th>
+        </tr>
+
         <tr>
             <td class="border p-2" rowspan="3">Heures supplementaires</td>
-            <td class="border p-2" >Nombre d'heure</td>
+            <td class="border p-2" >Nombre d'heures</td>
             <td class="border p-2" ></td>
         </tr>
         <tr>
@@ -90,25 +93,32 @@
         </tr>
         <tr>
             <td class="border p-2 font-bold" >Total du</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2 font-bold" > </td>
         </tr>
         <tr>
+            <th class=" p-2 bg-gray-200" colspan="3">Suppléments et Bonus</th>
+        </tr>
+
+        <tr>
             <td class="border p-2">Supplement du travail du samedi, du dimanche et jours feries</td>
-            <td class="border p-2"></td>
-            <td class="border p-2"></td>
+            <td class="border p-2" colspan="2"></td>
         </tr>
         <tr>
             <td class="border p-2">Primes</td>
-            <td class="border p-2"></td>
-            <td class="border p-2"></td>
+            <td class="border p-2" colspan="2"></td>
         </tr>
         <tr>
             <td class="border p-2">Divers</td>
-            <td class="border p-2"></td>
-            <td class="border p-2"></td>
+            <td class="border p-2" colspan="2"></td>
         </tr>
+
+
         <tr>
-            <td class="border p-2" rowspan="3">Conges payes</td>
+            <th class=" p-2 bg-gray-200" colspan="3">Avantages et Absences</th>
+        </tr>
+
+        <tr>
+            <td class="border p-2" rowspan="3">Congés payés</td>
             <td class="border p-2" >Jours</td>
             <td class="border p-2" ></td>
         </tr>
@@ -118,11 +128,11 @@
         </tr>
         <tr>
             <td class="border p-2 font-bold" >Total du</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2 font-bold" > {{'$' . $total_salary }} </td>
         </tr>
         <tr>
             <td class="border p-2" rowspan="3">Maladie ou accident</td>
-            <td class="border p-2" >Jours paayes aux 2/3</td>
+            <td class="border p-2" >Jours payés aux 2/3</td>
             <td class="border p-2" ></td>
         </tr>
         <tr>
@@ -130,21 +140,28 @@
             <td class="border p-2" ></td>
         </tr>
         <tr>
-            <td class="border p-2 font-bold" >Total du 20 Total</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2 font-bold" >Total du</td>
+            <td class="border p-2 font-bold" ></td>
         </tr>
+
+        <tr>
+            <th class=" p-2 bg-gray-200" colspan="3">Total Brut du Salaire</th>
+
         <tr>
             <td class="border p-2 font-bold">Total brut du</td>
-            <td class="border p-2" ></td>
-            <td class="border p-2"></td>
+            <td class="border p-2" colspan="2"></td>
         </tr>
+
         <tr>
-            <td class="border p-2" rowspan="5">Deduction</td>
+            <th class=" p-2 bg-gray-200" colspan="3">Déductions </th>
+
+        <tr>
+            <td class="border p-2" rowspan="5">Déductions</td>
             <td class="border p-2" >Pension</td>
             <td class="border p-2" ></td>
         </tr>
         <tr>
-            <td class="border p-2" >Indemnites Compensatrices</td>
+            <td class="border p-2" >Indemnités Compensatrices</td>
             <td class="border p-2" ></td>
         </tr>
         <tr>
@@ -160,12 +177,17 @@
             <td class="border p-2" ></td>
         </tr>
         <tr>
-            <td class="border p-2 font-bold " >Total des deductions</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2 font-bold " >Total des déductions</td>
+            <td class="border p-2" colspan="2" ></td>
         </tr>
+
         <tr>
-            <td class="border p-2" rowspan="4">Allocations familiales</td>
-            <td class="border p-2" >Nombre d'enfant beneficiaire</td>
+            <th class=" p-2 bg-gray-200" colspan="3">Allocations Familiales </th>
+        </tr>
+
+        <tr>
+            <td class="border p-2" rowspan="4">Allocations Familiales</td>
+            <td class="border p-2" >Nombre d'enfant bénéficiaire</td>
             <td class="border p-2" ></td>
         </tr>
         <tr>
@@ -177,23 +199,27 @@
             <td class="border p-2" ></td>
         </tr>
         <tr>
-            <td class="border p-2 font-bold " >Total a payer</td>
+            <td class="border p-2 font-bold " >Total à payer</td>
             <td class="border p-2" ></td>
         </tr>
+        <tr>
+            <th class=" p-2 bg-gray-200" colspan="3">Total Net à Payer </th>
         <tr>
             <td class="border p-2 font-bold " >Net a payer </td>
-            <td class="border p-2" ></td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" colspan="2"></td>
         </tr>
+        <tr>
+            <th class=" p-2 bg-gray-200" colspan="3">Montant des cotisations INSS</th>
+        <tr>
         <tr>
             <td class="border p-2 font-bold " >Montant pris en consideration pour le calcul des cotisitions INSS </td>
-            <td class="border p-2" ></td>
-            <td class="border p-2" ></td>
         </tr>
         <tr>
+            <th class=" p-2 bg-gray-200" colspan="3">Observations</th>
+        <tr>
+        <tr>
             <td class="border p-2 font-bold " >Observations</td>
-            <td class="border p-2" ></td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" colspan="2"></td>
         </tr>
         </tbody>
     </table>

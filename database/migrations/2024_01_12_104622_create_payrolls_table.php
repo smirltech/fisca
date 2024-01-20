@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('payrolls', function (Blueprint $table) {
             $table->id();
-            $table->integer('employee_id'); // ID de l'employé, si vous avez une table distincte pour les employés
             $table->foreignId('employee_id')->references('id')->on('employees');
             $table->integer('order_number'); // Numéro d'ordre du travailleur
             $table->string('employee_name'); // Noms et Prénoms du Travailleur

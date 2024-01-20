@@ -22,9 +22,10 @@ return new class extends Migration
             $table->string('department', 100);
             $table->string('photo', 100);
             $table->string('matriculate', 20);
-            $table->string('commune', 30);  //Commune
+            $table->string('address', 30);  //Commune
             //salaire de base exprimee en heures de travail
             $table->integer('base_salary'); //Salaire de base
+            $table->integer('order_number'); //Salaire de base
             $table->boolean('payed')->default(false);
             $table->timestamps();
         });

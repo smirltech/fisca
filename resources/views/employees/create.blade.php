@@ -55,194 +55,212 @@
                                                             <div id="basic-example" class="basic-wizard dark:text-white">
                                                                 <h3 class="dark:text-white">Worker identification</h3>
                                                                 <section>
-                                                                    <form>
-                                                                        <div class="grid grid-cols-12 gap-x-5">
-                                                                            <div class="col-span-12 md:col-span-6">
-                                                                                <div class="mb-3">
-                                                                                    <label for="order_number" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Order number</label>
-                                                                                    <input  class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
-                                                                                            type="text"
-                                                                                            id="order_number"
-                                                                                            name="order_number"
-                                                                                            value="{{old('order_number')}}"
-                                                                                            placeholder="Enter your Order number"
-                                                                                            autofocus
-                                                                                    />
-                                                                                    @error('order_number')
+                                                                    <div class="grid grid-cols-12 gap-x-5">
+                                                                        <div class="col-span-12 md:col-span-6">
+                                                                            <div class="mb-3">
+                                                                                <label for="order_number" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Order number</label>
+                                                                                <input  class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
+                                                                                        type="text"
+                                                                                        id="order_number"
+                                                                                        name="order_number"
+                                                                                        value="{{old('order_number')}}"
+                                                                                        placeholder="Enter your Order number"
+                                                                                        autofocus
+                                                                                />
+                                                                                @error('order_number')
+                                                                                <p class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">{{ $message }}</p>
+                                                                                @enderror
+                                                                            </div>
+                                                                        </div>
+                                                                        @php
+                                                                            $required = '<sub class="text-red-700">*</sub>';
+                                                                        @endphp
+                                                                        <div class="col-span-12 md:col-span-6">
+                                                                            <div class="mb-3">
+                                                                                <label for="first_name" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200"> First Name {!! $required !!}</label>
+                                                                                <input class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
+                                                                                       type="text"
+                                                                                       id="first_name"
+                                                                                       name="first_name"
+                                                                                       value="{{old('first_name')}}"
+                                                                                       required
+                                                                                       autofocus
+                                                                                       placeholder="Enter your First Name"
+                                                                                />
+                                                                                @error('first_name')
                                                                                     <p class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">{{ $message }}</p>
-                                                                                    @enderror
-                                                                                </div>
-                                                                            </div>
-                                                                            @php
-                                                                                $required = '<sub class="text-red-700">*</sub>';
-                                                                            @endphp
-                                                                            <div class="col-span-12 md:col-span-6">
-                                                                                <div class="mb-3">
-                                                                                    <label for="first_name" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200"> First Name {!! $required !!}</label>
-                                                                                    <input class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
-                                                                                           type="text"
-                                                                                           id="first_name"
-                                                                                           name="first_name"
-                                                                                           value="{{old('first_name')}}"
-                                                                                           required
-                                                                                           autofocus
-                                                                                           placeholder="Enter your First Name"
-                                                                                    />
-                                                                                    @error('first_name')
-                                                                                        <p class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">{{ $message }}</p>
-                                                                                    @enderror
-                                                                                </div>
+                                                                                @enderror
                                                                             </div>
                                                                         </div>
-                                                                        <div class="grid grid-cols-12 gap-x-5">
-                                                                            <div class="col-span-12 md:col-span-6">
-                                                                                <div class="mb-3">
-                                                                                    <label for="last_name" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Last Name {!! $required !!}</label>
-                                                                                    <input type="text" class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
-                                                                                           id="last_name"
-                                                                                           name="last_name"
-                                                                                           required
-                                                                                           value="{{ old('last_name') }}"
-                                                                                           autofocus
-                                                                                           placeholder="Enter your Last Number"
-                                                                                    />
-                                                                                    @error('last_name')
+                                                                    </div>
+                                                                    <div class="grid grid-cols-12 gap-x-5">
+                                                                        <div class="col-span-12 md:col-span-6">
+                                                                            <div class="mb-3">
+                                                                                <label for="last_name" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Last Name {!! $required !!}</label>
+                                                                                <input type="text" class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
+                                                                                       id="last_name"
+                                                                                       name="last_name"
+                                                                                       required
+                                                                                       value="{{ old('last_name') }}"
+                                                                                       autofocus
+                                                                                       placeholder="Enter your Last Number"
+                                                                                />
+                                                                                @error('last_name')
+                                                                                <p class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">{{ $message }}</p>
+                                                                                @enderror
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-span-12 md:col-span-6">
+                                                                            <div class="mb-3">
+                                                                                <label for="middle_name" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Middle Name {!! $required !!}</label>
+                                                                                <input  class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
+                                                                                       type="text"
+                                                                                       name="middle_name"
+                                                                                       id="middle_name"
+                                                                                       value="{{ old('middle_name') }}"
+                                                                                       placeholder="Middle Name"
+                                                                                       required
+                                                                                       autofocus
+                                                                                />
+                                                                                @error('middle_name')
                                                                                     <p class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">{{ $message }}</p>
-                                                                                    @enderror
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-span-12 md:col-span-6">
-                                                                                <div class="mb-3">
-                                                                                    <label for="middle_name" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Middle Name {!! $required !!}</label>
-                                                                                    <input  class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
-                                                                                           type="text"
-                                                                                           name="middle_name"
-                                                                                           id="middle_name"
-                                                                                           value="{{ old('middle_name') }}"
-                                                                                           placeholder="Middle Name"
-                                                                                           required
-                                                                                           autofocus
-                                                                                    />
-                                                                                    @error('middle_name')
-                                                                                        <p class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">{{ $message }}</p>
-                                                                                    @enderror
-                                                                                </div>
+                                                                                @enderror
                                                                             </div>
                                                                         </div>
-                                                                        <div class="grid grid-cols-12 gap-x-5">
-                                                                            <div class="col-span-12 md:col-span-6">
-                                                                                <div class="mb-3">
-                                                                                    <label for="email" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Email {!! $required !!}</label>
-                                                                                    <input class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
-                                                                                           type="email"
-                                                                                           name="email"
-                                                                                           id="email"
-                                                                                           value="{{ old('email') }}"
-                                                                                           placeholder="Email"
-                                                                                           required
-                                                                                           autofocus
-                                                                                    />
-                                                                                    @error('middle_name')
-                                                                                        <p class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">{{ $message }}</p>
-                                                                                    @enderror
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-span-12 md:col-span-6">
-                                                                                <div class="mb-3">
-                                                                                    <label for="phone_number" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Phone {!! $required !!}</label>
-                                                                                    <input class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
-                                                                                           type="number"
-                                                                                           name="phone_number"
-                                                                                           id="phone_number"
-                                                                                           value="{{ old('phone_number') }}"
-                                                                                           placeholder="eg. 097 0012 457"
-                                                                                           required
-                                                                                           autofocus
-                                                                                    />
-                                                                                    @error('phone_number')
-                                                                                        <p class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">{{ $message }}</p>
-                                                                                    @enderror
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="grid grid-cols-12 gap-x-5">
-                                                                            <div class="col-span-12 md:col-span-6">
-                                                                                    <div class="mb-3">
-                                                                                        <label for="gender" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Gender {!! $required !!}</label>
-                                                                                        <select class="text-gray-700 rounded border-gray-400 dark:bg-zink-700 dark:text-zink-200 dark:border-zink-50  dark:placeholder:text-zink-200 w-full border py-2 px-3 "
-                                                                                                name="gender"
-                                                                                                id="gender"
-                                                                                        >
-                                                                                            <option selected>Gender</option>
-                                                                                            <option value="m">M</option>
-                                                                                            <option value="f">F</option>
-                                                                                        </select>
-                                                                                    </div>
-                                                                            </div>
-                                                                            <div class="col-span-12 md:col-span-6">
-                                                                                    <div class="mb-3">
-                                                                                        <label for="gender" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Choose the department {!! $required !!}</label>
-                                                                                        <select class="text-gray-700 rounded border-gray-400 dark:bg-zink-700 dark:text-zink-200 dark:border-zink-50  dark:placeholder:text-zink-200 w-full border py-2 px-3 "
-                                                                                                name="gender"
-                                                                                                id="gender"
-                                                                                        >
-                                                                                            <option selected>Department</option>
-                                                                                            <option value="drh">DRH</option>
-                                                                                        </select>
-                                                                                    </div>
-                                                                            </div>
-
-                                                                        </div>
-                                                                        <div class="grid grid-cols-12 gap-x-5">
-                                                                            <div class="col-span-12 md:col-span-6">
-                                                                                <div class="mb-3">
-                                                                                    <label for="number_of_dependant_children" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Dependant children {!! $required !!}</label>
-                                                                                    <input  class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
-                                                                                            type="number"
-                                                                                            name="number_of_dependant_children"
-                                                                                            id="number_of_dependant_children"
-                                                                                            placeholder="number of dependant children"
-                                                                                            value="{{ old('number_of_dependant_children') }}"
-                                                                                            required
-                                                                                            autofocus
-                                                                                    />
-                                                                                    @error('number_of_dependant_children')
+                                                                    </div>
+                                                                    <div class="grid grid-cols-12 gap-x-5">
+                                                                        <div class="col-span-12 md:col-span-6">
+                                                                            <div class="mb-3">
+                                                                                <label for="email" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Email {!! $required !!}</label>
+                                                                                <input class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
+                                                                                       type="email"
+                                                                                       name="email"
+                                                                                       id="email"
+                                                                                       value="{{ old('email') }}"
+                                                                                       placeholder="Email"
+                                                                                       required
+                                                                                       autofocus
+                                                                                />
+                                                                                @error('middle_name')
                                                                                     <p class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">{{ $message }}</p>
-                                                                                    @enderror
-                                                                                </div>
+                                                                                @enderror
                                                                             </div>
-                                                                            <div class="col-span-12 md:col-span-6">
-                                                                                <div class="mb-3">
-                                                                                    <label for="photo" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Upload picture employee {!! $required !!}</label>
-                                                                                    <input class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
-                                                                                           type="file"
-                                                                                           name="photo"
-                                                                                           id="photo"
-                                                                                           required
-                                                                                           autofocus
-                                                                                    />
-                                                                                </div>
-                                                                            </div>
-
                                                                         </div>
-                                                                        <div class="grid grid-cols-12 gap-x-5">
-                                                                            <div class="col-span-12">
+                                                                        <div class="col-span-12 md:col-span-6">
+                                                                            <div class="mb-3">
+                                                                                <label for="phone_number" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Phone {!! $required !!}</label>
+                                                                                <input class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
+                                                                                       type="number"
+                                                                                       name="phone_number"
+                                                                                       id="phone_number"
+                                                                                       value="{{ old('phone_number') }}"
+                                                                                       placeholder="eg. 097 0012 457"
+                                                                                       required
+                                                                                       autofocus
+                                                                                />
+                                                                                @error('phone_number')
+                                                                                    <p class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">{{ $message }}</p>
+                                                                                @enderror
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="grid grid-cols-12 gap-x-5">
+                                                                        <div class="col-span-12 md:col-span-6">
                                                                                 <div class="mb-3">
-                                                                                    <label for="address" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Address</label>
-                                                                                    <textarea id="address" class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200" grids="2"
-                                                                                              placeholder="Enter your Address"
-                                                                                              name="address"
-                                                                                              required
-                                                                                              autofocus
+                                                                                    <label for="gender" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Gender {!! $required !!}</label>
+                                                                                    <select class="text-gray-700 rounded border-gray-400 dark:bg-zink-700 dark:text-zink-200 dark:border-zink-50  dark:placeholder:text-zink-200 w-full border py-2 px-3 "
+                                                                                            name="gender"
+                                                                                            id="gender"
                                                                                     >
-                                                                                    </textarea>
+                                                                                        <option selected>Gender</option>
+                                                                                        <option value="m">M</option>
+                                                                                        <option value="f">F</option>
+                                                                                    </select>
                                                                                 </div>
+                                                                        </div>
+                                                                        <div class="col-span-12 md:col-span-6">
+                                                                                <div class="mb-3">
+                                                                                    <label for="department" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Choose the department {!! $required !!}</label>
+                                                                                    <select class="text-gray-700 rounded border-gray-400 dark:bg-zink-700 dark:text-zink-200 dark:border-zink-50  dark:placeholder:text-zink-200 w-full border py-2 px-3 "
+                                                                                            name="department"
+                                                                                            id="department"
+                                                                                    >
+                                                                                        <option selected>Department</option>
+                                                                                        <option value="drh">DRH</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="grid grid-cols-12 gap-x-5">
+                                                                        <div class="col-span-12 md:col-span-6">
+                                                                            <div class="mb-3">
+                                                                                <label for="base_salary" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Dependant children {!! $required !!}</label>
+                                                                                <input  class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
+                                                                                        type="number"
+                                                                                        name="base_salary"
+                                                                                        id="base_salary"
+                                                                                        placeholder="Base salary"
+                                                                                        value="{{ old('base_salary') }}"
+                                                                                        required
+                                                                                        autofocus
+                                                                                />
+                                                                                @error('base_salary')
+                                                                                <p class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">{{ $message }}</p>
+                                                                                @enderror
                                                                             </div>
                                                                         </div>
-                                                                    </form>
+                                                                        <div class="col-span-12 md:col-span-6">
+                                                                            <div class="mb-3">
+                                                                                <label for="number_of_dependant_children" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Dependant children {!! $required !!}</label>
+                                                                                <input  class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
+                                                                                        type="number"
+                                                                                        name="number_of_dependant_children"
+                                                                                        id="number_of_dependant_children"
+                                                                                        placeholder="number of dependant children"
+                                                                                        value="{{ old('number_of_dependant_children') }}"
+                                                                                        required
+                                                                                        autofocus
+                                                                                />
+                                                                                @error('number_of_dependant_children')
+                                                                                <p class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">{{ $message }}</p>
+                                                                                @enderror
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-span-12 md:col-span-6">
+                                                                            <div class="mb-3">
+                                                                                <label for="photo" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Upload picture employee {!! $required !!}</label>
+                                                                                <input class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200"
+                                                                                       type="file"
+                                                                                       name="photo"
+                                                                                       id="photo"
+                                                                                       required
+                                                                                       autofocus
+                                                                                />
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="grid grid-cols-12 gap-x-5">
+                                                                        <div class="col-span-12">
+                                                                            <div class="mb-3">
+                                                                                <label for="address" class="block font-medium text-13 text-gray-600 mb-2 dark:text-zink-200">Address</label>
+                                                                                <textarea id="address" class="dark:bg-transparent dark:border-zink-50 dark:placeholder:text-zink-200 w-full border py-2 px-3 placeholder:text-gray-600 rounded border-gray-400 placeholder:text-13 focus:border focus:border-gray-400 focus:ring-0 focus:outline-none text-gray-600 dark:text-zink-200" grids="2"
+                                                                                          placeholder="Enter your Address"
+                                                                                          name="address"
+                                                                                          required
+                                                                                          autofocus
+                                                                                >
+                                                                                </textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </section>
                                                             </div>
 
+                                                            <div>
+                                                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">save</button>
+                                                            </div>
                                                         </div>
                                                         <!-- end card body -->
                                                     </div>
@@ -277,7 +295,7 @@
 <script src="{{ asset('assets/libs/jquery-steps/build/jquery.steps.min.js')}}"></script>
 
 <!-- form wizard init -->
-<script src="{{ asset('assets/js/pages/form-wizard.init.js')}}"></script>
+{{--<script src="{{ asset('assets/js/pages/form-wizard.init.js')}}"></script>--}}
 
 <!-- App js -->
 <script src="{{asset('assets/js/app.js')}}"></script>

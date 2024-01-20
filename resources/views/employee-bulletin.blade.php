@@ -53,7 +53,7 @@
         </tr>
         <tr>
             <td class="border p-2">Emploi et Catégorie</td>
-            <td class="border p-2" colspan="2">{{ $employee->categorie }}</td>
+            <td class="border p-2" colspan="2">{{ $employee->categorie ?? "Travailleur" }}</td>
         </tr>
         <tr>
             <td class="border p-2">Numéro d'immatriculation à la sécurité sociale</td>
@@ -120,28 +120,28 @@
         <tr>
             <td class="border p-2" rowspan="3">Congés payés</td>
             <td class="border p-2" >Jours</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $avantages_et_absences->paid_leave_days }}</td>
         </tr>
         <tr>
             <td class="border p-2" >Taux</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $avantages_et_absences->paid_leave_rate }}</td>
         </tr>
         <tr>
             <td class="border p-2 font-bold" >Total du</td>
-            <td class="border p-2 font-bold" > {{'$' . $total_salary }} </td>
+            <td class="border p-2 font-bold" > {{ $avantages_et_absences->paid_leave_total }} </td>
         </tr>
         <tr>
             <td class="border p-2" rowspan="3">Maladie ou accident</td>
             <td class="border p-2" >Jours payés aux 2/3</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $avantages_et_absences->sickness_or_accident_days }}</td>
         </tr>
         <tr>
             <td class="border p-2" >Taux journalier</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $avantages_et_absences->sickness_or_accident_rate }}</td>
         </tr>
         <tr>
             <td class="border p-2 font-bold" >Total du</td>
-            <td class="border p-2 font-bold" ></td>
+            <td class="border p-2 font-bold" >{{ $avantages_et_absences->sickness_or_accident_total }}</td>
         </tr>
 
         <tr>
@@ -149,7 +149,7 @@
 
         <tr>
             <td class="border p-2 font-bold">Total brut du</td>
-            <td class="border p-2" colspan="2"></td>
+            <td class="border p-2" colspan="2">{{ $total_gross_due->total }}</td>
         </tr>
 
         <tr>
@@ -158,27 +158,27 @@
         <tr>
             <td class="border p-2" rowspan="5">Déductions</td>
             <td class="border p-2" >Pension</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $deductions->pension }}</td>
         </tr>
         <tr>
             <td class="border p-2" >Indemnités Compensatrices</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $deductions->compensation }}</td>
         </tr>
         <tr>
             <td class="border p-2  " >Avances</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $deductions->advances }}</td>
         </tr>
         <tr>
             <td class="border p-2  " >Divers</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $deductions->other }}</td>
         </tr>
         <tr>
             <td class="border p-2  " >Retenues fiscales</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $deductions->tax }}</td>
         </tr>
         <tr>
             <td class="border p-2 font-bold " >Total des déductions</td>
-            <td class="border p-2" colspan="2" ></td>
+            <td class="border p-2" colspan="2" >{{ $deductions->total }}</td>
         </tr>
 
         <tr>
@@ -188,31 +188,32 @@
         <tr>
             <td class="border p-2" rowspan="4">Allocations Familiales</td>
             <td class="border p-2" >Nombre d'enfant bénéficiaire</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $family_allowance->children_beneficiary_count }}</td>
         </tr>
         <tr>
             <td class="border p-2" >Nombre de jours</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $family_allowance->days }}</td>
         </tr>
         <tr>
             <td class="border p-2  " >Taux Journalier</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $family_allowance->rate }}</td>
         </tr>
         <tr>
             <td class="border p-2 font-bold " >Total à payer</td>
-            <td class="border p-2" ></td>
+            <td class="border p-2" >{{ $family_allowance->total }}</td>
         </tr>
         <tr>
             <th class=" p-2 bg-gray-200" colspan="3">Total Net à Payer </th>
         <tr>
             <td class="border p-2 font-bold " >Net a payer </td>
-            <td class="border p-2" colspan="2"></td>
+            <td class="border p-2" colspan="2">{{ $net_pay->total }}</td>
         </tr>
         <tr>
             <th class=" p-2 bg-gray-200" colspan="3">Montant des cotisations INSS</th>
         <tr>
         <tr>
             <td class="border p-2 font-bold " >Montant pris en consideration pour le calcul des cotisitions INSS </td>
+            <td class="border p-2 " colspan="2" >{{ $inss_contribution_base->total }} </td>
         </tr>
         <tr>
             <th class=" p-2 bg-gray-200" colspan="3">Observations</th>

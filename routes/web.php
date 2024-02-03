@@ -71,4 +71,4 @@ Route::get('/cnss/download', function ()
     {
         return Excel::download(new \App\Exports\CnssExport, 'cnss.xlsx');
     }
-);
+)->name('cnss_all_download');

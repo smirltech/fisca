@@ -22,7 +22,8 @@ class Employee extends Model
         'matriculate',
         'base_salary',
         'payed',
-        'commune',
+        'address',
+        'order_number'
     ];
 
 }

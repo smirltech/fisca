@@ -27,7 +27,7 @@ class EmployeeController extends Controller
             ->count('id');
 
         return view('index', [
-            'employees' =>DB::table('employees')->paginate(10),
+            'employees' =>DB::table('employees')->orderByDesc('id')->paginate(10),
             'salaryToBePaid' => $salaryToBePaid,
             'pendingAgent' => $pendingAgent,
             'number_of_payed_agents' => DB::table('employees')->where('payed', '=', '1')->count('id'),
@@ -48,6 +48,7 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
+            'order_number' => 'required',
             'first_name' => 'required',
             'last_name' => 'required',
             'middle_name' => 'required',
@@ -57,14 +58,14 @@ class EmployeeController extends Controller
             'department' => 'required',
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'base_salary' => 'required|numeric',
-            'payed' => 'required|boolean',
-            'commune' => 'required',
+            'address' => 'required',
         ]);
 
 
 
         $validate['photo'] = $request->file('photo')->store('photos', 'public');
         $validate['matriculate'] = str(now()->year)->substr(2, 2) . str($validate['first_name'])->substr(0, 1)->upper() . str($validate['last_name'])->substr(0, 1)->upper() . str($validate['middle_name'])->substr(0, 1)->upper() . DB::table('employees')->latest('id')->first()->id + 1   ;
+        $validate['payed'] = 0;
 
        Employee::create($validate);
 

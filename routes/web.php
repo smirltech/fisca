@@ -8,6 +8,7 @@ use App\Http\Controllers\PaySlipController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SalaryController;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,3 +66,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/employees/{employee_id}/over_times/create', [OverTimeController::class, 'create'])->name('over_times.create');
     Route::post('/employees/{employee_id}/over_times/store', [OverTimeController::class, 'store'])->name('over_times.store');
 });
+
+Route::get('/cnss/download', function ()
+    {
+        return Excel::download(new \App\Exports\CnssExport, 'cnss.xlsx');
+    }
+);

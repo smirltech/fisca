@@ -132,12 +132,6 @@
     @keydown.escape="closeSideMenu"
 >
     <div class="py-4 text-gray-500 dark:text-gray-400">
-        <a
-            class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
-            href="#"
-        >
-            Windmill
-        </a>
         <ul class="mt-6">
             <li class="relative px-6 py-3">
               <span

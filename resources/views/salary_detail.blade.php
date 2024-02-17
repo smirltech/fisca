@@ -300,13 +300,6 @@
                             Bulletin
                         </button>
                     </a>
-                    <a href="{{ route('cnss.create', ['employee_id' => $employee->id]) }}">
-                        <button
-                            class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                        >
-                            CNSS
-                        </button>
-                    </a>
                     <a href="{{ route('pay_slips.create', ['employee_id' => $employee->id]) }}">
                         <button
                             class="px-4 py-2  text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"

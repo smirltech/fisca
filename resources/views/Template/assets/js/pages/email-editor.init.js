@@ -6,9 +6,9 @@ Contact: themesbrand@gmail.com
 File: Email summernote Js File
 */
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-    if($("#email-editor ").length > 0){
+    if ($("#email-editor ").length > 0) {
         tinymce.init({
             selector: "textarea#email-editor",
             height: 200,

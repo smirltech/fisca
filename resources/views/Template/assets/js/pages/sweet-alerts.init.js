@@ -61,16 +61,16 @@ File: Sweetalert Js File
                 confirmButtonColor: "#34c38f",
                 cancelButtonColor: "#f46a6a",
                 confirmButtonText: "Yes, delete it!"
-              }).then(function (result) {
+            }).then(function (result) {
                 if (result.value) {
-                  Swal.fire("Deleted!", "Your file has been deleted.", "success");
+                    Swal.fire("Deleted!", "Your file has been deleted.", "success");
                 }
             });
         });
 
         //Parameter
         $('#sa-params').click(function () {
-			Swal.fire({
+            Swal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",
                 icon: 'warning',
@@ -83,21 +83,21 @@ File: Sweetalert Js File
             }).then(function (result) {
                 if (result.value) {
                     Swal.fire({
-                      title: 'Deleted!',
-                      text: 'Your file has been deleted.',
-                      icon: 'success',
-                      confirmButtonColor: "#34c38f",
+                        title: 'Deleted!',
+                        text: 'Your file has been deleted.',
+                        icon: 'success',
+                        confirmButtonColor: "#34c38f",
                     })
-                  } else if (
+                } else if (
                     // Read more about handling dismissals
                     result.dismiss === Swal.DismissReason.cancel
-                  ) {
+                ) {
                     Swal.fire({
-                      title: 'Cancelled',
-                      text: 'Your imaginary file is safe :)',
-                      icon: 'error'
+                        title: 'Cancelled',
+                        text: 'Your imaginary file is safe :)',
+                        icon: 'error'
                     })
-                  }
+                }
             });
         });
 
@@ -112,35 +112,34 @@ File: Sweetalert Js File
                 animation: false
             })
         });
-		
+
         //Auto Close Timer
         $('#sa-close').click(function () {
             var timerInterval;
             Swal.fire({
-            title: 'Auto close alert!',
-            html: 'I will close in <strong></strong> seconds.',
-            timer: 2000,
-            confirmButtonColor: "#5b73e8",
-            onBeforeOpen:function () {
-                Swal.showLoading()
-                timerInterval = setInterval(function() {
-                Swal.getContent().querySelector('strong')
-                    .textContent = Swal.getTimerLeft()
-                }, 100)
-            },
-            onClose: function () {
-                clearInterval(timerInterval)
-            }
+                title: 'Auto close alert!',
+                html: 'I will close in <strong></strong> seconds.',
+                timer: 2000,
+                confirmButtonColor: "#5b73e8",
+                onBeforeOpen: function () {
+                    Swal.showLoading()
+                    timerInterval = setInterval(function () {
+                        Swal.getContent().querySelector('strong')
+                            .textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                onClose: function () {
+                    clearInterval(timerInterval)
+                }
             }).then(function (result) {
-            if (
-                // Read more about handling dismissals
-                result.dismiss === Swal.DismissReason.timer
-            ) {
-                console.log('I was closed by the timer')
-            }
+                if (
+                    // Read more about handling dismissals
+                    result.dismiss === Swal.DismissReason.timer
+                ) {
+                    console.log('I was closed by the timer')
+                }
             })
         });
-
 
 
         //custom html alert
@@ -149,8 +148,8 @@ File: Sweetalert Js File
                 title: '<i>HTML</i> <u>example</u>',
                 icon: 'info',
                 html: 'You can use <b>bold text</b>, ' +
-                '<a href="//Themesbrand.in/">links</a> ' +
-                'and other HTML tags',
+                    '<a href="//Themesbrand.in/">links</a> ' +
+                    'and other HTML tags',
                 showCloseButton: true,
                 showCancelButton: true,
                 confirmButtonClass: 'btn btn-success',
@@ -227,26 +226,26 @@ File: Sweetalert Js File
                 confirmButtonColor: "#5b73e8",
                 cancelButtonColor: "#74788d",
                 progressSteps: ['1', '2', '3']
-              }).queue([
+            }).queue([
                 {
-                  title: 'Question 1',
-                  text: 'Chaining swal2 modals is easy'
+                    title: 'Question 1',
+                    text: 'Chaining swal2 modals is easy'
                 },
                 'Question 2',
                 'Question 3'
-              ]).then( function (result) {
+            ]).then(function (result) {
                 if (result.value) {
-                  Swal.fire({
-                    title: 'All done!',
-                    html:
-                      'Your answers: <pre><code>' +
-                        JSON.stringify(result.value) +
-                      '</code></pre>',
-                    confirmButtonText: 'Lovely!',
-                    confirmButtonColor: "#34c38f",
-                  })
+                    Swal.fire({
+                        title: 'All done!',
+                        html:
+                            'Your answers: <pre><code>' +
+                            JSON.stringify(result.value) +
+                            '</code></pre>',
+                        confirmButtonText: 'Lovely!',
+                        confirmButtonColor: "#34c38f",
+                    })
                 }
-              })
+            })
         });
 
         //Danger
@@ -256,7 +255,7 @@ File: Sweetalert Js File
                 confirmButtonColor: "#5b73e8",
                 confirmButtonText: 'Show my public IP',
                 text: 'Your public IP will be received ' +
-                'via AJAX request',
+                    'via AJAX request',
                 showLoaderOnConfirm: true,
                 preConfirm: function () {
                     return new Promise(function (resolve) {

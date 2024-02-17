@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\Employee;
 use App\Models\OverTime;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OverTimeFactory extends Factory

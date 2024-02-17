@@ -6,6 +6,6 @@ Contact: themesbrand@gmail.com
 File: Form mask Js File
 */
 
-$(document).ready(function(){
+$(document).ready(function () {
     $(".input-mask").inputmask();
 });

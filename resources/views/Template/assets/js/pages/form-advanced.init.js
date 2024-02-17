@@ -9,7 +9,8 @@ File: Form Advanced Js File
 !function ($) {
     "use strict";
 
-    var AdvancedForm = function () { };
+    var AdvancedForm = function () {
+    };
 
     AdvancedForm.prototype.init = function () {
 
@@ -102,13 +103,13 @@ File: Form Advanced Js File
                 '<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase() + '.png" class="img-flag" /> ' + state.text + '</span>'
             );
             return $state;
-        };
+        }
 
         $(".select2-templating").select2({
             templateResult: formatState
         });
 
-       
+
     },
         //init
         $.AdvancedForm = new AdvancedForm, $.AdvancedForm.Constructor = AdvancedForm

@@ -51,53 +51,53 @@ var defaultEvents = [{
     start: new Date(y, m, 1),
     className: 'text-white p-1 border-transparent bg-violet-500'
 },
-{
-    title: 'Long Event',
-    start: new Date(y, m, d - 5),
-    end: new Date(y, m, d - 2),
-    className: 'text-white p-1 border-transparent bg-yellow-500'
-},
-{
-    id: 999,
-    title: 'Repeating Event',
-    start: new Date(y, m, d - 3, 16, 0),
-    allDay: false,
-    className: 'text-white p-1 border-transparent bg-sky-500'
-},
-{
-    id: 999,
-    title: 'Repeating Event',
-    start: new Date(y, m, d + 4, 16, 0),
-    allDay: false,
-    className: 'text-white p-1 border-transparent bg-violet-500'
-},
-{
-    title: 'Meeting',
-    start: new Date(y, m, d, 10, 30),
-    allDay: false,
-    className: 'text-white p-1 border-transparent bg-green-500'
-},
-{
-    title: 'Lunch',
-    start: new Date(y, m, d, 12, 0),
-    end: new Date(y, m, d, 14, 0),
-    allDay: false,
-    className: 'text-white p-1 border-transparent bg-red-500'
-},
-{
-    title: 'Birthday Party',
-    start: new Date(y, m, d + 1, 19, 0),
-    end: new Date(y, m, d + 1, 22, 30),
-    allDay: false,
-    className: 'text-white p-1 border-transparent bg-green-500'
-},
-{
-    title: 'Click for Google',
-    start: new Date(y, m, 28),
-    end: new Date(y, m, 29),
-    url: 'http://google.com/',
-    className: 'text-white p-1 border-transparent bg-zinc-800'
-}];
+    {
+        title: 'Long Event',
+        start: new Date(y, m, d - 5),
+        end: new Date(y, m, d - 2),
+        className: 'text-white p-1 border-transparent bg-yellow-500'
+    },
+    {
+        id: 999,
+        title: 'Repeating Event',
+        start: new Date(y, m, d - 3, 16, 0),
+        allDay: false,
+        className: 'text-white p-1 border-transparent bg-sky-500'
+    },
+    {
+        id: 999,
+        title: 'Repeating Event',
+        start: new Date(y, m, d + 4, 16, 0),
+        allDay: false,
+        className: 'text-white p-1 border-transparent bg-violet-500'
+    },
+    {
+        title: 'Meeting',
+        start: new Date(y, m, d, 10, 30),
+        allDay: false,
+        className: 'text-white p-1 border-transparent bg-green-500'
+    },
+    {
+        title: 'Lunch',
+        start: new Date(y, m, d, 12, 0),
+        end: new Date(y, m, d, 14, 0),
+        allDay: false,
+        className: 'text-white p-1 border-transparent bg-red-500'
+    },
+    {
+        title: 'Birthday Party',
+        start: new Date(y, m, d + 1, 19, 0),
+        end: new Date(y, m, d + 1, 22, 30),
+        allDay: false,
+        className: 'text-white p-1 border-transparent bg-green-500'
+    },
+    {
+        title: 'Click for Google',
+        start: new Date(y, m, 28),
+        end: new Date(y, m, 29),
+        url: 'http://google.com/',
+        className: 'text-white p-1 border-transparent bg-zinc-800'
+    }];
 
 function addNewEvent(info) {
     formEvent.classList.remove("was-validated");
@@ -105,7 +105,7 @@ function addNewEvent(info) {
     selectedEvent = null;
     modalTitle.innerText = 'Add Event';
     newEventData = info;
-document.querySelector("#btn-delete-event").classList.add("hidden")
+    document.querySelector("#btn-delete-event").classList.add("hidden")
 
 }
 
@@ -134,8 +134,8 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
     }, drop: function (info) {
         // is the "remove after drop" checkbox checked?
         // if (checkbox.checked) {
-            // if so, remove the element from the "Draggable Events" list
-            // info.draggedEl.parentNode.removeChild(info.draggedEl);
+        // if so, remove the element from the "Draggable Events" list
+        // info.draggedEl.parentNode.removeChild(info.draggedEl);
         // }
     },
     // businessHours: getBusinessHours(), // Set initial business hours
@@ -165,7 +165,7 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
         newEventData = null;
         modalTitle.innerText = 'Edit Event';
         newEventData = null;
-document.querySelector("#btn-delete-event").classList.remove("hidden")
+        document.querySelector("#btn-delete-event").classList.remove("hidden")
 
     },
     dateClick: function (info) {
@@ -175,7 +175,6 @@ document.querySelector("#btn-delete-event").classList.remove("hidden")
     events: defaultEvents
 });
 calendar.render();
-
 
 
 /*Add new event*/
@@ -212,6 +211,7 @@ document.getElementById("btn-delete-event").addEventListener("click", function (
         document.getElementById("eventModal-close").click();
     }
 });
+
 // localization
 function changeLocale() {
     var selectedLocale = document.getElementById('localization-category').value;

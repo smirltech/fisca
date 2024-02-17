@@ -77,8 +77,6 @@ var swiper = new Swiper(".fadeeffect", {
 });
 
 
-
-
 // countdown
 
 // (function () {

@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CNSSData;
 use App\Models\Employee;
 use Dompdf\Dompdf;
-use Faker\Core\Number;
 use Faker\Factory;
 use Illuminate\Support\Facades\DB;
 use stdClass;
@@ -25,26 +23,8 @@ class EmployeeBulletinController extends Controller
         return $this->getView($employee);
     }
 
-    public function download($employee_id)
+    private function getView($employee, $download = false)
     {
-        $employee = Employee::find($employee_id);
-
-        // If employee not found, return 404 error
-        if (is_null($employee)) {
-            abort(404, 'Employee not found');
-        }
-
-        $view = $this->getView($employee, true)->render();
-
-        $dompdf = new Dompdf();
-        $dompdf->loadHtml($view);
-        $dompdf->setPaper('A5', 'portrait');
-
-        $dompdf->render();
-        $dompdf->stream(strtolower($employee->full_name) . 'bulletin.pdf', ['Attachment' => true]);
-    }
-
-    private function getView($employee, $download = false){
         $full_name = $employee->first_name . ' ' . $employee->last_name . ' ' . $employee->middle_name;
 
         $social_security_number = DB::table('cnss_data')->where('employee_id', '=', $employee->id)->first()?->social_security_number ?? 'N/A';
@@ -167,7 +147,7 @@ class EmployeeBulletinController extends Controller
         return $deductions;
     }
 
-    public function getFamilyAllowance($salary, )
+    public function getFamilyAllowance($salary,)
     {
         $faker = new Factory();
         $family_allowance = new stdClass();
@@ -193,5 +173,24 @@ class EmployeeBulletinController extends Controller
         $inss_contribution_base->total = $salary->total + $overtimes->total + $supp_and_bonus->total + $avantages_et_absences->paid_leave_total + $avantages_et_absences->sickness_or_accident_total;
 
         return $inss_contribution_base;
+    }
+
+    public function download($employee_id)
+    {
+        $employee = Employee::find($employee_id);
+
+        // If employee not found, return 404 error
+        if (is_null($employee)) {
+            abort(404, 'Employee not found');
+        }
+
+        $view = $this->getView($employee, true)->render();
+
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        $dompdf->setPaper('A5', 'portrait');
+
+        $dompdf->render();
+        $dompdf->stream(strtolower($employee->full_name) . 'bulletin.pdf', ['Attachment' => true]);
     }
 }

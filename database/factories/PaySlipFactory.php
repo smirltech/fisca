@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\PaySlip;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PaySlip>
+ * @extends Factory<PaySlip>
  */
 class PaySlipFactory extends Factory
 {

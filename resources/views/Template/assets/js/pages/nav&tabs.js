@@ -1,6 +1,6 @@
-// 
+//
 // nav-tabs
-// 
+//
 document.querySelectorAll(".nav-tabs").forEach(function (elem) {
     elem.querySelectorAll('[data-tw-toggle="tab"]').forEach(function (item) {
         item.addEventListener("click", function () {
@@ -48,6 +48,7 @@ document.querySelectorAll(".nav-tabs").forEach(function (elem) {
         });
     });
 });
+
 // Active link on scroll
 function setActiveTab() {
     const scrollY = window.scrollY;
@@ -59,7 +60,7 @@ function setActiveTab() {
 
         if (
             section.offsetTop <= scrollY &&
-            section.offsetTop + section.offsetHeight - 100  > scrollY
+            section.offsetTop + section.offsetHeight - 100 > scrollY
         ) {
 
             link.classList.add("active");
@@ -68,13 +69,14 @@ function setActiveTab() {
         }
     });
 }
+
 if (window.location.href == " http://localhost:8081/crypto-ico-landing.html") {
-    
+
     window.addEventListener("scroll", setActiveTab);
 }
-// 
+//
 // accordion
-// 
+//
 document.querySelectorAll('[data-tw-accordion="collapse"]').forEach(function (elem) {
     elem.querySelectorAll(".accordion-item").forEach(function (item) {
         item.querySelector(".accordion-header").addEventListener("click", function (event) {
@@ -112,10 +114,10 @@ function dismissCollapse(test) {
 document.querySelector("#buy")?.addEventListener("click", () => {
     document.querySelector("#currencyHidden1").classList.remove('hidden')
     document.querySelector("#currencyHidden2").classList.add('hidden')
-    
+
 })
 document.querySelector("#sell")?.addEventListener("click", () => {
     document.querySelector("#currencyHidden2").classList.remove('hidden')
     document.querySelector("#currencyHidden1").classList.add('hidden')
-    
+
 })

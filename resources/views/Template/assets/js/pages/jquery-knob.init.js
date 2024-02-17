@@ -6,6 +6,6 @@ Contact: themesbrand@gmail.com
 File: Jquery knob init Js File
 */
 
-$(function() {
+$(function () {
     $(".knob").knob();
 });

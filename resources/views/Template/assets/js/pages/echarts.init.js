@@ -86,7 +86,7 @@ if (lineChartColors) {
         }],
         color: lineChartColors,
     };
-    ;
+
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
@@ -127,16 +127,16 @@ if (mixLineChartColors) {
             left: 0,
             top: 20,
             feature: {
-                dataView: { readOnly: false, title: "Data View" },
-                magicType: { type: ['line', 'bar'], title: { line: "For line chart", bar: "For bar chart" } },
-                restore: { title: "restore" },
-                saveAsImage: { title: "Download Image" }
+                dataView: {readOnly: false, title: "Data View"},
+                magicType: {type: ['line', 'bar'], title: {line: "For line chart", bar: "For bar chart"}},
+                restore: {title: "restore"},
+                saveAsImage: {title: "Download Image"}
             }
         },
         color: mixLineChartColors,
         legend: {
             data: ['Evaporation', 'Precipitation', 'Average temperature'],
-            textStyle: { color: '#8791af' }
+            textStyle: {color: '#8791af'}
         },
         xAxis: [
             {
@@ -213,7 +213,7 @@ if (mixLineChartColors) {
             }
         ]
     };
-    ;
+
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
@@ -236,7 +236,7 @@ if (doughnutChartColors) {
             orient: 'vertical',
             x: 'left',
             data: ['Laptop', 'Tablet', 'Mobile', 'Others', 'Desktop'],
-            textStyle: { color: '#8791af' }
+            textStyle: {color: '#8791af'}
         },
         color: doughnutChartColors,
         series: [
@@ -264,16 +264,16 @@ if (doughnutChartColors) {
                     }
                 },
                 data: [
-                    { value: 335, name: 'Laptop' },
-                    { value: 310, name: 'Tablet' },
-                    { value: 234, name: 'Mobile' },
-                    { value: 135, name: 'Others' },
-                    { value: 1548, name: 'Desktop' }
+                    {value: 335, name: 'Laptop'},
+                    {value: 310, name: 'Tablet'},
+                    {value: 234, name: 'Mobile'},
+                    {value: 135, name: 'Others'},
+                    {value: 1548, name: 'Desktop'}
                 ]
             }
         ]
     };
-    ;
+
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
@@ -295,7 +295,7 @@ if (pieChartColors) {
             orient: 'vertical',
             left: 'left',
             data: ['Laptop', 'Tablet', 'Mobile', 'Others', 'Desktop'],
-            textStyle: { color: '#8791af' }
+            textStyle: {color: '#8791af'}
         },
         color: pieChartColors,
         series: [
@@ -305,11 +305,11 @@ if (pieChartColors) {
                 radius: '55%',
                 center: ['50%', '60%'],
                 data: [
-                    { value: 335, name: 'Laptop' },
-                    { value: 310, name: 'Tablet' },
-                    { value: 234, name: 'Mobile' },
-                    { value: 135, name: 'Others' },
-                    { value: 1548, name: 'Desktop' }
+                    {value: 335, name: 'Laptop'},
+                    {value: 310, name: 'Tablet'},
+                    {value: 234, name: 'Mobile'},
+                    {value: 135, name: 'Others'},
+                    {value: 1548, name: 'Desktop'}
                 ],
                 itemStyle: {
                     emphasis: {
@@ -321,7 +321,7 @@ if (pieChartColors) {
             }
         ]
     };
-    ;
+
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
@@ -389,7 +389,7 @@ if (scatterChartColors) {
         }],
         color: scatterChartColors
     };
-    ;
+
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
@@ -471,14 +471,14 @@ if (bubbleChartColors) {
             itemStyle: {
                 normal: {
                     shadowBlur: 10,
-                    shadowColor: 'rgba('+bubbleChartColors[0]+', 0.5)',
+                    shadowColor: 'rgba(' + bubbleChartColors[0] + ', 0.5)',
                     shadowOffsetY: 5,
                     color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
                         offset: 0,
-                        color: 'rgba('+bubbleChartColors[0]+', 0.1)',
+                        color: 'rgba(' + bubbleChartColors[0] + ', 0.1)',
                     }, {
                         offset: 1,
-                        color: 'rgb('+bubbleChartColors[0]+')',
+                        color: 'rgb(' + bubbleChartColors[0] + ')',
                     }])
                 }
             }
@@ -501,19 +501,20 @@ if (bubbleChartColors) {
             itemStyle: {
                 normal: {
                     shadowBlur: 10,
-                    shadowColor: 'rgba('+bubbleChartColors[1]+', 0.5)',
+                    shadowColor: 'rgba(' + bubbleChartColors[1] + ', 0.5)',
                     shadowOffsetY: 5,
                     color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
                         offset: 0,
-                        color: 'rgba('+bubbleChartColors[1]+', 0.1)',
+                        color: 'rgba(' + bubbleChartColors[1] + ', 0.1)',
                     }, {
                         offset: 1,
-                        color: 'rgb('+bubbleChartColors[1]+')',
+                        color: 'rgb(' + bubbleChartColors[1] + ')',
                     }])
                 }
             }
         }]
-    };;
+    };
+
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
@@ -523,70 +524,70 @@ if (bubbleChartColors) {
 
 var candleStickChartColors = getChartColorsArray("candlestick-chart");
 if (candleStickChartColors) {
-var dom = document.getElementById("candlestick-chart");
-var myChart = echarts.init(dom);
-var app = {};
-option = null;
-option = {
-    // Setup grid
-    grid: {
-        zlevel: 0,
-        x: 50,
-        x2: 50,
-        y: 30,
-        y2: 30,
-        borderWidth: 0,
-        backgroundColor: 'rgba(0,0,0,0)',
-        borderColor: 'rgba(0,0,0,0)',
-    },
-    xAxis: {
-        data: ['2017-10-24', '2017-10-25', '2017-10-26', '2017-10-27'],
-        axisLine: {
-            lineStyle: {
-              color: '#8791af'
+    var dom = document.getElementById("candlestick-chart");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    option = {
+        // Setup grid
+        grid: {
+            zlevel: 0,
+            x: 50,
+            x2: 50,
+            y: 30,
+            y2: 30,
+            borderWidth: 0,
+            backgroundColor: 'rgba(0,0,0,0)',
+            borderColor: 'rgba(0,0,0,0)',
+        },
+        xAxis: {
+            data: ['2017-10-24', '2017-10-25', '2017-10-26', '2017-10-27'],
+            axisLine: {
+                lineStyle: {
+                    color: '#8791af'
+                },
+            },
+            splitLine: {
+                lineStyle: {
+                    color: "rgba(166, 176, 207, 0.1)"
+                }
             },
         },
-        splitLine: {
-            lineStyle: {
-                color:"rgba(166, 176, 207, 0.1)"
-            }
-        },
-    },
-    yAxis: {
-        axisLine: {
-            lineStyle: {
-              color: '#8791af'
+        yAxis: {
+            axisLine: {
+                lineStyle: {
+                    color: '#8791af'
+                },
+            },
+            splitLine: {
+                lineStyle: {
+                    color: "rgba(166, 176, 207, 0.1)"
+                }
             },
         },
-        splitLine: {
-            lineStyle: {
-                color:"rgba(166, 176, 207, 0.1)"
+        series: [{
+            type: 'k',
+            data: [
+                [20, 30, 10, 35],
+                [40, 35, 30, 55],
+                [33, 38, 33, 40],
+                [40, 40, 32, 42]
+            ],
+
+            itemStyle: {
+                normal: {
+                    color: candleStickChartColors[0],
+                    color0: candleStickChartColors[1],
+                    borderColor: candleStickChartColors[0],
+                    borderColor0: candleStickChartColors[1]
+                }
             }
-        },
-    },
-    series: [{
-        type: 'k',
-        data: [
-            [20, 30, 10, 35],
-            [40, 35, 30, 55],
-            [33, 38, 33, 40],
-            [40, 40, 32, 42]
-        ],
-        
-        itemStyle: {
-            normal: {
-                color: candleStickChartColors[0], 
-                color0: candleStickChartColors[1],
-                borderColor: candleStickChartColors[0],
-                borderColor0: candleStickChartColors[1]
-            }
-        }
-    }]
-};
-;
-if (option && typeof option === "object") {
-    myChart.setOption(option, true);
-}
+        }]
+    };
+
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
 }
 
 
@@ -652,7 +653,7 @@ if (gaugeChartColors) {
         option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
         myChart.setOption(option, true);
     }, 2000);
-    ;
+
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }

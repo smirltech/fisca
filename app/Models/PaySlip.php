@@ -18,6 +18,6 @@ class PaySlip extends Model
         'commission',
         'other_allowances',
         'fringe_benefit',
-        ];
+    ];
 
 }

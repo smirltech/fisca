@@ -2,10 +2,10 @@
 
 namespace App\Mail;
 
-use App\Http\Controllers\EmployeeBulletinController;
 use App\Models\Employee;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -18,7 +18,7 @@ class MailEmployee extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(protected  Employee $employee )
+    public function __construct(protected Employee $employee)
     {
 
     }
@@ -54,7 +54,7 @@ class MailEmployee extends Mailable
     /**
      * Get the attachments for the message.
      *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+     * @return array<int, Attachment>
      */
     public function attachments(): array
     {

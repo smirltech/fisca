@@ -17,14 +17,6 @@ class OverTimeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create($employee_id)
-    {
-        return view('over_times.create', compact('employee_id'));
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request, $employee_id)
@@ -42,6 +34,14 @@ class OverTimeController extends Controller
         OverTime::create($validated);
 
         return redirect()->route('salary.details', ['employee_id' => $employee_id])->with('success', 'Over time created successfully.');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create($employee_id)
+    {
+        return view('over_times.create', compact('employee_id'));
     }
 
     /**

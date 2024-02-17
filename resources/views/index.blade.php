@@ -53,7 +53,7 @@
                         <div
                             class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500"
                         >
-                            <div class="w-5 h-5">
+                            <div class="flex justify-center w-5 h-5">
                                 <span class="material-symbols-outlined">security</span>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                         <div
                             class="p-3 mr-4 text-blue-500 bg-blue-100 rounded-full dark:text-blue-100 dark:bg-blue-500"
                         >
-                            <div class="w-5 h-5">
+                            <div class="flex justify-center w-5 h-5">
                                 <span class="material-symbols-outlined">sell</span>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                         <div
                             class="p-3 mr-4 text-teal-500 bg-teal-100 rounded-full dark:text-teal-100 dark:bg-teal-500"
                         >
-                            <div class="w-5 h-5" >
+                            <div class="flex justify-center w-5 h-5" >
                                 <span class="material-symbols-outlined">balance</span>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                         <div
                             class="p-3 mr-4 text-teal-500 bg-teal-100 rounded-full dark:text-teal-100 dark:bg-teal-500"
                         >
-                            <div class="w-5 h-5">
+                            <div class="flex justify-center w-5 h-5">
                                 <span class="material-symbols-outlined">groups</span>
                             </div>
                         </div>
@@ -140,7 +140,7 @@
                         <div
                             class="flex items-center  p-3 mr-4 text-teal-500 bg-teal-100 rounded-full dark:text-teal-100 dark:bg-teal-500"
                         >
-                            <div class="w-5 h-5">
+                            <div class="flex justify-center w-5 h-5">
                                 <span class="material-symbols-outlined">account_balance</span>
                             </div>
                         </div>

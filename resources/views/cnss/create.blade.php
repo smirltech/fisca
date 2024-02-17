@@ -25,6 +25,11 @@
                 <!-- component -->
                 <div class="{{--bg-gray-100 dark:bg-gray-800 --}}transition-colors duration-300">
                     <div class="container mx-auto p-4">
+                        <h2
+                            class="mb-8 text-xl font-semibold text-gray-700 dark:text-gray-200"
+                        >
+                            <a href="{{ route('index') }}">Dashboard</a>/<a href="{{ route('cnss') }}">cnss</a>/<a href="{{ route('cnss.create') }}" class="text-green-500">create</a>
+                        </h2>
                         <div class="bg-white dark:bg-gray-700 shadow rounded-lg p-6">
                             <h1 class="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Cnss Information</h1>
                             <p class="text-gray-600 dark:text-gray-300 mb-6">Fill all the fillable field below.</p>

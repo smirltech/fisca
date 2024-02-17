@@ -21,11 +21,19 @@ class EmployeeController extends Controller
             ->where('payed', '=', '0')
             ->count('id');
 
+
         return view('index', [
             'employees' => DB::table('employees')->orderByDesc('id')->paginate(10),
             'salaryToBePaid' => $salaryToBePaid,
             'pendingAgent' => $pendingAgent,
             'number_of_payed_agents' => DB::table('employees')->where('payed', '=', '1')->count('id'),
+        ]);
+    }
+
+    public function personnal()
+    {
+        return view('section_dashboard/personal', [
+            'employees' => DB::table('employees')->orderByDesc('id')->paginate(10),
         ]);
     }
 

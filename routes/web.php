@@ -1,5 +1,6 @@
 <?php
 
+use App\Exports\CnssExport;
 use App\Http\Controllers\CNSSController;
 use App\Http\Controllers\EmployeeBulletinController;
 use App\Http\Controllers\EmployeeController;
@@ -70,11 +71,11 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/cnss/download', function ()
     {
-        return Excel::download(new \App\Exports\CnssExport, 'cnss.xlsx');
+        return Excel::download(new CnssExport, 'cnss.xlsx');
     }
 )->name('cnss_all_download');
 
-
+// Section_dashboard
 Route::get('/personal',[SectionController::class, 'personnal'])->name('personal');
 Route::get('/cnss',[SectionController::class, 'cnss'])->name('cnss');
 Route::get('/onem',[SectionController::class, 'onem'])->name('onem');

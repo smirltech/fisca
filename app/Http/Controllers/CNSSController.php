@@ -16,14 +16,6 @@ class CNSSController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create($employee_id)
-    {
-        return view('cnss.create', ['employee_id' => $employee_id]);
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request, $employee_id)
@@ -43,6 +35,14 @@ class CNSSController extends Controller
         CNSSData::create($validator);
 
         return redirect()->route('index')->with('success', 'CNSS data created successfully.');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create($employee_id)
+    {
+        return view('cnss.create', ['employee_id' => $employee_id]);
     }
 
     /**

@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\CNSSData;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\CNSSData>
+ * @extends Factory<CNSSData>
  */
 class CNSSDataFactory extends Factory
 {
@@ -19,7 +20,7 @@ class CNSSDataFactory extends Factory
         return [
             'social_security_number' => $this->faker->randomNumber(8),
             'employee_id' => $this->faker->randomNumber(8),
-            'type_of_worker' => $this->faker->randomElement([0,1]),
+            'type_of_worker' => $this->faker->randomElement([0, 1]),
             'contributed_amount' => $this->faker->randomFloat(2, 0, 999999),
             'number_of_workdays' => $this->faker->randomNumber(2),
             'number_of_work_hours' => $this->faker->randomNumber(2),

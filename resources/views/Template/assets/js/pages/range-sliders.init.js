@@ -11,14 +11,14 @@ $(document).ready(function () {
     $("#range_01").ionRangeSlider({
         skin: "square"
     });
-    
+
     $("#range_02").ionRangeSlider({
         skin: "square",
         min: 100,
         max: 1000,
         from: 550
     });
-    
+
     $("#range_03").ionRangeSlider({
         skin: "square",
         type: "double",
@@ -29,7 +29,7 @@ $(document).ready(function () {
         to: 800,
         prefix: "$"
     });
-   
+
     $("#range_04").ionRangeSlider({
         skin: "square",
         type: "double",
@@ -39,7 +39,7 @@ $(document).ready(function () {
         from: -500,
         to: 500
     });
-    
+
     $("#range_05").ionRangeSlider({
         skin: "square",
         type: "double",
@@ -50,14 +50,14 @@ $(document).ready(function () {
         to: 500,
         step: 250
     });
-    
+
     $("#range_06").ionRangeSlider({
         skin: "square",
         grid: true,
         from: 3,
         values: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     });
-    
+
     $("#range_07").ionRangeSlider({
         skin: "square",
         grid: true,
@@ -67,7 +67,7 @@ $(document).ready(function () {
         step: 1000,
         prettify_enabled: true
     });
-    
+
     $("#range_08").ionRangeSlider({
         skin: "square",
         min: 100,

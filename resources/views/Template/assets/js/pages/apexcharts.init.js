@@ -65,10 +65,10 @@ if (lineChartDatalabelColors) {
             name: "High - 2018",
             data: [26, 24, 32, 36, 33, 31, 33]
         },
-        {
-            name: "Low - 2018",
-            data: [14, 11, 16, 12, 17, 13, 12]
-        }
+            {
+                name: "Low - 2018",
+                data: [14, 11, 16, 12, 17, 13, 12]
+            }
         ],
         title: {
             text: 'Average High & Low Temperature',
@@ -122,17 +122,17 @@ if (lineChartDatalabelColors) {
             }
         }]
     }
-  
+
     var chart = new ApexCharts(
         document.querySelector("#line_chart_datalabel"),
         options
     );
-  
+
     chart.render();
 }
 
 
-  //  line chart datalabel
+//  line chart datalabel
 var lineChartdashedColors = getChartColorsArray("line_chart_dashed");
 if (lineChartdashedColors) {
     var options = {
@@ -159,14 +159,14 @@ if (lineChartdashedColors) {
             name: "Session Duration",
             data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10]
         },
-        {
-            name: "Page Views",
-            data: [36, 42, 60, 42, 13, 18, 29, 37, 36, 51, 32, 35]
-        },
-        {
-            name: 'Total Visits',
-            data: [89, 56, 74, 98, 72, 38, 64, 46, 84, 58, 46, 49]
-        }
+            {
+                name: "Page Views",
+                data: [36, 42, 60, 42, 13, 18, 29, 37, 36, 51, 32, 35]
+            },
+            {
+                name: 'Total Visits',
+                data: [89, 56, 74, 98, 72, 38, 64, 46, 84, 58, 46, 49]
+            }
         ],
         title: {
             text: 'Page Statistics',
@@ -515,7 +515,7 @@ if (rangeAreaChartColors) {
         },
         yaxis: {
             labels: {
-                formatter: function(val) {
+                formatter: function (val) {
                     return val + '°C'
                 }
             }
@@ -907,7 +907,7 @@ if (mixedChartColors) {
                         return y.toFixed(0) + " points";
                     }
                     return y;
-  
+
                 }
             }
         },
@@ -915,7 +915,7 @@ if (mixedChartColors) {
             borderColor: '#f1f1f1'
         }
     }
-  
+
     var chart = new ApexCharts(
         document.querySelector("#mixed_chart"),
         options
@@ -956,7 +956,7 @@ if (radialChartColors) {
         series: [44, 55, 67, 83],
         labels: ['Computer', 'Tablet', 'Laptop', 'Mobile'],
         colors: radialChartColors,
-    
+
     }
 
     var chart = new ApexCharts(

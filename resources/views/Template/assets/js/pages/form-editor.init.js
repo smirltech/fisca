@@ -32,6 +32,6 @@ $(document).ready(function () {
     // }
     tinymce.init({
         selector: '#elm1'
-      });
-         
+    });
+
 });

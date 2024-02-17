@@ -17,7 +17,8 @@ function getChartColorsArray(chartId) {
                 if (newValue.indexOf(",") === -1) {
                     var color = getComputedStyle(document.documentElement).getPropertyValue(newValue);
                     if (color) return color;
-                    else return newValue;;
+                    else return newValue;
+
                 } else {
                     var val = value.split(',');
                     if (val.length == 2) {

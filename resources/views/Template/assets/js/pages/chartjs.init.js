@@ -16,7 +16,8 @@ function getChartColorsArray(chartId) {
                 if (newValue.indexOf(",") === -1) {
                     var color = getComputedStyle(document.documentElement).getPropertyValue(newValue);
                     if (color) return color;
-                    else return newValue;;
+                    else return newValue;
+
                 } else {
                     var val = value.split(',');
                     if (val.length == 2) {
@@ -35,25 +36,26 @@ function getChartColorsArray(chartId) {
 Chart.defaults.borderColor = "rgba(133, 141, 152, 0.1)";
 Chart.defaults.color = "#858d98";
 
-!function($) {
+!function ($) {
     "use strict";
 
-    var ChartJs = function() {};
+    var ChartJs = function () {
+    };
 
-    ChartJs.prototype.respChart = function(selector,type,data, options) {
+    ChartJs.prototype.respChart = function (selector, type, data, options) {
         // get selector by context
         var ctx = selector.get(0).getContext("2d");
         // pointing parent container to make chart js inherit its width
         var container = $(selector).parent();
 
         // enable resizing matter
-        $(window).resize( generateChart );
+        $(window).resize(generateChart);
 
         // this function produce the responsive Chart JS
-        function generateChart(){
+        function generateChart() {
             // make chart width fit with its container
-            var ww = selector.attr('width', $(container).width() );
-            switch(type){
+            var ww = selector.attr('width', $(container).width());
+            switch (type) {
                 case 'Line':
                     new Chart(ctx, {type: 'line', data: data, options: options});
                     break;
@@ -75,190 +77,190 @@ Chart.defaults.color = "#858d98";
             }
             // Initiate new chart or Redraw
 
-        };
+        }
         // run function - render chart at first load
         generateChart();
     },
-    //init
-    ChartJs.prototype.init = function() {
-        //creating lineChart
-        var LinechartLinechartColors = getChartColorsArray("lineChart");
-        if (LinechartLinechartColors) {
-        var lineChart1 = {
-            labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September","October"],
-            datasets: [
-                {
-                    label: "Sales Analytics",
-                    fill: true,
-                    lineTension: 0.5,
-                    backgroundColor: LinechartLinechartColors[0],
-                    borderColor: LinechartLinechartColors[1],
-                    borderCapStyle: 'butt',
-                    borderDash: [],
-                    borderDashOffset: 0.0,
-                    borderJoinStyle: 'miter',
-                    pointBorderColor: LinechartLinechartColors[1],
-                    pointBackgroundColor: "#fff",
-                    pointBorderWidth: 1,
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: LinechartLinechartColors[1],
-                    pointHoverBorderColor: "#fff",
-                    pointHoverBorderWidth: 2,
-                    pointRadius: 1,
-                    pointHitRadius: 10,
-                    data: [65, 59, 80, 81, 56, 55, 40, 55, 30, 80]
-                },
-                {
-                    label: "Monthly Earnings",
-                    fill: true,
-                    lineTension: 0.5,
-                    backgroundColor: LinechartLinechartColors[2],
-                    borderColor: LinechartLinechartColors[3],
-                    borderCapStyle: 'butt',
-                    borderDash: [],
-                    borderDashOffset: 0.0,
-                    borderJoinStyle: 'miter',
-                    pointBorderColor: LinechartLinechartColors[3],
-                    pointBackgroundColor: "#fff",
-                    pointBorderWidth: 1,
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: LinechartLinechartColors[3],
-                    pointHoverBorderColor: "#eef0f2",
-                    pointHoverBorderWidth: 2,
-                    pointRadius: 1,
-                    pointHitRadius: 10,
-                    data: [80, 23, 56, 65, 23, 35, 85, 25, 92, 36]
-                }
-            ]
-        };
+        //init
+        ChartJs.prototype.init = function () {
+            //creating lineChart
+            var LinechartLinechartColors = getChartColorsArray("lineChart");
+            if (LinechartLinechartColors) {
+                var lineChart1 = {
+                    labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October"],
+                    datasets: [
+                        {
+                            label: "Sales Analytics",
+                            fill: true,
+                            lineTension: 0.5,
+                            backgroundColor: LinechartLinechartColors[0],
+                            borderColor: LinechartLinechartColors[1],
+                            borderCapStyle: 'butt',
+                            borderDash: [],
+                            borderDashOffset: 0.0,
+                            borderJoinStyle: 'miter',
+                            pointBorderColor: LinechartLinechartColors[1],
+                            pointBackgroundColor: "#fff",
+                            pointBorderWidth: 1,
+                            pointHoverRadius: 5,
+                            pointHoverBackgroundColor: LinechartLinechartColors[1],
+                            pointHoverBorderColor: "#fff",
+                            pointHoverBorderWidth: 2,
+                            pointRadius: 1,
+                            pointHitRadius: 10,
+                            data: [65, 59, 80, 81, 56, 55, 40, 55, 30, 80]
+                        },
+                        {
+                            label: "Monthly Earnings",
+                            fill: true,
+                            lineTension: 0.5,
+                            backgroundColor: LinechartLinechartColors[2],
+                            borderColor: LinechartLinechartColors[3],
+                            borderCapStyle: 'butt',
+                            borderDash: [],
+                            borderDashOffset: 0.0,
+                            borderJoinStyle: 'miter',
+                            pointBorderColor: LinechartLinechartColors[3],
+                            pointBackgroundColor: "#fff",
+                            pointBorderWidth: 1,
+                            pointHoverRadius: 5,
+                            pointHoverBackgroundColor: LinechartLinechartColors[3],
+                            pointHoverBorderColor: "#eef0f2",
+                            pointHoverBorderWidth: 2,
+                            pointRadius: 1,
+                            pointHitRadius: 10,
+                            data: [80, 23, 56, 65, 23, 35, 85, 25, 92, 36]
+                        }
+                    ]
+                };
 
-            this.respChart($("#lineChart"), 'Line', lineChart1);
-    }
+                this.respChart($("#lineChart"), 'Line', lineChart1);
+            }
 
-        //donut chart
-        var DoughnutchartColors = getChartColorsArray("doughnut");
-        if (DoughnutchartColors) {
-        var donutChart = {
-            labels: [
-                "Desktops",
-                "Tablets"
-            ],
-            datasets: [
-                {
-                    data: [300, 210],
-                    backgroundColor: DoughnutchartColors,
-                    hoverBackgroundColor: DoughnutchartColors,
-                    hoverBorderColor: "#fff"
-                }]
-        };
-        this.respChart($("#doughnut"),'Doughnut',donutChart);
-    }
+            //donut chart
+            var DoughnutchartColors = getChartColorsArray("doughnut");
+            if (DoughnutchartColors) {
+                var donutChart = {
+                    labels: [
+                        "Desktops",
+                        "Tablets"
+                    ],
+                    datasets: [
+                        {
+                            data: [300, 210],
+                            backgroundColor: DoughnutchartColors,
+                            hoverBackgroundColor: DoughnutchartColors,
+                            hoverBorderColor: "#fff"
+                        }]
+                };
+                this.respChart($("#doughnut"), 'Doughnut', donutChart);
+            }
 
 
-        //Pie chart
-        var PiechartColors = getChartColorsArray("pie");
-        if (PiechartColors) {
-            var pieChart = {
-                labels: [
-                    "Desktops",
-                    "Tablets"
-                ],
-                datasets: [
-                    {
-                        data: [300, 180],
-                        backgroundColor: PiechartColors,
-                        hoverBackgroundColor: PiechartColors,
+            //Pie chart
+            var PiechartColors = getChartColorsArray("pie");
+            if (PiechartColors) {
+                var pieChart = {
+                    labels: [
+                        "Desktops",
+                        "Tablets"
+                    ],
+                    datasets: [
+                        {
+                            data: [300, 180],
+                            backgroundColor: PiechartColors,
+                            hoverBackgroundColor: PiechartColors,
+                            hoverBorderColor: "#fff"
+                        }]
+                };
+                this.respChart($("#pie"), 'Pie', pieChart);
+            }
+
+
+            //barchart
+            var BarchartColors = getChartColorsArray("bar");
+            if (BarchartColors) {
+                var barChart = {
+                    labels: ["January", "February", "March", "April", "May", "June", "July"],
+                    datasets: [
+                        {
+                            label: "Sales Analytics",
+                            backgroundColor: BarchartColors[0],
+                            borderColor: BarchartColors[0],
+                            borderWidth: 1,
+                            hoverBackgroundColor: BarchartColors[1],
+                            hoverBorderColor: BarchartColors[1],
+                            data: [65, 59, 81, 45, 56, 80, 50, 20]
+                        }
+                    ]
+                };
+
+                this.respChart($("#bar"), 'Bar', barChart);
+            }
+
+
+            //radar chart
+            var RadarchartColors = getChartColorsArray("radar");
+            if (RadarchartColors) {
+                var radarChart = {
+                    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+                    datasets: [
+                        {
+                            label: "Desktops",
+                            backgroundColor: RadarchartColors[0],
+                            borderColor: RadarchartColors[1],
+                            pointBackgroundColor: RadarchartColors[1],
+                            pointBorderColor: "#fff",
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderColor: RadarchartColors[1],
+                            data: [65, 59, 90, 81, 56, 55, 40]
+                        },
+                        {
+                            label: "Tablets",
+                            backgroundColor: RadarchartColors[2],
+                            borderColor: RadarchartColors[3],
+                            pointBackgroundColor: RadarchartColors[3],
+                            pointBorderColor: "#fff",
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderColor: RadarchartColors[3],
+                            data: [28, 48, 40, 19, 96, 27, 100]
+                        }
+                    ]
+                };
+                this.respChart($("#radar"), 'Radar', radarChart);
+            }
+
+            //Polar area  chart
+            var PolarAreachartColors = getChartColorsArray("polarArea");
+            if (PolarAreachartColors) {
+                var polarChart = {
+                    datasets: [{
+                        data: [
+                            11,
+                            16,
+                            7,
+                            18
+                        ],
+                        backgroundColor: PolarAreachartColors,
+                        label: 'My dataset', // for legend
                         hoverBorderColor: "#fff"
-                    }]
-            };
-            this.respChart($("#pie"),'Pie',pieChart);
-        }
-
-
-        //barchart
-        var BarchartColors = getChartColorsArray("bar");
-        if (BarchartColors) {
-            var barChart = {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
-                datasets: [
-                    {
-                        label: "Sales Analytics",
-                        backgroundColor: BarchartColors[0],
-                        borderColor: BarchartColors[0],
-                        borderWidth: 1,
-                        hoverBackgroundColor: BarchartColors[1],
-                        hoverBorderColor: BarchartColors[1],
-                        data: [65, 59, 81, 45, 56, 80, 50,20]
-                    }
-                ]
-            };
-
-            this.respChart($("#bar"),'Bar',barChart);
-    }
-
-
-        //radar chart
-        var RadarchartColors = getChartColorsArray("radar");
-        if (RadarchartColors) {
-        var radarChart = {
-            labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
-            datasets: [
-                {
-                    label: "Desktops",
-                    backgroundColor: RadarchartColors[0],
-                    borderColor: RadarchartColors[1],
-                    pointBackgroundColor: RadarchartColors[1],
-                    pointBorderColor: "#fff",
-                    pointHoverBackgroundColor: "#fff",
-                    pointHoverBorderColor: RadarchartColors[1],
-                    data: [65, 59, 90, 81, 56, 55, 40]
-                },
-                {
-                    label: "Tablets",
-                    backgroundColor: RadarchartColors[2],
-                    borderColor: RadarchartColors[3],
-                    pointBackgroundColor: RadarchartColors[3],
-                    pointBorderColor: "#fff",
-                    pointHoverBackgroundColor: "#fff",
-                    pointHoverBorderColor: RadarchartColors[3],
-                    data: [28, 48, 40, 19, 96, 27, 100]
-                }
-            ]
-        };
-        this.respChart($("#radar"),'Radar',radarChart);
-    }
-
-        //Polar area  chart
-        var PolarAreachartColors = getChartColorsArray("polarArea");
-        if (PolarAreachartColors) {
-        var polarChart = {
-            datasets: [{
-                data: [
-                    11,
-                    16,
-                    7,
-                    18
-                ],
-                backgroundColor: PolarAreachartColors,
-                label: 'My dataset', // for legend
-                hoverBorderColor: "#fff"
-            }],
-            labels: [
-                "Series 1",
-                "Series 2",
-                "Series 3",
-                "Series 4"
-            ]
-        };
-        this.respChart($("#polarArea"),'PolarArea',polarChart);
-    }
-    },
-    $.ChartJs = new ChartJs, $.ChartJs.Constructor = ChartJs
+                    }],
+                    labels: [
+                        "Series 1",
+                        "Series 2",
+                        "Series 3",
+                        "Series 4"
+                    ]
+                };
+                this.respChart($("#polarArea"), 'PolarArea', polarChart);
+            }
+        },
+        $.ChartJs = new ChartJs, $.ChartJs.Constructor = ChartJs
 
 }(window.jQuery),
 
 //initializing
-function($) {
-    "use strict";
-    $.ChartJs.init()
-}(window.jQuery);
+    function ($) {
+        "use strict";
+        $.ChartJs.init()
+    }(window.jQuery);

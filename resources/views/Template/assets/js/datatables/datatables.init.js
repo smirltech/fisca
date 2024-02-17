@@ -93,8 +93,7 @@ rowSelectionDeletion.on('click', 'tbody tr', (e) => {
 
     if (classList.contains('selected')) {
         classList.remove('selected');
-    }
-    else {
+    } else {
         rowSelectionDeletion.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
         classList.add('selected');
     }

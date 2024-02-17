@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Mail\MailEmployee;
 use App\Models\Employee;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -21,7 +20,7 @@ class SalaryController extends Controller
 
         $employee = Employee::find($request->employee_id);
 
-        return view( 'salary_detail', [
+        return view('salary_detail', [
             'salary' => $employee->salary,
         ]);
 
@@ -94,11 +93,9 @@ class SalaryController extends Controller
      * overtime_salary = hourly_salary * number_of_hours
      *
      */
-    public static function overtime_salary($hourly_salary, $number_of_hours){
-        return $hourly_salary * $number_of_hours;
-    }
 
-    public static function getTotalHoursOfOvertimeOfThisMonth($employee_id){
+    public static function getTotalHoursOfOvertimeOfThisMonth($employee_id)
+    {
         $overtimes = DB::table('over_times')
             ->where('employee_id', $employee_id)
             ->whereMonth('date', now()->month)
@@ -112,7 +109,13 @@ class SalaryController extends Controller
         return array_sum($overtimes);
     }
 
-    public function pay($employee_id) {
+    public static function overtime_salary($hourly_salary, $number_of_hours)
+    {
+        return $hourly_salary * $number_of_hours;
+    }
+
+    public function pay($employee_id)
+    {
         $employee = Employee::find($employee_id);
 
         if (is_null($employee)) {

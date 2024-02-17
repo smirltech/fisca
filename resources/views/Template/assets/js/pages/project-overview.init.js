@@ -1,4 +1,3 @@
-
 /*
 Template Name: Skote - Admin & Dashboard Template
 Author: Themesbrand
@@ -12,25 +11,25 @@ File: Project overview init js
 var options = {
 
     chart: {
-    height: 290,
-    type: 'bar',
-    toolbar: {
-        show: false,
-    }
+        height: 290,
+        type: 'bar',
+        toolbar: {
+            show: false,
+        }
     },
     plotOptions: {
-    bar: {
-        columnWidth: '14%',
-        endingShape: 'rounded'
-    }
+        bar: {
+            columnWidth: '14%',
+            endingShape: 'rounded'
+        }
     },
     dataLabels: {
-    enabled: false
+        enabled: false
     },
 
     series: [{
-    name: 'Overview',
-    data: [42, 56, 40, 64, 26, 42, 56, 35, 62]
+        name: 'Overview',
+        data: [42, 56, 40, 64, 26, 42, 56, 35, 62]
     }],
     grid: {
         yaxis: {
@@ -48,19 +47,19 @@ var options = {
         labels: {
             rotate: -90
         },
-        categories: ['1', '2', '3', '4', '5', '6', '7', '8','9'],
+        categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
         title: {
-                text: 'Week',
+            text: 'Week',
         }
     },
     colors: ['#556ee6'],
 
 
-    }
+}
 
-    var chart = new ApexCharts(
+var chart = new ApexCharts(
     document.querySelector("#overview-chart"),
     options
-    );
+);
 
-    chart.render();
+chart.render();

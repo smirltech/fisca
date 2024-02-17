@@ -6,8 +6,7 @@ Contact: themesbrand@gmail.com
 File: ecommerce cart Js File
 */
 
-var defaultOptions = {
-};
+var defaultOptions = {};
 
 $('[data-toggle="touchspin"]').each(function (idx, obj) {
     var objOptions = $.extend({}, defaultOptions, $(obj).data());
@@ -38,6 +37,7 @@ function getDivFromTheElement(element) {
     }
     return temp
 }
+
 // input spin
 function inputSpinComponets() {
     isData();
@@ -87,9 +87,10 @@ function inputSpinComponets() {
         Array.from(productRow.getElementsByClassName('product-line-price')).forEach(function (e) {
             e.innerHTML = linePrice.toFixed(2);
             recalculateCart();
-        }); 
-        
+        });
+
     }
+
     // Add remove button functionality
     function remveBtn(productElement) {
         var productRow = productElement.closest('.product');
@@ -104,14 +105,14 @@ function inputSpinComponets() {
 
     // recalculate value
     function recalculateCart() {
-      var elm = document.querySelector(".product-list")
+        var elm = document.querySelector(".product-list")
         var subtotal = 0;
         Array.from(elm.getElementsByClassName("product")).forEach(function (item) {
             Array.from(item.getElementsByClassName('product-line-price')).forEach(function (e) {
                 subtotal += parseFloat(e.innerHTML);
             });
         });
-        
+
         var currencySign = "$";
         var taxRate = 0.125;
         var shippingRate = 65.00;
@@ -123,7 +124,7 @@ function inputSpinComponets() {
 
         var shipping = (subtotal > 0 ? shippingRate : 0);
         var newTotal = subtotal + tax + shipping - discount;
-       
+
         const cartSubtitle = elm.parentElement.nextElementSibling.querySelector(".totalTable .tTable .cart-subtotal")
         if (cartSubtitle) {
             cartSubtitle.innerHTML = currencySign + subtotal.toFixed(2);
@@ -146,5 +147,6 @@ function inputSpinComponets() {
         }
     }
 }
+
 //input spinner end
 inputSpinComponets()

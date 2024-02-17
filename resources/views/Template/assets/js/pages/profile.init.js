@@ -29,12 +29,12 @@ var options = {
         width: 2,
         colors: ['transparent']
     },
-    series: [ {
+    series: [{
         name: 'Revenue',
-        data: [42, 85, 101, 56 , 37, 105, 38, 58, 92, 82, 72, 32]
+        data: [42, 85, 101, 56, 37, 105, 38, 58, 92, 82, 72, 32]
     }],
     xaxis: {
-        categories: ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     },
     yaxis: {
         title: {

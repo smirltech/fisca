@@ -7,6 +7,7 @@ use App\Http\Controllers\OverTimeController;
 use App\Http\Controllers\PaySlipController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SalaryController;
+use App\Http\Controllers\SectionController;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -72,3 +73,11 @@ Route::get('/cnss/download', function ()
         return Excel::download(new \App\Exports\CnssExport, 'cnss.xlsx');
     }
 )->name('cnss_all_download');
+
+
+Route::get('/personal',[SectionController::class, 'personnal'])->name('personal');
+Route::get('/cnss',[SectionController::class, 'cnss'])->name('cnss');
+Route::get('/onem',[SectionController::class, 'onem'])->name('onem');
+Route::get('/ipr',[SectionController::class, 'ipr'])->name('ipr');
+Route::get('/ifre',[SectionController::class, 'ifre'])->name('ifre');
+Route::get('/inpp',[SectionController::class, 'inpp'])->name('inpp');

@@ -17,7 +17,8 @@ function getChartColorsArray(chartId) {
                 if (newValue.indexOf(",") === -1) {
                     var color = getComputedStyle(document.documentElement).getPropertyValue(newValue);
                     if (color) return color;
-                    else return newValue;;
+                    else return newValue;
+
                 } else {
                     var val = value.split(',');
                     if (val.length == 2) {
@@ -222,16 +223,19 @@ const openModalButton = document.getElementById('openModal');
 const modal = document.getElementById('myModal');
 const modelOver = document.getElementById('modelOver');
 const closeModalButton = document.getElementById('closeModal');
+
 // Function to open the modal
 function openModal() {
     modal.classList.remove('hidden');
     modelOver.classList.remove('hidden');
 }
+
 // Function to close the modal
 function closeModal() {
     modal.classList.add('hidden');
     modelOver.classList.add('hidden');
 }
+
 // Event listeners to open and close the modal
 closeModalButton.addEventListener('click', closeModal);
 

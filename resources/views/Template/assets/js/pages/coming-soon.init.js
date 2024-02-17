@@ -7,7 +7,6 @@ File: coming soon Init Js File
 */
 
 
-
 // countdown
 
 (function () {

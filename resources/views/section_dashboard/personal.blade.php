@@ -16,7 +16,7 @@
                 <h2
                     class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
                 >
-                   Dashboard/<a href="{{ route('personal') }}" class="text-blue-500">Personals</a>
+                   <a href="{{ route('index') }}">Dashboard/</a><a href="{{ route('personal') }}" class="text-blue-500">Personals</a>
                 </h2>
 
                 <div class="w-full overflow-hidden rounded-lg shadow-xs">

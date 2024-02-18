@@ -82,7 +82,7 @@
                         <div class="d-flex align-items-center justify-content-center vh-100 flex-column">
                             <i class="icofont-sale-discount display-1 text-warning"></i>
                             <h4 class="my-4 text-white">{{  ucfirst(config('app.name')) }}</h4>
-                            <p class="text-center text-white-50 mb-5 px-4">Cheaper prices than your local<br>supermarket, great cashback offers to top it off.</p>
+                            <p class="text-center text-white-50 mb-5 px-4">Une application qui vous permet de gérer <br> les employés, y compris les taxes à payer à l'État.</p>
                         </div>
                     </div>
                 </div>

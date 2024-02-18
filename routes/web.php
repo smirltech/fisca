@@ -1,5 +1,6 @@
 <?php
 
+use App\Exports\CnssExport;
 use App\Http\Controllers\CNSSController;
 use App\Http\Controllers\EmployeeBulletinController;
 use App\Http\Controllers\EmployeeController;
@@ -56,8 +57,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/bulletin/download/employee/{employee_id}', [EmployeeBulletinController::class, 'download'])->name('bulletin.download');
 
     //CNSS
-    Route::get('/employees/{employee_id}/cnss/create', [CNSSController::class, 'create'])->name('cnss.create');
-    Route::post('/employees/{employee_id}/cnss/store', [CNSSController::class, 'store'])->name('cnss.store');
+    Route::get('/cnss/create', [CNSSController::class, 'create'])->name('cnss.create');
+    Route::post('/cnss/store', [CNSSController::class, 'store'])->name('cnss.store');
 
     //PaySlip
     Route::get('/employees/{employee_id}/pay_slips/create', [PaySlipController::class, 'create'])->name('pay_slips.create');
@@ -70,12 +71,12 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/cnss/download', function ()
     {
-        return Excel::download(new \App\Exports\CnssExport, 'cnss.xlsx');
+        return Excel::download(new CnssExport, 'cnss.xlsx');
     }
 )->name('cnss_all_download');
 
-
-Route::get('/personal',[SectionController::class, 'personnal'])->name('personal');
+// Section_dashboard
+Route::get('/personal',[SectionController::class, 'personal'])->name('personal');
 Route::get('/cnss',[SectionController::class, 'cnss'])->name('cnss');
 Route::get('/onem',[SectionController::class, 'onem'])->name('onem');
 Route::get('/ipr',[SectionController::class, 'ipr'])->name('ipr');

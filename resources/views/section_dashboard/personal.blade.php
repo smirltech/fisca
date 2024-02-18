@@ -16,7 +16,7 @@
                 <h2
                     class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
                 >
-                   Dashboard/<a href="{{ route('index') }}" class="text-blue-500">Personal</a>
+                   <a href="{{ route('index') }}">Dashboard/</a><a href="{{ route('personal') }}" class="text-blue-500">Personals</a>
                 </h2>
 
                 <div class="w-full overflow-hidden rounded-lg shadow-xs">
@@ -96,7 +96,7 @@
                                     <td class="px-4 py-4 flex justify-between">
                                         <a href="{{route('salary.details', ['employee_id' => $employee->id]  )}}">
                                             <button
-                                                class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                                                class="px-4 py-2 text-sm  font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                                                 Details
                                             </button>
                                         </a>
@@ -107,6 +107,7 @@
                                         {{--                                                class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple">--}}
                                         {{--                                                OverTime ,Bullltin--}}
                                         {{--                                            </button>--}}
+
                                         {{--                                        </a>--}}
                                     </td>
                                     <td>
@@ -123,7 +124,6 @@
                         <!-- Pagination -->
                     </div>
                 </div>
-
 
             </div>
         </main>

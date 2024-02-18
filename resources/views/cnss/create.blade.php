@@ -25,11 +25,25 @@
                 <!-- component -->
                 <div class="{{--bg-gray-100 dark:bg-gray-800 --}}transition-colors duration-300">
                     <div class="container mx-auto p-4">
+                        <h2
+                            class="mb-8 text-xl font-semibold text-gray-700 dark:text-gray-200"
+                        >
+                            <a href="{{ route('index') }}">Dashboard</a>/<a href="{{ route('cnss') }}">cnss</a>/<a href="{{ route('cnss.create') }}" class="text-green-500">create</a>
+                        </h2>
                         <div class="bg-white dark:bg-gray-700 shadow rounded-lg p-6">
-                            <h1 class="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Css Information</h1>
+                            <h1 class="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Cnss Information</h1>
                             <p class="text-gray-600 dark:text-gray-300 mb-6">Fill all the fillable field below.</p>
-                            <form action="{{ route('cnss.store', ['employee_id' => $employee_id]) }}" method="post">
+                            <form action="{{ route('cnss.store') }}" method="post">
                                 @csrf
+                                <div class="mb-4">
+                                    <select name="employee_id" class="border p-2 rounded w-full"
+                                            aria-label="emplyee id">
+                                        <option value="{{ $default->id ?? '' }}">{{ $default->full_name ?? 'Default' }}</option>
+                                        @foreach($employees as $employee)
+                                            <option value="{{ $employee->id }}">{{ $employee->first_name . " " . $employee->last_name. " ". $employee->middle_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="mb-4">
                                     <input name="social_security_number" type="text" aria-label="social security number"
                                            placeholder="Social security number" class="border p-2 rounded w-full"

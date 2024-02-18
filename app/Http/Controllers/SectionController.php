@@ -7,10 +7,14 @@ use Illuminate\Support\Facades\DB;
 
 class SectionController extends Controller
 {
-   public function personnal()
+   public function personal()
     {
         return view('section_dashboard/personal', [
             'employees' => DB::table('employees')->orderByDesc('id')->paginate(10),
         ]);
+    }
+
+    public function cnss(){
+       return view('section_dashboard/cnss', []);
     }
 }

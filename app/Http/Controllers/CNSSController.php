@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CNSSData;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
 class CNSSController extends Controller
@@ -18,7 +19,7 @@ class CNSSController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, $employee_id)
+    public function store(Request $request)
     {
         $validator = $request->validate([
             'social_security_number' => 'required',
@@ -28,21 +29,21 @@ class CNSSController extends Controller
             'number_of_work_hours' => 'required|numeric',
             'gross_taxable_amount' => 'required|numeric',
             'contributed_period' => 'required|date',
+            'employee_id' => 'required|numeric|exists:employees,id',
         ]);
-
-        $validator['employee_id'] = $employee_id;
 
         CNSSData::create($validator);
 
-        return redirect()->route('index')->with('success', 'CNSS data created successfully.');
+        return redirect()->route('cnss')->with('success', 'CNSS data created successfully.');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create($employee_id)
+    public function create()
     {
-        return view('cnss.create', ['employee_id' => $employee_id]);
+        $employees = Employee::all();
+        return view('cnss.create', compact('employees'));
     }
 
     /**

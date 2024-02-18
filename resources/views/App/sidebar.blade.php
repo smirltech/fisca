@@ -7,7 +7,7 @@
             class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
             href="#"
         >
-            SmirlTech
+             {{ config('app.name') }}
 
         </a>
         <ul class="mt-6">

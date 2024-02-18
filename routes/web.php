@@ -76,7 +76,7 @@ Route::get('/cnss/download', function ()
 )->name('cnss_all_download');
 
 // Section_dashboard
-Route::get('/personal',[SectionController::class, 'personnal'])->name('personal');
+Route::get('/personal',[SectionController::class, 'personal'])->name('personal');
 Route::get('/cnss',[SectionController::class, 'cnss'])->name('cnss');
 Route::get('/onem',[SectionController::class, 'onem'])->name('onem');
 Route::get('/ipr',[SectionController::class, 'ipr'])->name('ipr');

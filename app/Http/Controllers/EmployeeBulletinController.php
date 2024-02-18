@@ -188,9 +188,9 @@ class EmployeeBulletinController extends Controller
 
         $dompdf = new Dompdf();
         $dompdf->loadHtml($view);
-        $dompdf->setPaper('A5', 'portrait');
+        $dompdf->setPaper('A5','portrait');
 
         $dompdf->render();
-        $dompdf->stream(strtolower($employee->full_name) . 'bulletin.pdf', ['Attachment' => true]);
+        $dompdf->stream(strtolower($employee->full_name) .'bulletin', ['Attachment' => true]);
     }
 }

@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bulletin de paie</title>
     <script src="https://cdn.tailwindcss.com"></script>
-{{--    @vite('resources/css/app.css')--}}
 </head>
 <body class="bg-gray-300 p-8">
 <div class="max-w-3xl mx-auto bg-white p-8 shadow-md">
     <!-- Entête -->
     @if(! $download)
         <div class="">
-            <a href="{{ route('index') }}" class="text-blue-500 font-bold">home</a>
+            <a href="{{ route('index') }}" class="text-blue-500 font-bold">Home</a>
         </div>
     @endif
     <div class="text-center mb-8">
         <h1 class="text-3xl font-bold">Bulletin de paie</h1>
-        <p class="text-gray-500">SmirlTech</p>
+        <p class="text-gray-500">{{ ucfirst(config('app.name')) }}</p>
     </div>
 
     <!-- Informations sur l'employé -->
@@ -25,19 +24,14 @@
 
         <p class="text-sm text-gray-500">N° d'affiliation de l'Employeur à la Sécurité sociale: {{ $cnss->affiliation_number ?? 'CNSS 0000' }}</p>
         <p class="text-sm text-gray-500">Nom de l'employeur: SmilrTech </p>
-        <p class="text-sm text-gray-500">Branche d'activité: Developpement de logiciel</p>
+        <p class="text-sm text-gray-500">Branche d'activité: Developpement de logiciel </p>
         <p class="text-sm text-gray-500">Feuille de paie du {{ now()->toDateString() }}</p>
     </div>
 
     <!-- Tableau des détails du salaire -->
     <table class="w-full border-collapse border border-gray-300 mb-6">
         <tbody>
-        {{--<tr>
-            <td class="border p-2">Salaire journalier</td>
-            <td class="border p-2">26 jours</td>
-            <td class="border p-2">{{ Number::currency($daily_salary) }}</td>
-            <td class="border p-2">{{ Number::currency($monthly_salary) }}</td>
-        </tr>--}}
+
 
         <tr>
             <th class=" p-2 bg-gray-200" colspan="3">Identification du Travailleur</th>
@@ -236,7 +230,7 @@
 
     <!-- Pied de page -->
     <div class="text-gray-500 text-xs">
-        <p>© {{ now()->year }} SmirlTech</p>
+        <p>© {{ now()->year }} {{ ucfirst(config('app.name')) }}</p>
     </div>
 
 
